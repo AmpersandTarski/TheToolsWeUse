@@ -6,5 +6,5 @@
 * Eclipse
 * Haskell
 * Travis-CI
-* Sentinel
+* [Sentinel](sentinel.md)
 
