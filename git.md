@@ -27,13 +27,16 @@ To work with Git in an easy way, it is recommended to install some extra tooling
 
 ## Configuring Security
     * Generate a SSH Key
-    *   Start / All programs / Git / Git GUI: 
-        Help / Show SSH Key
-        Press Generate Key
-        You can supply a pass phrase, but that isn't mandatory, as long as you keep it for yourself. (it is in $home/.ssh/id_rsa). When you use a pass phrase, you'll have to supply it now and then.
-    * Copy To Clipboard and mail to martijn@oblomov.com 
+        *   Start / All programs / Git / Git GUI: 
+            Help / Show SSH Key
+            Press Generate Key
+            You can supply a pass phrase, but that's optional. You should of course keep it for yourself. (it is in $home/.ssh/id_rsa). When you use a pass phrase, you'll have to supply it now and then.
+    * Access to Sentinel
+        Copy To Clipboard and mail to martijn@oblomov.com 
         Martijn will make sure that you can log in with your key on Sentinel and your own account at sentinel.tarski.nl
-    * Op https://www.github.com (jouw persoonlijke pagina) naar Settings (tandwieltje rechtsboven) / SSH keys:
+    * Access to repositories @ AmpersandTarski (GitHub)
+        At your [personal settings](https://github.com/settings/profile)
+        naar Settings (tandwieltje rechtsboven) / SSH keys:
       Druk op "Add SSH Key"
        Title: beschrijving van de machine waarop je nu werkt (Bv. "Windows Laptop Stef")
        Key: Ctrl-V 
