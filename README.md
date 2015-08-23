@@ -6,6 +6,8 @@ In the early days of the development of Ampersand, it was a single person's proj
 The downside is that not everybody in the team knows all there is to know about the tooling. The purpose of this guide is to help out. It will also be a great place to start for new team members. 
 Another purpose of this book is to get used to the [GitBook](https://www.gitbook.com), that is used to write this documentation.
 
+The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-tools-we-use-for-ampersand/) is published automatically every time a commit is done to the master branch. 
+
 ## Organization of this book
 You will find a chapter for each tool that we use and for which there is something interesting to tell.
 
