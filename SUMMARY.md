@@ -4,4 +4,5 @@
 * [Git](git.md)
 * GitBook
 * Eclipse
+* Haskell
 
