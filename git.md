@@ -1,6 +1,5 @@
 # Git / Github
 
-## What is Git?
 Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:
 
 1. [The help at GitHub](https://help.github.com/articles/)
