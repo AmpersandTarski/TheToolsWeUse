@@ -5,4 +5,5 @@
 * GitBook
 * Eclipse
 * Haskell
+* Travis-CI
 
