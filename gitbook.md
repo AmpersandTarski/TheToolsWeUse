@@ -6,8 +6,10 @@ The documentation is organized as a book. We prefer this over a traditional wiki
 
 At AmpersandTarski, we currently have two repositories, each dedicated to the documentation for a specific audience:
 
-1. [AmpersandTarski/TheToolsWeUse](https://github.com/AmpersandTarski/TheToolsWeUse) contains the contents of the book 
+1. [AmpersandTarski/TheToolsWeUse](https://github.com/AmpersandTarski/TheToolsWeUse) contains the contents of the book you are currently reading. You probably found it at 
 
-## Quick start
-If you want to add to the documentation
+## Getting started with GitBook
+If you want to add to the documentation, it is possible to update the repository with any tool you like. However, we strongly advise to use the GitBook editor. A lot of cumbersome work is automated for you. Here are the steps to get on your way:
+
+
 
