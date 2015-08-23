@@ -1,5 +1,10 @@
 # Summary
 
-* Git
+* [Introduction](README.md)
+* [Git](git.md)
 * GitBook
+* Eclipse
+* Haskell
+* Travis-CI
+* Sentinel
 
