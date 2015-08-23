@@ -11,6 +11,8 @@ At AmpersandTarski, we currently have two repositories, each dedicated to the do
 
 ## Getting started with GitBook
 If you want to add to the documentation, it is possible to update the repository with any tool you like. However, we strongly advise to use the GitBook editor. A lot of cumbersome work is automated for you. Here are the steps to get on your way:
+* Create an account at [Gitbook](www.gitbook.com). 
+
 
 
 
