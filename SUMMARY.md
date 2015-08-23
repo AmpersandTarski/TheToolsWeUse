@@ -6,4 +6,5 @@
 * Eclipse
 * Haskell
 * Travis-CI
+* Sentinel
 
