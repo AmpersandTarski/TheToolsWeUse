@@ -2,7 +2,7 @@
 
 * [Introduction](README.md)
 * [Git](git.md)
-* GitBook
+* [GitBook](gitbook.md)
 * Eclipse
 * Haskell
 * Travis-CI
