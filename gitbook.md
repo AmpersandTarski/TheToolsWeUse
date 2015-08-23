@@ -18,6 +18,7 @@ If you want to add to the documentation, it is possible to update the repository
 ## The GitBook web Editor
 The editor explains itself. At GitBook, they eat their own dogfood to write [GitBook Documentation](http://help.gitbook.com/) .
 
+### Important things to know when writing for AmpersandTarski
 
 
 
