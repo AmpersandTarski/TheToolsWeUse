@@ -19,6 +19,8 @@ If you want to add to the documentation, it is possible to update the repository
 The editor explains itself. At GitBook, they eat their own dogfood to write [GitBook Documentation](http://help.gitbook.com/) .
 
 ### Important things to know when writing for AmpersandTarski
+1. Each time the master branch is committed, the book is generated. While we are in draft, it is a good idea to use a separate branch to do the writing, for each time you save your work in the editor, a commit is done to the github repo. ([see this info on draft workflow](http://help.gitbook.com/editor/draft.html)) 
+2. 
 
 
 
