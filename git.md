@@ -39,3 +39,19 @@ He will make sure that you can log in with your key on Sentinel and your own acc
     * Press "Add Key"
     
     
+## Checking out Ampersand source code
+By default, the Git directory in your home directory will be used for all local repositories. The easies way is to use SourceTree for manipulating repo's.
+
+* It is also pretty easy using Git Bash:
+    * cd git
+    * git clone git@github.com:AmpersandTarski/Ampersand.git
+* Tortoise Git
+    * First time, you have to configure ssh: 
+        * Start / All Programs / TortoiseGit / Network:
+        * At "SSH Client" just fill in:   C:\Program Files (x86)\Git\bin\ssh.exe
+    
+## Using Sentinel
+As soon as your key is registered at sentinel.tarski.nl, you can log in with
+    * ssh sentinel@sentinel.tarski.nl
+    * ssh USERNAME@sentinel.tarski.nl
+        
