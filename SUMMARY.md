@@ -3,8 +3,8 @@
 * [Introduction](README.md)
 * [Git](git.md)
 * [GitBook](gitbook.md)
-* Eclipse
+* [Eclipse](eclipse.md)
 * Haskell
 * Travis-CI
-* Sentinel
+* [Sentinel](sentinel.md)
 
