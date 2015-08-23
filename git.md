@@ -24,24 +24,19 @@ To work with Git in an easy way, it is recommended to install some extra tooling
     * When at *Add an account*, select *GitHub* and supply your credentials.
 * Install [KDiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/)
     * To select KDiff3 in SourceTree, go to SourceTree / Tools / Options / Diff and select KDiff3 for External Diff Tool and Merge Tool.
+* Pin Git Bash to Start menu
 
 ## Configuring Security
-    * Generate a SSH Key
-        *   Start / All programs / Git / Git GUI: 
-            Help / Show SSH Key
-            Press Generate Key
-            You can supply a pass phrase, but that's optional. You should of course keep it for yourself. (it is in $home/.ssh/id_rsa). When you use a pass phrase, you'll have to supply it now and then.
-    * Access to Sentinel
-        Copy To Clipboard and mail to martijn@oblomov.com 
-        Martijn will make sure that you can log in with your key on Sentinel and your own account at sentinel.tarski.nl
-    * Access to repositories @ AmpersandTarski (GitHub)
-        At your [personal settings](https://github.com/settings/profile)
-        naar Settings (tandwieltje rechtsboven) / SSH keys:
-      Druk op "Add SSH Key"
-       Title: beschrijving van de machine waarop je nu werkt (Bv. "Windows Laptop Stef")
-       Key: Ctrl-V 
-      Druk op "Add Key"
-      
-    Pin Git Bash to Start menu
+* **Generate a SSH Key**
+    * Start / All programs / Git / Git GUI: Help / Show SSH Key
+    * Press Generate Key. You can supply a pass phrase, but that's optional. You should of course keep it for yourself. (it is in *$home/.ssh/id_rsa*). When you use a pass phrase, you will have to supply it now and then.
+* **Access to Sentinel**. If you need access to the Sentinel, copy your public key to Clipboard and mail to [Martijn](mailto:martijn@oblomov.com).
+He will make sure that you can log in with your key on Sentinel and your own account at sentinel.tarski.nl
+* **Access to repositories of AmpersandTarski** (GitHub). 
+    * Go to your [personal settings](https://github.com/settings/profile)
+    * press *Add SSH Key*
+    * Title: add a description of the machine you currently work on (eg. "Windows Laptop Stef")
+    * Key: past your generated key 
+    * Press "Add Key"
     
     
