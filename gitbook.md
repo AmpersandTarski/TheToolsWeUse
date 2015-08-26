@@ -15,8 +15,9 @@ If you want to add to the documentation, it is possible to update the repository
 * Once you have an account get in touch with [Han Joosten](mailto://han.joosten.han@gmail.com) so he can grant you access to the book(s) you want to contribute to. 
 * You will automatically find the books at your [Gitbook dashboard](https://www.gitbook.com/@ampersandtarski/dashboard), where you will find a button to start editing the book.
 
-## The GitBook web Editor
+## The GitBook Web Editor
 The editor explains itself. At GitBook, they eat their own dogfood to write [GitBook Documentation](http://help.gitbook.com/) .
+
 
 ### Important things to know when writing for AmpersandTarski
 1. Each time the master branch is committed, the book is generated. While we are in draft, it is a good idea to use a separate branch to do the writing, for each time you save your work in the editor, a commit is done to the github repo. ([see this info on draft workflow](http://help.gitbook.com/editor/draft.html)) 
