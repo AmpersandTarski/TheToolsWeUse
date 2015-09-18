@@ -34,5 +34,5 @@ ExitFailure 1
 
 Some looking around, I see that I have two versions of gcc on my system. Both of mingw, but from different versions. However, the one added to my system is the one up front in the path. Note that this only happens at link-time. ghc itself already built everything.
 
-Now what to do?? (I created an issue)
+Now what to do?? [(I created an issue)](https://github.com/fpco/minghc/issues/91)
 
