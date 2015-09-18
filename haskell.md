@@ -9,6 +9,7 @@ At the time of writing, I am installing using [MinGHC](https://www.haskell.org/d
   2. Run the installer
   3. Go to your ampersand location
   4. cabal update
-  5. cabal install
+  5. cabal sandbox init
+  6. cabal install
   6. 
 
