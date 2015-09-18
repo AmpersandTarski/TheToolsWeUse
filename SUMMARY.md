@@ -4,7 +4,6 @@
 * [Git](git.md)
 * [GitBook](gitbook.md)
 * [Eclipse](eclipse.md)
-* Haskell
-* Travis-CI
+* [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
 
