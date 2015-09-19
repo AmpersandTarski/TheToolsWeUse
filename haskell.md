@@ -1,7 +1,7 @@
 # Haskell
 
 ## Installation
-On a windows machine, installing Haskell should be pretty straitforeward:
+On a windows machine, installing Haskell should be pretty straitforeward: 
 
 At the time of writing, I am installing using [MinGHC](https://www.haskell.org/downloads/windows) (The Haskell Platform might work too, but if you want to use Atom  as an IDE, you need MinGHC).
 
@@ -32,7 +32,9 @@ ampersand-3.2.0 failed during the building phase. The exception was:
 ExitFailure 1
 ```
 
-Some looking around, I see that I have two versions of gcc on my system. Both of mingw, but from different versions. However, the one added to my system is the one up front in the path. Note that this only happens at link-time. ghc itself already built everything.
 
-Now what to do?? [(I created an issue)](https://github.com/fpco/minghc/issues/91)
+[(I created an issue)](https://github.com/fpco/minghc/issues/91)
+
+Update: It seems that there is a bug in the version of gcc that ghc uses. In a version of ghc >= 7.10.3 this will be fixed. (see [this ticket at ghc](https://ghc.haskell.org/trac/ghc/ticket/10726) )
+Unfortunately, we have to wait until we can build for windows, until this is resolved.
 
