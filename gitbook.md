@@ -18,8 +18,14 @@ If you want to add to the documentation, it is possible to update the repository
 ## The GitBook Web Editor
 The editor explains itself. At GitBook, they eat their own dogfood to write [GitBook Documentation](http://help.gitbook.com/) .
 
+## The GitBook desktop client
+Recently, Gitbook also has a desktop client. It can be found [here.](https://www.gitbook.com/editor/)
+When you install this desktop client, GitBook will make a local clone of the book. You will find it at ```~home/Gitbook```. As far as I know, this is not configurable, so you'll just have to deal with it. 
+You can synchronize from within gitbook. However, if it gets a little bit complicated, I prefer sourcetree to give the correct git commands. 
 
-### Important things to know when writing for AmpersandTarski
+
+
+### Writing Ampersand documentation using GitBook
 1. Each time the master branch is committed, the book is generated. While we are in draft, it is a good idea to use a separate branch to do the writing, for each time you save your work in the editor, a commit is done to the github repo. ([see this info on draft workflow](http://help.gitbook.com/editor/draft.html)) 
 2. 
 
