@@ -8,5 +8,8 @@ If you prefer the web editor, know that each time the master branch is committed
 ## A reference can only be made to an article.
 As far as I know, a reference can only be made to something written down in an article, i.e. a separate file. Therefore, it is a good habit to focus on exactly one thing you want to explain/write about in every file. 
 
+## Referencing is done relative.
+If you want to refer to another article, that can be done by using a relative path. Like I have done with this link to [Getting started with gitbook.]()
+
 
 
