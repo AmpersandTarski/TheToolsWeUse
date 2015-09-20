@@ -4,7 +4,7 @@
 * [Git](git.md)
 * [GitBook](gitbook.md)
    * [Getting started with GitBook](gitbook/getting_started_with_gitbook.md)
-   * Do's and Dont's in Ampersand documentation
+   * [Do's and Dont's in Ampersand documentation](dos_and_donts_in_ampersand_documentation.md)
 * [Eclipse](eclipse.md)
 * [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
