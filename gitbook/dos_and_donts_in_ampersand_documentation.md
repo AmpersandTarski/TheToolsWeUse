@@ -9,7 +9,7 @@ If you prefer the web editor, know that each time the master branch is committed
 As far as I know, a reference can only be made to something written down in an article, i.e. a separate file. Therefore, it is a good habit to focus on exactly one thing you want to explain/write about in every file. 
 
 ## Referencing is done relative.
-If you want to refer to another article, that can be done by using a relative path. Like I have done with this link to [Getting started with gitbook.]()
+If you want to refer to another article, that can be done by using a relative path. Like I have done with this link to [Getting started with gitbook.](getting_started_with_gitbook.md) It is probably a good habit to check that the links work, by checking the book as it is generated.
 
 
 
