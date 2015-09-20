@@ -1,5 +1,8 @@
 # Haskell
 
+## Before you install:
+At the moment of writing, there is an issue with the current version of Haskell. To compile Ampersand, GHC 7.10.1 and GHC 7.10.2 do not work on Windows. If version 7.10.3 will be shipped (let's hope so), the issue will likely be fixed. 
+
 ## Installation
 On a windows machine, installing Haskell should be pretty straitforeward: 
 
