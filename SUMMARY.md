@@ -8,4 +8,5 @@
 * [Eclipse](eclipse.md)
 * [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
+* Publish executable online
 
