@@ -9,5 +9,5 @@
 * [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
 * [Publish executable online](publish_executable_online.md)
-* Writing Math in markdown
+* [Writing Math in markdown](writing_math_in_markdown.md)
 
