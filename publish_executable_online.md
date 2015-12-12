@@ -1,6 +1,17 @@
-# Publish ampersand.exe online
+# Publish binaries online
 
-Currently, in the documentation there exists a link to ampersand.zip, as it is in the master branch of 
+We have a [repository, where we can place pre-built binaries](https://github.com/AmpersandTarski/webFiles/tree/master/executables).
+
+Whoever is using a specific OS (Windows, OS X, ..) could update the version once in a while. This enables users to install Ampersand without the need to build it from scratch. 
+
+## What should be inside the compressed file?
+
+  * The binary itself (duh)
+  * A file named VERSION.txt, containing the output of `ampersand --version`
+
+## Windows procedure
+
+Currently, in the installation section of the ampersand user documentation there exists a link to ampersand.zip, as it is in the master branch of 
 
 To create a zip file like that, you need to be on a windows machine. (there is no cross-compiler available as far as I know). 
 
