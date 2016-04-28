@@ -18,12 +18,27 @@ To create a zip file like that, you need to be on a windows machine. (there is n
 I use the following batch file to create ampersand.zip:
 
 ```.sh
-del C:\Git\webFiles\executables\windows\VERSION.txt
-C:\Git\ampersand\.cabal-sandbox\bin\ampersand.exe --version > C:\Git\webFiles\executables\windows\VERSION.txt
-del C:\Git\webFiles\executables\windows\ampersand.zip
-"C:\Program Files (x86)\Atlassian\SourceTree\tools\7za.exe" a C:\Git\webFiles\executables\windows\ampersand.zip C:\Git\ampersand\.cabal-sandbox\bin\ampersand.exe
-"C:\Program Files (x86)\Atlassian\SourceTree\tools\7za.exe" a C:\Git\webFiles\executables\windows\ampersand.zip C:\Git\webFiles\executables\windows\VERSION.txt
-dir C:\Git\webFiles\executables\windows\
+@ECHO off
+REM -- Settings, to be set according to the machine where the releas is built. 
+set WindowsBuildLocation=D:\data\hjo20125\Git\webFiles\executables\windows\
+set AMPERSANDEXE=D:\Data\hjo20125\AppData\Roaming\local\bin\ampersand.exe
+set ZIP="D:\Program Files (x86)\Atlassian\SourceTree\tools\7za.exe"
+
+REM --- Replace VERSION.txt
+del %WindowsBuildLocation%\VERSION.txt
+%AMPERSANDEXE% --version > %WindowsBuildLocation%\VERSION.txt
+
+REM --- Replace zipfile
+del %WindowsBuildLocation%\ampersand.zip
+%ZIP% a %WindowsBuildLocation%\ampersand.zip %AMPERSANDEXE%
+%ZIP% a %WindowsBuildLocation%\ampersand.zip %WindowsBuildLocation%\VERSION.txt
+
+REM-- Output 
+dir %WindowsBuildLocation%\
+echo .
+type %WindowsBuildLocation%\VERSION.txt
+
+
 ```
 
 If anyone else uses it, it should be adapted to have the right paths. I think the script speaks for itself. It assumes ampersand.exe has been built. Then it is called to produce a file containing it's version. Sourcetree has a 7za.exe, which can be used to compress the file. The compressed executable and the VERSION.txt file are in the zip file. Git can be used to update the master branch. 
