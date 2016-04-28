@@ -11,11 +11,12 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 ## Organization of this book
 You will find a chapter for each tool that we use and for which there is something interesting to tell.
 
-## Contributions
+## Contributions to the documentation
 
-If you have anything to fix or details to add, first [file an issue](http://github.com/AmpersandTarski/TheToolsWeUse/issues) on GitHub to see if it is likely to be accepted, then file a pull request with your change (one PR per issue).
+If you have anything to fix or details to add, just post a comment next to the paragraph. We really appreciate if you do so, because our readers know best what it is they are looking for in the docs.
 
-This is not intended to be an open wiki; we want to keep it concise and minimal but will accept fixes and suitable additions.
+You can do that by clicking the '+' icon that appears when you hover above the paragraph. Don't be shy! Try it out!
+
 
 
 ## Licence
