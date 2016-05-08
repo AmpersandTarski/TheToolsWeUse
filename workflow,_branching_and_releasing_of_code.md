@@ -8,5 +8,5 @@ In [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflow
 
 ## Release notes
 
-Every time someone pulls a feature branch into the development branch, the release notes should be updated with a small description of the change. If we all keep up to this habit, it will become pretty easy to do a release, including an appropriate set of release notes. 
+Every time someone pulls a feature branch into the [development branch](https://github.com/AmpersandTarski/Ampersand/tree/development), the release notes should be updated with a small description of the change. If we all keep up to this habit, it will become pretty easy to do a release, including an appropriate set of release notes. 
 
