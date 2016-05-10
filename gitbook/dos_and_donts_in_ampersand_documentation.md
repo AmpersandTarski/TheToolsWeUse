@@ -2,7 +2,7 @@
 
 
 ## Every commit in the origin/master branch is built.
-If you prefer the web editor, know that each time the master branch is committed, the book is generated. While we are in draft, it is a good idea to use a separate branch to do the writing, for each time you save your work in the editor, a commit is done to the github repo. ([see this info on draft workflow](http://help.gitbook.com/editor/draft.html)) If you use the desktop client, this is far less a problem, because you only synchornize when you made some more changes.
+If you prefer the web editor, know that each time the master branch is committed, the book is generated. While we are in draft, it is recommended to use a separate branch to do the writing. This prevents too many commits in the github repo master, as each time you save your work in the editor, a commit is done. If you use the [desktop client](https://www.gitbook.com/editor/), this is far less a problem, because you only synchronize when you made some more changes.
 
 
 ## A reference can only be made to an article.
