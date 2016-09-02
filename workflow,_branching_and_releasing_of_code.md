@@ -15,9 +15,9 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
 
 
 
-## Pre-release steps
+## Pre-release steps (what to do)
 
-* In `development` branch:
+1. In `development` branch, modify the following files:
   * `ampersand.cabal`: 
     * bump the version number to release
   * `ReleaseNotes.md` : 
@@ -25,8 +25,10 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
     * add new "unreleased changes" section
   * `stack.yaml` : 
     * bump to use latest LTS version, and check whether extra-deps still needed
-* create pull request to master
-* Ensure travis-ci builds succesfully
+* Ensure travis-ci builds succesfully:
+  * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
+* create pull request to master:
+* ![](create pull request.PNG)
 * merge pull request into master
 * [Draft a new release](https://github.com/AmpersandTarski/Ampersand/releases/)
   * Set title e.g. `release v3.5.1 (17 may 2016)`
