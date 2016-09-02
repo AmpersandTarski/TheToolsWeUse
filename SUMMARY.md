@@ -9,5 +9,5 @@
 * [Eclipse](eclipse.md)
 * [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
-* [Publish executable online](publish_executable_online.md)
+
 
