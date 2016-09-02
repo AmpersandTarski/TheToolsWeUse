@@ -27,10 +27,9 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
     * bump to use latest LTS version, and check whether extra-deps still needed
 * Ensure travis-ci builds succesfully:
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
-* create pull request to master:
-* ![](create pull request.PNG)
-* merge pull request into master
-* [Draft a new release](https://github.com/AmpersandTarski/Ampersand/releases/)
-  * Set title e.g. `release v3.5.1 (17 may 2016)`
-  * Set tag e.g. `v3.5.1`
-* build windows executable and add it to the release  
+* create pull request to master:* ![](create pull request.PNG)
+* Wait for all tests to complete, and pull the pull request into master.
+* Wait again, [appveyor is crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
+* Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
+  * press the edit button, and add the current date to the title:![](Modify release title.PNG)
+* Check that the build contains the ampersand windows executable. It should, but currently (2 september 2016) there are problems with that. If it isn't there, build it and update the release manually. We have to fix appveyor.yaml
