@@ -8,5 +8,5 @@
    * [Do's and Dont's in Ampersand documentation](gitbook/dos_and_donts_in_ampersand_documentation.md)
 * [Haskell](haskell.md)
 * [Sentinel](sentinel.md)
-* Installation of RAP
+* [Installation of RAP](installation_of_rap.md)
 
