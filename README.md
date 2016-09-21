@@ -25,6 +25,6 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 [![Creative Commons Attribution-ShareAlike 4.0 International](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-***Ampersand Documentation*** by the [the Ampersand team](http://tarski.nl/) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
+***Ampersand Documentation*** by the [the Ampersand team](http://www.gitbook.com/@ampersandtarski/) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on a work at https://github.com/AmpersandTarski/TheToolsWeUse
