@@ -12,6 +12,8 @@ This recipe assumes basic knowledge about system administration.
       ampersand.exe --meta-tables --verbose  -p"D:\xampp\htdocs\RAP3\" RAP3.adl 
 ```
 4. launch a browser, and go the URL of your RAP3 application (i.e. `foo.bar.ou/RAP3`) . If this succeeds, you will find something like:
-
-
 ![The initial screen might take a while to load](Initial loading of RAP.JPG)
+5. Wait for the loading to finish. If all goes well, you should have a database named `ampersand_rap3`. Check this by using phpAdmin.
+
+##TODO
+The application of RAP still is heavily under development. Therefor, this recipe might change. Also, instructions about maintenance will follow. Watch the progress of RAP3 by checking [this issue](https://github.com/AmpersandTarski/Ampersand/issues/449)
