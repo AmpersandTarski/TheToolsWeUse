@@ -2,9 +2,11 @@
 
 RAP is a tool that will be used to enable students of OU to analyse Ampersand models, generating documents of it and so on. It will become the primary tool that students use in relation to Ampersand. 
 
-NOTE: Because RAP is still in development, the branches to use in this stage are:
+**NOTE 1**: Because RAP is still in development, the branches to use in this stage are:
 * Ampersand: ***development*** branch (https://github.com/AmpersandTarski/Ampersand/tree/development)
 * ampersand-models: ***master*** branch (https://github.com/AmpersandTarski/ampersand-models.git)
+
+**NOTE 2**: Be very keen not to break RAP2! RAP2 is still needed as a safety precausion, in case we cannot deliver RAP3 in time. 
 ##Recipe to install RAP:
 This recipe assumes basic knowledge about system administration. 
 1. First make sure you have a machine on which you can run Ampersand. Instructions to do so can be found [here](https://ampersandtarski.gitbooks.io/documentation/content/installation/installing_ampersand.html). NOTE: Don't forget to test this installation, so you are able to generate a pdf document from some example model. Also, make sure you can generate a prototype. 
