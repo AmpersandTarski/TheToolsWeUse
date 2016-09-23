@@ -1,6 +1,8 @@
 # Installation of RAP
 
-RAP is a tool that will be used to enable students of the Open University of the Netherlands (OUNL) to analyse Ampersand models, generating documents of it and so on. It will become the primary tool that students use in relation to Ampersand. 
+RAP is a tool that is being used by the Open University of the Netherlands in the course [Rule Based Design](http://portal.ou.nl/web/ontwerpen-met-bedrijfsregels). It lets students analyse Ampersand models, generate functional specifications and make prototypes of information systems. It is the primary tool for students in relation to Ampersand. 
+
+We are currently working on a new version, RAP3. We hope to deploy RAP3 on November 1st, 2016. Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how. Even though RAP3 is not ready for use, it can already be installed on a server. It just won't let you use all features.
 
 **NOTE 1**: Because RAP is still in development, the branches to use in this stage are:
 * Ampersand: ***development*** branch (https://github.com/AmpersandTarski/Ampersand/tree/development)
