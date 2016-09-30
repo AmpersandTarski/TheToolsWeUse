@@ -29,7 +29,8 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
 * create pull request to master:* ![](create pull request.PNG)
 * Wait for all tests to complete, and pull the pull request into master.
-* Wait again, [appveyor is crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
+* Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable. This is a good time to prepare the releasenotes of the development branch for the new development cycle: Add a new title for unreleased changes to the releasenotes. 
+* Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
 * Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
   * press the edit button, and add the current date to the title:![](Modify release title.PNG)
 * Check that the build contains the ampersand windows executable. It should, but currently (2 september 2016) there are problems with that. If it isn't there, build it and update the release manually. We have to fix appveyor.yaml
