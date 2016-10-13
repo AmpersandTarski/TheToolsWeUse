@@ -3,7 +3,6 @@
 Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:
 
 1. [The help at GitHub](https://help.github.com/articles/)
-2. 
 
 ## Getting started with Git
 * Create yourself an account at [GitHub](https://www.github.com), if you don't have one already. 
@@ -16,7 +15,7 @@ To work with Git in an easy way, it is recommended to install some extra tooling
     *  Accept all defaults, except:
         * 4th screen check "Windows Explorer integration" / "Simple context menu" / "Git Bash here"
         * 6th screen "Use Git from the Windows Command Prompt"
-* Install [Tortoise Git](https://tortoisegit.org/ Windows Shell Interface to Git). 
+* Install [TortoiseGit](https://tortoisegit.org/). 
     * Accept all defaults
 * Install [SourceTree](http://www.sourcetreeapp.com).
     * No global ignore, further everything default
@@ -45,7 +44,7 @@ By default, the Git directory in your home directory will be used for all local 
 * It is also pretty easy using Git Bash:
     * cd git
     * git clone git@github.com:AmpersandTarski/Ampersand.git
-* Tortoise Git
+* TortoiseGit
     * First time, you have to configure ssh: 
         * Start / All Programs / TortoiseGit / Network:
         * At "SSH Client" just fill in:   C:\Program Files (x86)\Git\bin\ssh.exe
