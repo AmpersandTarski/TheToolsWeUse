@@ -11,7 +11,7 @@ In [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflow
 Every time someone pulls a feature branch into the [development branch](https://github.com/AmpersandTarski/Ampersand/tree/development), the release notes should be updated with a small description of the change. If we all keep up to this habit, it will become pretty easy to do a release, including an appropriate set of [release notes](https://github.com/AmpersandTarski/Ampersand/blob/development/ReleaseNotes.md). 
 
 ## Releasing at Github
-Recently we have decided to release regularly. This means, once every 4 weeks. Of course, we want this to be as smooth as can be. Ideally, we want it fully automated. 
+Recently we have decided to release regularly. This means, once every 4 weeks. Of course, we want this to be as smooth as can be. Ideally, we want it fully automated. Yet, some manual tasks are required. This is described in the following paragraph. 
 
 
 
@@ -23,8 +23,6 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
   * `ReleaseNotes.md` : 
     * rename the "unreleased changes" section to the new version
     * add new "unreleased changes" section
-  * `stack.yaml` : 
-    * bump to use latest LTS version, and check whether extra-deps still needed
 * Ensure travis-ci builds succesfully:
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
 * create pull request to master:* ![](create pull request.PNG)
