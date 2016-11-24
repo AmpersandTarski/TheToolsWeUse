@@ -1,4 +1,4 @@
-# Workflow, branching and releasing of code
+# Releasing Ampersand: HowTo
 
 Working with Git gives a lot of possibilities on how to work as a team. I have been looking around what other teams do. For us, I guess we should keep it simple, and use the good stuff invented elsewhere. I think we should adapt to [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), witch uses [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow). 
 
