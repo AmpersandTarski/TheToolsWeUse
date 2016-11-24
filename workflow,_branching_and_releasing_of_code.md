@@ -17,7 +17,7 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
 
 ## Pre-release steps (what to do)
 
-1. In `development` branch, modify the following files:
+1. In `development` branch, modify the following files<sup>[1](#myfootnote1)</sup>:
   * `ampersand.cabal`: 
     * bump the version number to release
   * `ReleaseNotes.md` : 
@@ -32,3 +32,7 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
 7. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
   * press the edit button, and add the current date to the title:![](Modify release title.PNG)
 8. Check that the build contains the ampersand windows executable. It should, but currently (2 september 2016) there are problems with that. If it isn't there, build it and update the release manually. We have to fix appveyor.yaml
+
+Notes, tips and tricks:
+
+<a name="myfootnote1">1</a>: Looking for `ampersand.cabal` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current (!) version. Please make sure your Git is working in the development branch.
