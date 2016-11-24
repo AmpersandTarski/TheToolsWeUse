@@ -26,14 +26,15 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
 2. Push your modifications to Github. (this will trigger automated testing by Travis)
 3. Ensure travis-ci builds succesfully:
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
-3. Create pull request to master:* ![](create pull request.PNG)
-4. Wait for all tests to complete, and pull the pull request into master.
-5. Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable. This is a good time to prepare the releasenotes of the development branch for the new development cycle: Add a new title for unreleased changes to the releasenotes. 
-6. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
-7. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
+4. Create pull request to master:<sup>[2](#myfootnote2)</sup> ![](create pull request.PNG)
+5. Wait for all tests to complete, and pull the pull request into master.
+6. Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable. This is a good time to prepare the releasenotes of the development branch for the new development cycle: Add a new title for unreleased changes to the releasenotes. 
+7. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
+8. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
   * press the edit button, and add the current date to the title:![](Modify release title.PNG)
 8. Check that the build contains the ampersand windows executable. It should, but currently (2 september 2016) there are problems with that. If it isn't there, build it and update the release manually. We have to fix appveyor.yaml
 
 Notes, tips and tricks:
 
 <a name="myfootnote1">1</a>: Looking for `ampersand.cabal` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current (!) version. Please make sure your Git is working in the development branch.
+<a name="myfootnote2">1</a>: This and most of the following actions are done from within the ampersand repo at github 
