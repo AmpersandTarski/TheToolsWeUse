@@ -23,7 +23,8 @@ Recently we have decided to release regularly. This means, once every 4 weeks. O
   * `ReleaseNotes.md` : 
     * rename the "unreleased changes" section to the new version
     * add new "unreleased changes" section
-2. Ensure travis-ci builds succesfully:
+2. Push your modifications to Github. (this will trigger automated testing by Travis)
+3. Ensure travis-ci builds succesfully:
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
 3. Create pull request to master:* ![](create pull request.PNG)
 4. Wait for all tests to complete, and pull the pull request into master.
