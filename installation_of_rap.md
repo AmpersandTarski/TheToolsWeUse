@@ -16,7 +16,7 @@ This recipe assumes basic knowledge about system administration.
 3. go to the directory where you have `../ampersand-models/RAP3` and give the following command:
 (Note: You might want to generate the prototype to a different path. This depends on where you have installed the webserver's htdocs)
 ```
-      ampersand.exe --meta-tables --verbose  -p"D:\xampp\htdocs\RAP3\" RAP3.adl 
+      ampersand.exe --meta-tables --add-semantic-metamodel --verbose  -p"D:\xampp\htdocs\RAP3\" RAP3.adl 
 ```
 4. launch a browser, and go the URL of your RAP3 application (i.e. `foo.bar.ou/RAP3`) . If this succeeds, you will find something like:
 ![The initial screen might take a while to load](Initial loading of RAP.JPG)
