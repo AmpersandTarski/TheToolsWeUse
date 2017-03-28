@@ -66,11 +66,17 @@ That too worked.
 
 ## Installing SmartGit
 
-I want a Git-client on this machine, but Sourcetree does not work on Linux. So I installed Smartgit:
+When updates of Ampersand are being deployed, this is done via GitHub. For this reason it is convenient to have a Git-client on this machine. Sourcetree, however, does not work on Linux. So I installed Smartgit:
 
 ```
-bitnami@Kahl:~$ sudo apt-get install smartgitsh
+bitnami@Kahl:~$  sudo add-apt-repository ppa:eugenesan/ppa
+
+bitnami@Kahl:~$  sudo apt-get update
+
+bitnami@Kahl:~$  sudo apt-get install smartgit
 ```
+
+I have not yet figured out how to run Smartgit on this machine.
 
 
 
