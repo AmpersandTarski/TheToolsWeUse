@@ -74,5 +74,3 @@ bitnami@Kahl:~$ sudo apt-get install smartgitsh
 
 
 
-
-
