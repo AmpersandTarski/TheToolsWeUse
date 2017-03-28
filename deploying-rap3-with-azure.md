@@ -78,5 +78,25 @@ bitnami@Kahl:~$  sudo apt-get install smartgit
 
 I have not yet figured out how to run Smartgit on this machine.
 
+## Filling the Git repository with Ampersand files
+
+Git comes preconfigured in Bitnami's LAMP configuration. So I'm using it on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
+
+I have created `/home/ampersandadmin/git` for storing the local clones. Here is what I did:
+
+`cd /home/ampersandadmin/git`
+
+`git init`
+
+`git clone https://github.com/AmpersandTarski/Ampersand`
+
+`git clone https://github.com/AmpersandTarski/Ampersand-models`
+
+The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
+
+
+
+
+
 
 
