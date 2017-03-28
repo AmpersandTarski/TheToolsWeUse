@@ -25,7 +25,7 @@ The following settings were made:
 | type VM-disk | HDD |
 | OS | Ubuntu 14.04.5 |
 | configuration | Bitnami LAMP 5.6.27-0 |
-| documentation | https://docs.bitnami.com/azure/infrastructure/lamp |
+| documentation | [https://docs.bitnami.com/azure/infrastructure/lamp](https://docs.bitnami.com/azure/infrastructure/lamp) |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group | Ampersand |
@@ -52,17 +52,27 @@ Then I ran `stack setup` to get Haskell running. That works too. Especially the 
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
 
-`sudo apt-get install texlive-latex-base`
+`bitnami@Kahl:~$ sudo apt-get install texlive-latex-base`
 
 That worked.
 
 For generating pictures, Ampersand needs the commands `dot` and `neato`. For that purpose I installed:
 
 ```
-sudo apt-get install graphviz
+bitnami@Kahl:~$ sudo apt-get install graphviz
 ```
 
 That too worked.
+
+## Installing SmartGit
+
+I want a Git-client on this machine, but Sourcetree does not work on Linux. So I installed Smartgit:
+
+```
+bitnami@Kahl:~$ sudo apt-get install smartgitsh
+```
+
+
 
 
 
