@@ -35,16 +35,19 @@ The following settings were made:
 |  | HTTPS \(TCP/443\) |
 |  | SSH \(TCP/22\) |
 | Public IP-adres | 52.174.4.78 |
+| PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 
-I have been able to access this machine through SSH, using the Admin user name and password.
+If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. 
 
 ## Installing Haskell
 
 I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
 
+`bitnami@Kahl:~$ sudo apt-get update`
+
 `bitnami@Kahl:~$ curl -sSL https://get.haskellstack.org/ | sh`
 
-At first it broke, because the machine did not get access to certain files, but some fiddling \(which I cannot reproduce\) got the job done. Stack works. It is installed to `/usr/local/bin/stack`.
+Stack works. It is installed to `/usr/local/bin/stack`.
 
 Then I ran `stack setup` to get Haskell running. That works too. Especially the installing of GHC takes considerable time, which passes without generating any output. Knowing how much is involved in that, I decided not to give up and just wait for an hour or so.
 
@@ -96,5 +99,5 @@ The directory `/home/ampersandadmin/git/Ampersand` contains the source code of t
 
 ## Getting MySQL and phpMyAdmin to work
 
-Instructions on how to find the initial password for MySQL and phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials).
+Instructions on how to find the initial password for MySQL and phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials). Since Bitnami-documentation on the web describes different ways to obtain the phpMyAdmin root password and only one of them works, I had a hard time getting the right password. I found it in the diagnostic data for startup, as described in the abovementioned link. When installing the virtual machine, DO NOT switch off the diagnostics for startup, because you will not get the log that contains the password.
 
