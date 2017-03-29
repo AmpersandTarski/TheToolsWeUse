@@ -37,7 +37,7 @@ The following settings were made:
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 
-If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. 
+If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`.
 
 ## Installing Haskell
 
@@ -48,6 +48,16 @@ I have used Haskell stack for installing Haskell. First I installed `stack` by f
 `bitnami@Kahl:~$ curl -sSL https://get.haskellstack.org/ | sh`
 
 Stack works. It is installed to `/usr/local/bin/stack`.
+
+Stack gives a warning about the PATH:
+
+`WARNING: '/home/ampersandadmin/.local/bin' is not on your PATH.`
+
+`    For best results, please add it to the beginning of PATH in your profile.`
+
+I ignored this warning for now.
+
+
 
 Then I ran `stack setup` to get Haskell running. That works too. Especially the installing of GHC takes considerable time, which passes without generating any output. Knowing how much is involved in that, I decided not to give up and just wait for an hour or so.
 
@@ -87,9 +97,9 @@ Git comes preconfigured in Bitnami's LAMP configuration. I have used Git on the 
 
 I have created `/home/ampersandadmin/git` for storing the local clones. Here is what I did:
 
-`cd /home/ampersandadmin/git`
+`mkdir ~/git`
 
-`git init`
+`cd ~/git`
 
 `git clone https://github.com/AmpersandTarski/Ampersand`
 
