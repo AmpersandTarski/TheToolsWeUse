@@ -64,7 +64,7 @@ bitnami@Kahl:~$ sudo apt-get install graphviz
 
 That too worked.
 
-## Installing SmartGit
+## Installing SmartGit \(a nice-to-have\)
 
 When updates of Ampersand are being deployed, this is done via GitHub. For this reason it is convenient to have a Git-client on this machine. Sourcetree, however, does not work on Linux. So I installed Smartgit:
 
@@ -80,7 +80,7 @@ I have not yet figured out how to run Smartgit on this machine.
 
 ## Filling the Git repository with Ampersand files
 
-Git comes preconfigured in Bitnami's LAMP configuration. So I'm using it on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
+Git comes preconfigured in Bitnami's LAMP configuration. I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
 I have created `/home/ampersandadmin/git` for storing the local clones. Here is what I did:
 
@@ -93,10 +93,4 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 `git clone https://github.com/AmpersandTarski/Ampersand-models`
 
 The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
-
-
-
-
-
-
 
