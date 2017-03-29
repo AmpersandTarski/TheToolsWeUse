@@ -21,7 +21,7 @@ The following settings were made:
 
 |  |  |
 | :--- | :--- |
-| server name | Kahl |
+| server name | Wolfram |
 | type VM-disk | HDD |
 | OS | Ubuntu 14.04.5 |
 | configuration | Bitnami LAMP 5.6.27-0 |
@@ -34,7 +34,7 @@ The following settings were made:
 | Inbound ports: | HTTP \(TCP/80\) |
 |  | HTTPS \(TCP/443\) |
 |  | SSH \(TCP/22\) |
-| Public IP-adres | 52.178.102.38 |
+| Public IP-adres | 52.174.4.78 |
 
 I have been able to access this machine through SSH, using the Admin user name and password.
 
@@ -96,7 +96,5 @@ The directory `/home/ampersandadmin/git/Ampersand` contains the source code of t
 
 ## Getting MySQL and phpMyAdmin to work
 
-Instructions on how to find the initial password for MySQL and phpMyAdmin are found on https://docs.bitnami.com/azure/faq/\#find\_credentials.
-
-
+Instructions on how to find the initial password for MySQL and phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials).
 
