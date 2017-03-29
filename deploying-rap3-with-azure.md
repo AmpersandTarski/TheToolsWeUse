@@ -94,3 +94,9 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
 
+## Getting MySQL and phpMyAdmin to work
+
+Instructions on how to find the initial password for MySQL and phpMyAdmin are found on https://docs.bitnami.com/azure/faq/\#find\_credentials.
+
+
+
