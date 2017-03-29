@@ -34,7 +34,7 @@ The following settings were made:
 | Inbound ports: | HTTP \(TCP/80\) |
 |  | HTTPS \(TCP/443\) |
 |  | SSH \(TCP/22\) |
-| Public IP-adres | 40.68.194.137 |
+| Public IP-adres | 52.178.102.38 |
 
 I have been able to access this machine through SSH, using the Admin user name and password.
 
