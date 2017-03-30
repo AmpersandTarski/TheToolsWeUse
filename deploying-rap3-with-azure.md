@@ -43,9 +43,13 @@ If have been able to access this machine through SSH, using the Admin user name 
 
 ## 2. Uploading RAP3
 
-This step requires section 1 to be finished successfully.
+This step requires section 1 to be finished successfully. It also requires you to have the complet RAP3 web-application available.
 
-I followed the instructions on https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp to upload the RAP3 source code from my laptop onto the server. 
+I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\).
+
+You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
+
+
 
 ## 3. Installing Haskell
 
@@ -93,13 +97,13 @@ This step requires sections 3 and 4 to be finished successfully.
 
 With the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
-`cd ~/git/Ampersand`
+`cd ~/git/Ampersand`
 
-`stack install`
+`stack install`
 
-`stack setup`
+`stack setup`
 
-`stack install`
+`stack install`
 
 For some reason, stack install gives an error message the first time, because it cannot find the  ghc-8.0.1 compiler. Running stack setup for the second time helps, even though it made me wait long for a second time. I don't know what is going on, but it gave me time to document it \(in this very text\). Anyway, the second time stack install was run, it generated an Ampersand compiler. That too takes a long time, but at least it produces output to show progress.
 
@@ -141,7 +145,7 @@ I have not yet figured out how to run Smartgit on this machine.
 
 This step requires section 1 to be finished successfully.
 
-To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on https://docs.bitnami.com/azure/components/phpmyadmin. I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using http://127.0.0.1:8888/phpmyadmin  \(case sensitive!\)
+To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8888/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
 
 Instructions on how to find the initial password for phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials). Since Bitnami-documentation on the web describes different ways to obtain the phpMyAdmin root password and only one of them works, I had a hard time getting the right password. I found it in the diagnostic data for startup, as described in the abovementioned link. When installing the virtual machine, DO NOT switch off the diagnostics for startup, because you will not get the log that contains the root-password.
 
@@ -150,6 +154,4 @@ After logging into phpMyAdmin as root, I created a user called 'ampersand' with 
 ## 9. Generating the RAP3 application
 
 This step requires sections 4 and 5 to be finished successfully.
-
-
 
