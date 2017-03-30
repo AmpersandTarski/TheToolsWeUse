@@ -51,7 +51,9 @@ Instructions on how to find the initial password for phpMyAdmin are found on [ht
 
 After logging into phpMyAdmin as root, I created a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. I have issued limited authorizations:
 
-![](/assets/MySQL authorization.png) 
+![](/assets/MySQL authorization.png)
+
+As a consequence of these settings, users of RAP3 will not be able to reinstall RAP3, if we accidentally leave the "reinstall database" option alive.
 
 ## 3. Uploading and running RAP3
 
@@ -162,4 +164,11 @@ I have not yet figured out how to run Smartgit on this machine.
 ## 9. Generating the RAP3 application
 
 This step requires sections 4 and 5 to be finished successfully.
+
+## 10. Last minute changes before going to production
+
+1. In the source code of RAP3, in the file SIAM\_importer.adl, the interface RAP3\_LoginForDevelopment.ifc must be disabled and the interface RAP3\_LoginForProduction.ifc must be enabled.
+2. anything else?
+
+
 
