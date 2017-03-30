@@ -39,13 +39,23 @@ The following settings were made:
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 
-If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`.
+If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
-## 2. Uploading RAP3
+## 2. Getting MySQL and phpMyAdmin to work
 
-This step requires section 1 to be finished successfully. It also requires you to have the complet RAP3 web-application available.
+To run RAP3 requires Apache and MySQL. Both are already installed on the server. However, you need the database administrator password to set it up for Ampersand. This step requires a server, so you must have finished section 1 successfully.
 
-I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must absolutely change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
+To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8888/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
+
+Instructions on how to find the initial password for phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials). Since Bitnami-documentation on the web describes different ways to obtain the phpMyAdmin root password and only one of them works, I had a hard time getting the right password. I found it in the diagnostic data for startup, as described in the abovementioned link. When installing the virtual machine, DO NOT switch off the diagnostics for startup, because you will not get the log that contains the root-password.
+
+After logging into phpMyAdmin as root, I created a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. I have issued limited authorizations: ![](/assets/MySQL authorizations.png)
+
+## 3. Uploading and running RAP3
+
+To run RAP3, the web-application must be installed on `/home/bitnami/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
+
+To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
 
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
@@ -55,11 +65,11 @@ It should show:
 
 If you need to restart the apache server for whatever reason, here is the command:
 
-`sudo /opt/bitnami/ctlscript.sh restart apache`
+`sudo /opt/bitnami/ctlscript.sh restart apache`
 
 ## 3. Installing Haskell
 
-This step requires section 1 to be finished successfully.
+In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
 
 I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
 
@@ -79,9 +89,9 @@ I ignored this warning for now.
 
 Then I ran `stack setup` to get Haskell running. That works too. Especially the installing of GHC takes considerable time, which passes without generating any output. Knowing how much is involved in that, I decided not to give up and just wait for an hour or so.
 
-## 4. Filling the Git repository with Ampersand files
+## 4. Filling the Git repository with Ampersand files and Ampersand models
 
-This step requires section 1 to be finished successfully.
+To build an Ampersand-compiler, we need the Ampersand source files, which reside in a GitHub repository. We can download these source files on a fresh server, so this step merely requires section 1 to be finished successfully. The RAP3 source files reside in a GitHub repository as well, so we'll just clone both repositories into the server.
 
 Git comes preconfigured in Bitnami's LAMP configuration. I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
@@ -99,7 +109,7 @@ The directory `/home/ampersandadmin/git/Ampersand` contains the source code of t
 
 ## 5. Creating an Ampersand-compiler
 
-This step requires sections 3 and 4 to be finished successfully.
+To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
 
 With the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
@@ -115,7 +125,7 @@ For some reason, stack install gives an error message the first time, because it
 
 ## 6. Installing LaTeX and GraphViz
 
-This step requires section 1 to be finished successfully.
+When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
 
@@ -133,7 +143,7 @@ That too worked.
 
 ## 7. Installing SmartGit \(a nice-to-have\)
 
-This step requires section 1 to be finished successfully.
+For looking into the local Git repository, it is nice to have a Git-client installed. This step requires section 1 to be finished successfully.
 
 When updates of Ampersand are being deployed, this is done via GitHub. For this reason it is convenient to have a Git-client on this machine. Sourcetree, however, does not work on Linux. So I installed Smartgit:
 
@@ -146,16 +156,6 @@ bitnami@Wolfram:~$  sudo apt-get install smartgit
 ```
 
 I have not yet figured out how to run Smartgit on this machine.
-
-## 8. Getting MySQL and phpMyAdmin to work
-
-This step requires section 1 to be finished successfully.
-
-To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8888/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
-
-Instructions on how to find the initial password for phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials). Since Bitnami-documentation on the web describes different ways to obtain the phpMyAdmin root password and only one of them works, I had a hard time getting the right password. I found it in the diagnostic data for startup, as described in the abovementioned link. When installing the virtual machine, DO NOT switch off the diagnostics for startup, because you will not get the log that contains the root-password.
-
-After logging into phpMyAdmin as root, I created a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. I have issued limited authorizations: ![](/assets/MySQL authorizations.png)
 
 ## 9. Generating the RAP3 application
 
