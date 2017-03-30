@@ -49,7 +49,7 @@ I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-uplo
 
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
-It should show:![](/assets/initial RAP3 screen.png)
+It should show:
 
 ![](/assets/initial RAP3 screen.png)
 
