@@ -166,7 +166,7 @@ This step requires sections 4 and 5 to be finished successfully.
 ## 10. Last minute changes before going to production
 
 1. In the source code of RAP3, in the file SIAM\_importer.adl, the interface RAP3\_LoginForDevelopment.ifc must be disabled and the interface RAP3\_LoginForProduction.ifc must be enabled.
-2. anything else?
+2. Is there anything we must alter in localsettings.php before going live?
 
 
 
