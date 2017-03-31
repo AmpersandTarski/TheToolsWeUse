@@ -111,6 +111,28 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
 
+To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
+
+`bitnami@Wolfram:~/git/Ampersand$ git status`
+
+`On branch development`
+
+`Your branch is up-to-date with 'origin/development'.`
+
+`nothing to commit, working directory clean`
+
+You can do the same in the `Ampersand-models` directory. There you must verify that you are in the master branch:
+
+`bitnami@Wolfram:~/git/Ampersand$ cd ../Ampersand-models/`
+
+`bitnami@Wolfram:~/git/Ampersand-models$ git status`
+
+`On branch master`
+
+`Your branch is up-to-date with 'origin/master'.`
+
+`nothing to commit, working directory clean`
+
 ## 5. Creating an Ampersand-compiler
 
 To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
