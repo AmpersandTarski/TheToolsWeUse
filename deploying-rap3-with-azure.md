@@ -119,13 +119,11 @@ With the source code of the Ampersand-compiler on the system, I created an execu
 
 `cd ~/git/Ampersand`
 
-`stack install`
-
 `stack setup`
 
 `stack install`
 
-For some reason, stack install gives an error message the first time, because it cannot find the  ghc-8.0.1 compiler. Running stack setup for the second time helps, even though it made me wait long for a second time. I don't know what is going on, but it gave me time to document it \(in this very text\). Anyway, the second time stack install was run, it generated an Ampersand compiler. That too takes a long time, but at least it produces output to show progress.
+Something is still wrong, because this doesn't work.
 
 ## 6. Installing LaTeX and GraphViz
 
