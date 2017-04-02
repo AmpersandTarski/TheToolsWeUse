@@ -32,7 +32,7 @@ Recently we have decided to release every four weeks. Of course, we want this to
 7. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
 8. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
   * press the edit button, and add the current date to the title:![](Modify release title.PNG)
-8. Check that the build contains the ampersand windows executable. It should, but currently (2 september 2016) there are problems with that. If it isn't there, build it and update the release manually. We have to fix appveyor.yaml
+8. Check that the build contains the ampersand windows executable. It should. If it isn't there, build it and update the release manually. The log of the Appveyor should probably contain a hint why the executable wasn't built.
 
 Notes, tips and tricks:
 

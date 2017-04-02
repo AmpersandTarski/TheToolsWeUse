@@ -113,25 +113,25 @@ The directory `/home/ampersandadmin/git/Ampersand` contains the source code of t
 
 To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
 
-`bitnami@Wolfram:~/git/Ampersand$ git status`
+`bitnami@Wolfram:~/git/Ampersand$ git status`
 
-`On branch development`
+`On branch development`
 
-`Your branch is up-to-date with 'origin/development'.`
+`Your branch is up-to-date with 'origin/development'.`
 
-`nothing to commit, working directory clean`
+`nothing to commit, working directory clean`
 
 You can do the same in the `Ampersand-models` directory. There you must verify that you are in the master branch:
 
-`bitnami@Wolfram:~/git/Ampersand$ cd ../Ampersand-models/`
+`bitnami@Wolfram:~/git/Ampersand$ cd ../Ampersand-models/`
 
-`bitnami@Wolfram:~/git/Ampersand-models$ git status`
+`bitnami@Wolfram:~/git/Ampersand-models$ git status`
 
-`On branch master`
+`On branch master`
 
-`Your branch is up-to-date with 'origin/master'.`
+`Your branch is up-to-date with 'origin/master'.`
 
-`nothing to commit, working directory clean`
+`nothing to commit, working directory clean`
 
 ## 5. Creating an Ampersand-compiler
 
