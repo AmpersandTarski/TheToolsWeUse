@@ -31,7 +31,7 @@ The following settings apply:
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 \(only via a VPN-tunnel\) |
 | Inbound port: FTP | not yet assigned \(should be 21\) |
-| Public IP-adres | [52.174.4.78](http://145.20.188.148) |
+| Public IP-adres | 145.20.188.148 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
 | web-application directory | /srv/www/htdocs |
 
@@ -51,9 +51,9 @@ As a consequence of these settings, users of RAP3 will not be able to reinstall 
 
 To run RAP3, the web-application must be installed on /srv/www/htdocs. This step requires sections 1 and 2 to be finished successfully, including a working FTP-port on the server. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
 
-To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
+To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /srv/www/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot should show the situation after the transfer \(TODO: update the screenshot\):![](/assets/Filezilla transfer confirmation.png)
 
-You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
+You can test whether this is successful by browsing to `145.20.188.148/RAP3/`
 
 It should show:
 
@@ -61,19 +61,13 @@ It should show:
 
 If you need to restart the apache server for whatever reason, here is the command:
 
-`sudo /opt/bitnami/ctlscript.sh restart apache`
+`sudo rcapache2 restart`
 
 ## 3. Installing Haskell
 
 In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
 
-I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
-
-`bitnami@Wolfram:~$ sudo apt-get update`
-
-`bitnami@Wolfram:~$ curl -sSL https://get.haskellstack.org/ | sh`
-
-Stack works. It is installed to `/usr/local/bin/stack`.
+You need Haskell stack for installing Haskell. I found stack already on this machine. It is installed as`/usr/local/bin/stack`.
 
 Stack gives a warning about the PATH:
 
@@ -83,7 +77,7 @@ Stack gives a warning about the PATH:
 
 I ignored this warning for now.
 
-Then I ran `stack setup` to get Haskell running. That works too. Especially the installing of GHC takes considerable time, which passes without generating any output. Knowing how much is involved in that, I decided not to give up and just wait for an hour or so.
+I did not get Haskell running. 
 
 ## 4. Filling the Git repository with Ampersand files and Ampersand models
 
@@ -101,13 +95,21 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 `git clone https://github.com/AmpersandTarski/Ampersand-models`
 
-The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
+This failed. The system says
+
+`Cloning into 'Ampersand'...`
+
+`error: copy-fd: write returned: No space left on device`
+
+`fatal: cannot copy '/usr/share/git-core/templates/description' to '/home/lru/git/Ampersand/.git/description': No space left on device`
+
+Upon success, the directory `/home/ampersandadmin/git/Ampersand` should contain the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` should contain the source code of the Ampersand models.
 
 ## 5. Creating an Ampersand-compiler
 
 To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
 
-With the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
+With the source code of the Ampersand-compiler on the system, I tried to create an executable by running `stack install`. Here is what I did:
 
 `cd ~/git/Ampersand`
 
@@ -119,37 +121,17 @@ Something is still wrong, because this doesn't work.
 
 ## 6. Installing LaTeX and GraphViz
 
-When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
-
-As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
-
-`bitnami@Wolfram:~$ sudo apt-get install texlive-latex-base`
-
-That worked.
+When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. I found pdflatex already working. So I only had to install GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
 
 For generating pictures, Ampersand needs the commands `dot` and `neato`. For that purpose I installed:
 
 ```
-bitnami@Wolfram:~$ sudo apt-get install graphviz
+lru@lnx-hrl-148v:~> sudo zypper install graphviz
 ```
 
 That too worked.
 
-## 7. Installing SmartGit \(a nice-to-have\)
-
-For looking into the local Git repository, it is nice to have a Git-client installed. This step requires section 1 to be finished successfully.
-
-When updates of Ampersand are being deployed, this is done via GitHub. For this reason it is convenient to have a Git-client on this machine. Sourcetree, however, does not work on Linux. So I installed Smartgit:
-
-```
-bitnami@Wolfram:~$  sudo add-apt-repository ppa:eugenesan/ppa
-
-bitnami@Wolfram:~$  sudo apt-get update
-
-bitnami@Wolfram:~$  sudo apt-get install smartgit
-```
-
-I have not yet figured out how to run Smartgit on this machine.
+## 
 
 ## 9. Generating the RAP3 application
 
