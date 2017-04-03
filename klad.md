@@ -17,7 +17,7 @@ Each step in the installation process gets a separate section in this text. It i
 
 ## 1. Setting up a machine
 
-I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked LAMP by Bitnami.
+I got a server from the Open University's IT-department.
 
 The following settings apply:
 
@@ -37,9 +37,35 @@ The following settings apply:
 
 If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
 
-## 2. Getting MySQL and phpMyAdmin to work
+## 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
 
 To run RAP3 requires Apache and MySQL. On a preinstalled MySQL-server you will need the database administrator password to set it up for Ampersand. This step requires hardware, so you must have finished section 1 successfully.
+
+On this server, there is no MySQL, so I had to install it. I followed the instructions on `https://en.opensuse.org/SDB:LAMP_setup#Setting_up_MariaDB`.
+
+First I installed **`mariadb `**and **`mariadb-tools`**:
+
+`sudo zypper in mariadb mariadb-tools`
+
+Then I started MariaDB:
+
+`lru@lnx-hrl-148v:~> sudo systemctl start mysql`
+
+To make sure the server will start at every boot:
+
+`lru@lnx-hrl-148v:~> sudo systemctl enable mysql`
+
+To set up MariaDB, I ran:
+
+`sudo mysql_secure_installation`
+
+By carefully following the instructions, I set up the MariaDB and chose root password `RAP3root`.
+
+However, here the procedure failed: 
+
+`/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
+
+
 
 After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:
 
@@ -61,7 +87,7 @@ It should show:
 
 If you need to restart the apache server for whatever reason, here is the command:
 
-`sudo rcapache2 restart`
+`sudo rcapache2 restart`
 
 ## 3. Installing Haskell
 
@@ -77,7 +103,7 @@ Stack gives a warning about the PATH:
 
 I ignored this warning for now.
 
-I did not get Haskell running. 
+I did not get Haskell running.
 
 ## 4. Filling the Git repository with Ampersand files and Ampersand models
 
@@ -97,11 +123,11 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 This failed. The system says
 
-`Cloning into 'Ampersand'...`
+`Cloning into 'Ampersand'...`
 
-`error: copy-fd: write returned: No space left on device`
+`error: copy-fd: write returned: No space left on device`
 
-`fatal: cannot copy '/usr/share/git-core/templates/description' to '/home/lru/git/Ampersand/.git/description': No space left on device`
+`fatal: cannot copy '/usr/share/git-core/templates/description' to '/home/lru/git/Ampersand/.git/description': No space left on device`
 
 Upon success, the directory `/home/ampersandadmin/git/Ampersand` should contain the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` should contain the source code of the Ampersand models.
 

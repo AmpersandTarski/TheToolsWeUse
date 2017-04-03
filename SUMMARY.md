@@ -10,5 +10,5 @@
 * [Sentinel](sentinel.md)
 * [Installation of RAP](installation_of_rap.md)
 * [Deploying RAP3 with Azure](deploying-rap3-with-azure.md)
-* [klad](klad.md)
+* [Deploying RAP3 with OUNL/ICTS](klad.md)
 
