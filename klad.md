@@ -43,13 +43,13 @@ To run RAP3 requires Apache and MySQL. On a preinstalled MySQL-server you will n
 
 On this server, there is no MySQL, so I had to install it. I followed the instructions on `https://en.opensuse.org/SDB:LAMP_setup#Setting_up_MariaDB`.
 
-First I installed **`mariadb `**and **`mariadb-tools`**:
+First I installed `mariadb`and `mariadb-tools`:
 
 `sudo zypper in mariadb mariadb-tools`
 
 Then I started MariaDB:
 
-`lru@lnx-hrl-148v:~> sudo systemctl start mysql`
+`lru@lnx-hrl-148v:~> sudo systemctl start mysql`
 
 To make sure the server will start at every boot:
 
@@ -57,15 +57,13 @@ To make sure the server will start at every boot:
 
 To set up MariaDB, I ran:
 
-`sudo mysql_secure_installation`
+`sudo mysql_secure_installation`
 
 By carefully following the instructions, I set up the MariaDB and chose root password `RAP3root`.
 
-However, here the procedure failed: 
+However, here the procedure failed:
 
-`/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
-
-
+`/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
 
 After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:
 
@@ -81,7 +79,7 @@ To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/f
 
 You can test whether this is successful by browsing to `145.20.188.148/RAP3/`
 
-It should show:
+It should show \(TODO: update the screenshot\):
 
 ![](/assets/initial RAP3 screen.png)
 
@@ -94,14 +92,6 @@ If you need to restart the apache server for whatever reason, here is the comman
 In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
 
 You need Haskell stack for installing Haskell. I found stack already on this machine. It is installed as`/usr/local/bin/stack`.
-
-Stack gives a warning about the PATH:
-
-`WARNING: '/home/ampersandadmin/.local/bin' is not on your PATH.`
-
-`For best results, please add it to the beginning of PATH in your profile.`
-
-I ignored this warning for now.
 
 I did not get Haskell running.
 
