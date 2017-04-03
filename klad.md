@@ -25,17 +25,17 @@ The following settings apply:
 | :--- | :--- |
 | server name | lnx-hrl-148v |
 | OS | SUSE Linux Enterprise Server 12 SP2, vs. 12.2 |
-| documentation |  |
 | Admin user name | lru |
 | verification type | password \(Lloyd Rutledge knows the password\) |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 \(only via a VPN-tunnel\) |
-| Inbound port: FTP | TCP/21 |
+| Inbound port: FTP | not yet assigned \(should be 21\) |
 | Public IP-adres | [52.174.4.78](http://145.20.188.148) |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
+| web-application directory | /srv/www/htdocs |
 
-If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
 
 ## 2. Getting MySQL and phpMyAdmin to work
 
@@ -49,7 +49,7 @@ As a consequence of these settings, users of RAP3 will not be able to reinstall 
 
 ## 3. Uploading and running RAP3
 
-To run RAP3, the web-application must be installed on /srv/www/htdocs. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
+To run RAP3, the web-application must be installed on /srv/www/htdocs. This step requires sections 1 and 2 to be finished successfully, including a working FTP-port on the server. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
 
 To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
 
