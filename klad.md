@@ -28,10 +28,10 @@ The following settings apply:
 | documentation |  |
 | Admin user name | lru |
 | verification type | password \(Lloyd Rutledge knows the password\) |
-| Inbound port: HTTP  | TCP/80 |
-| Inbound port: HTTPS  | TCP/443 |
-| Inbound port: SSH  | TCP/22 \(only via a VPN-tunnel\) |
-| Inbound port: FTP  | TCP/21 |
+| Inbound port: HTTP | TCP/80 |
+| Inbound port: HTTPS | TCP/443 |
+| Inbound port: SSH | TCP/22 \(only via a VPN-tunnel\) |
+| Inbound port: FTP | TCP/21 |
 | Public IP-adres | [52.174.4.78](http://145.20.188.148) |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
 

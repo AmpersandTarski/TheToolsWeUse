@@ -36,6 +36,7 @@ The following settings were made:
 | Inbound ports: | HTTP \(TCP/80\) |
 |  | HTTPS \(TCP/443\) |
 |  | SSH \(TCP/22\) |
+|  |  |
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 
