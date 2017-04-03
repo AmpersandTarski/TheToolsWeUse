@@ -33,12 +33,13 @@ The following settings were made:
 | Resource group | Ampersand |
 | location | Western Europe |
 | Size | 1 core, 1.75 GB, 2 disks, Max. IOP's 2x500 |
-| Inbound ports: | HTTP \(TCP/80\) |
-|  | HTTPS \(TCP/443\) |
-|  | SSH \(TCP/22\) |
-|  |  |
+| Inbound port: HTTP | TCP/80 |
+| Inbound port: HTTPS  | TCP/443 |
+| Inbound port: SSH  | TCP/22 |
+| Inbound port: FTP | TCP/21 |
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
+| web application directory | /home/bitnami/htdocs |
 
 If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
