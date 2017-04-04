@@ -66,8 +66,6 @@ After logging into phpMyAdmin as root, I created a user called 'ampersand' with 
 
 ![](/assets/MySQL authorization.png)
 
-
-
 ## 3. Uploading and running RAP3
 
 To run RAP3, the web-application must be installed on `/home/bitnami/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
