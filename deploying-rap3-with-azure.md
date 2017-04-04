@@ -156,7 +156,7 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 `git clone https://github.com/AmpersandTarski/Ampersand-models`
 
-The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
+Now you are done. The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
 
 To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
 
