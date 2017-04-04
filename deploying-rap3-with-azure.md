@@ -183,7 +183,7 @@ bitnami@Wolfram:~$  sudo apt-get install smartgit
 
 I have not yet figured out how to run Smartgit on this machine.
 
-## 9. Generating the RAP3 application
+## 8. Generating the RAP3 application
 
 This step requires sections 4 and 5 to be finished successfully.
 
@@ -192,6 +192,10 @@ It requires to run the command-line command:
 ```
 ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
 ```
+
+## 9. Local Settings
+
+This step requires section 4 to be finished successfully.
 
 ## 10. Last minute changes before going to production
 
