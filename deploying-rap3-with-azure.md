@@ -184,7 +184,17 @@ You can do the same in the `Ampersand-models` directory. There you must verify t
 
 To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
 
-With the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
+Haskell puts the `ampersand` file on `~/.local/bin/`. For this reason I have added this directory to the `$PATH` variable by changing the file `~/.profile`. In this file I edited:
+
+`# set PATH so it includes user's private bin if it exists`
+
+`if [ -d "$HOME/.local/bin" ] ; then`
+
+`    PATH="$HOME/.local/bin:$PATH"`
+
+`fi`
+
+Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
 `cd ~/git/Ampersand`
 
@@ -192,7 +202,7 @@ With the source code of the Ampersand-compiler on the system, I created an execu
 
 `stack install`
 
-A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It worked on a 4-core 8GB configuration \(A4\).
+A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It gets stuck straight away. It did succeed on a 4-core 8GB configuration \(A4\).
 
 ## 6. Installing LaTeX and GraphViz
 
