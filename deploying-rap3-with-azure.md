@@ -30,8 +30,8 @@ The following settings were made:
 | documentation | [https://docs.bitnami.com/azure/infrastructure/lamp](https://docs.bitnami.com/azure/infrastructure/lamp) |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
-| Resource group | Ampersand |
-| location | Western Europe |
+| Resource group \(in Azure\) | Ampersand |
+| location \(in Azure\) | Western Europe |
 | Size | 1 core, 1.75 GB, 2 disks, Max. IOP's 2x500 |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
@@ -39,7 +39,11 @@ The following settings were made:
 | Inbound port: FTP | TCP/21 |
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
-| web application directory | /home/bitnami/htdocs |
+| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
+| `{APPACC}`=   the account under which the SPReg application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
+| {APPHOST} = the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'spreg.mydomain.org'\) |  |
+|  |  |
+|  |  |
 
 If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
@@ -195,7 +199,7 @@ ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
 
 ## 9. Local Settings
 
-This step requires section 4 to be finished successfully.
+This step requires section 4 to be finished successfully, to check the local settings in .
 
 ## 10. Last minute changes before going to production
 
