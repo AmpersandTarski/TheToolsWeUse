@@ -186,13 +186,13 @@ To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that
 
 Haskell puts the `ampersand` file on `~/.local/bin/`. For this reason I have added this directory to the `$PATH` variable by changing the file `~/.profile`. In this file I edited:
 
-`# set PATH so it includes user's private bin if it exists`
+`# set PATH so it includes user's private bin if it exists`
 
-`if [ -d "$HOME/.local/bin" ] ; then`
+`if [ -d "$HOME/.local/bin" ] ; then`
 
-`    PATH="$HOME/.local/bin:$PATH"`
+`PATH="$HOME/.local/bin:$PATH"`
 
-`fi`
+`fi`
 
 Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
@@ -245,6 +245,7 @@ This step requires sections 4 and 5 to be finished successfully.
 It requires to run the command-line command:
 
 ```
+cd ~/git/Ampersand-models/
 ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
 ```
 
