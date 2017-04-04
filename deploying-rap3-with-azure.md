@@ -34,8 +34,8 @@ The following settings were made:
 | location | Western Europe |
 | Size | 1 core, 1.75 GB, 2 disks, Max. IOP's 2x500 |
 | Inbound port: HTTP | TCP/80 |
-| Inbound port: HTTPS  | TCP/443 |
-| Inbound port: SSH  | TCP/22 |
+| Inbound port: HTTPS | TCP/443 |
+| Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
@@ -187,9 +187,18 @@ I have not yet figured out how to run Smartgit on this machine.
 
 This step requires sections 4 and 5 to be finished successfully.
 
+It requires to run the command-line command:
+
+```
+ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
+```
+
 ## 10. Last minute changes before going to production
 
-1. In the source code of RAP3, in the file SIAM\_importer.adl, the interface RAP3\_LoginForDevelopment.ifc must be disabled and the interface RAP3\_LoginForProduction.ifc must be enabled.
+1. In the source code of RAP3, in the file SIAM\_importer.adl:
+   1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
+   2. enable "RAP3\_LoginForProduction.ifc"
+   3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
 2. Is there anything we must alter in localsettings.php before going live?
 
 
