@@ -1,4 +1,4 @@
-* [ ] # Ampersand in Ordina's cloud
+# Ampersand in Ordina's cloud
 
 In early 2017 the need arose for an Ampersand implementation in Ordina's cloud, to let young professionals get acquainted with Ampersand. We chose to implement RAP3 in Azure, because Ordina has an Azure subscription. RAP3 is the same environment that our students use at the Open Universiteit, so the maintainance of RAP3 can be reused for both target audiences.
 
