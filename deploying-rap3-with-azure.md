@@ -32,7 +32,7 @@ The following settings were \(or will be\) made:
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | Ampersand |
 | location \(in Azure\) | Western Europe |
-| Size | 1 core, 1.75 GB, 2 disks, Max. IOP's 2x500 |
+| Size | 4 core, 8 GB, 8 disks, Max. IOP's 8x500 |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
@@ -192,7 +192,7 @@ With the source code of the Ampersand-compiler on the system, I created an execu
 
 `stack install`
 
-Something is still wrong, because this doesn't work.
+A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It worked on a 4-core 8GB configuration \(A4\).
 
 ## 6. Installing LaTeX and GraphViz
 
