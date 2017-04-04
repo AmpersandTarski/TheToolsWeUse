@@ -19,7 +19,7 @@ Each step in the installation process gets a separate section in this text. It i
 
 I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked LAMP by Bitnami.
 
-The following settings were made:
+The following settings were \(or will be\) made:
 
 |  |  |
 | :--- | :--- |
@@ -40,12 +40,19 @@ The following settings were made:
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
-| `{APPACC}`=   the account under which the SPReg application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
-| {APPHOST} = the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'spreg.mydomain.org'\) |  |
-|  |  |
-|  |  |
+| `{APPACC}`=  the account under which the SPReg application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
+| `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'spreg.mydomain.org'\) |  |
+| `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
+| `{APPURI}` = the URI at which the SPReg application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
+| `{APPURL}` = the full name for calling the application \(e.g. https://mydomain.org:8080/spreg', or https://spreg.mydomain.org\) |  |
 
-If have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+I have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+
+TODO: make sure that `{APPHOST}` can be found by DNS.
+
+I have verified that that any applicable firewalls allow traffic on port 80 `{APPPORT}` by browsing from outside the network to 52.174.4.78 \(the public IP-address\).
+
+- if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through https://letsencrypt.org/\) 
 
 ## 2. Getting MySQL and phpMyAdmin to work
 
@@ -76,6 +83,40 @@ It should show:
 If you need to restart the apache server for whatever reason, here is the command:
 
 `sudo /opt/bitnami/ctlscript.sh restart apache`
+
+If there are problems, check the Apache server:
+
+- Make sure that {APPACC} can read all files in {APPDIR}.
+
+- Make sure that {APPACC} has write permissions \(on all files\) in the directory {APPDIR}/Log.
+
+- If needed, edit Apache's config.ini so that:
+
+  a\) it listens at {APPPORT}
+
+  b\) users that call {APPURL} will be served {APPDIR}/index.php
+
+  c\) Apache's .htaccess files are processed within {APPDIR} and its subdirectories.
+
+     \(see e.g. https://help.ubuntu.com/community/EnablingUseOfApacheHtaccessFiles\)
+
+     \`AllowOverride All\` should be set in the &lt;Directory /&gt; section, for example \(the directory statement must apply to at least {APPDIR}\):
+
+	&lt;Directory /var/www/&gt;
+
+	        Options Indexes FollowSymLinks
+
+	        AllowOverride All
+
+	        Require all granted
+
+	&lt;/Directory&gt;
+
+- enable \`mod-rewrite\` extension \(see http://askubuntu.com/questions/422027/mod-rewrite-is-enabled-but-not-working\)
+
+	- you can check if modules are enabled with cmd: apache2ctl -M. You should then find that the \`rewrite\_module\` is listed.
+
+- ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
 
 ## 3. Installing Haskell
 
