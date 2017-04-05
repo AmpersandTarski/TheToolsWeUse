@@ -75,9 +75,7 @@ However, here the procedure failed:
 
 `/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
 
-After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:
-
-![](/assets/import.png)
+After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:![](assets/MySQL authorization.png)
 
 ## 3. Uploading and running RAP3
 
