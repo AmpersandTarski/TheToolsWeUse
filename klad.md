@@ -30,12 +30,19 @@ The following settings apply:
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 \(only via a VPN-tunnel\) |
-| Inbound port: FTP | not yet assigned \(should be 21\) |
+| Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 145.20.188.148 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
-| web-application directory | /srv/www/htdocs |
 
-If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
+| `{APPDIR}`=  the directory into which RAP3 files will be deployed | /srv/www/htdocs |
+| :--- | :--- |
+| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
+| `{APPHOST}` =  the URI of the machine that hosts the [RAP3 ](https://spreg.mydomain.org%29\)application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
+| `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
+| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/[RAP3](https://spreg.mydomain.org%29\)', or '[RAP3](https://spreg.mydomain.org%29\).mydomain.org'\) |  |
+| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/R](https://mydomain.org:8080/spreg)AP3', or [https://RAP3.mydomain.org\](https://spreg.mydomain.org%29\) |  |
+
+I have checked that the server works by browsing to "http://145.20.188.148/test.php". I have been able to access this machine through SSH, using the Admin user name and password. I If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
 
 ## 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
 
@@ -73,7 +80,7 @@ As a consequence of these settings, users of RAP3 will not be able to reinstall 
 
 ## 3. Uploading and running RAP3
 
-To run RAP3, the web-application must be installed on /srv/www/htdocs. This step requires sections 1 and 2 to be finished successfully, including a working FTP-port on the server. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
+To run RAP3, the web-application must be installed on /srv/www/htdocs. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 9 you will have built that web-application by yourself.
 
 To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /srv/www/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot should show the situation after the transfer \(TODO: update the screenshot\):![](/assets/Filezilla transfer confirmation.png)
 
