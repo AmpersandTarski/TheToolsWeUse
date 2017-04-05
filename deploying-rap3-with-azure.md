@@ -118,29 +118,7 @@ If there are problems, check the Apache server:
 
 * ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
 
-## 3. Installing Haskell
-
-In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
-
-I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
-
-`bitnami@Wolfram:~$ sudo apt-get update`
-
-`bitnami@Wolfram:~$ curl -sSL https://get.haskellstack.org/ | sh`
-
-Stack works. It is installed to `/usr/local/bin/stack`.
-
-Stack gives a warning about the PATH:
-
-`WARNING: '/home/ampersandadmin/.local/bin' is not on your PATH.`
-
-`For best results, please add it to the beginning of PATH in your profile.`
-
-I ignored this warning for now.
-
-Then I ran `stack setup` to get Haskell running. That works too. Especially the installing of GHC takes considerable time, which passes without generating any output. Knowing how much is involved in that, I decided not to give up and just wait for an hour or so.
-
-## 4. Filling the Git repository with Ampersand files and Ampersand models
+## 3. Filling the Git repository with Ampersand files and Ampersand models
 
 To build an Ampersand-compiler, we need the Ampersand source files, which reside in a GitHub repository. We can download these source files on a fresh server, so this step merely requires section 1 to be finished successfully. The RAP3 source files reside in a GitHub repository as well, so we'll just clone both repositories into the server.
 
@@ -180,6 +158,26 @@ You can do the same in the `Ampersand-models` directory. There you must verify t
 
 `nothing to commit, working directory clean`
 
+## 4. Installing Haskell
+
+In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
+
+I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
+
+`bitnami@Wolfram:~$ sudo apt-get update`
+
+`bitnami@Wolfram:~$ curl -sSL https://get.haskellstack.org/ | sh`
+
+Stack works. It is installed to `/usr/local/bin/stack`.
+
+Stack gives a warning about the PATH:
+
+`WARNING: '/home/ampersandadmin/.local/bin' is not on your PATH.`
+
+`For best results, please add it to the beginning of PATH in your profile.`
+
+I ignored this warning for now.
+
 ## 5. Creating an Ampersand-compiler
 
 To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
@@ -202,7 +200,7 @@ Having the source code of the Ampersand-compiler on the system, I created an exe
 
 `stack install`
 
-A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It gets stuck straight away. It did succeed on a 4-core 8GB configuration \(A4\).
+A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It got stuck without any hints about what is wrong. It did succeed on a 4-core 8GB configuration \(A4\).
 
 ## 6. Installing LaTeX and GraphViz
 
