@@ -282,7 +282,7 @@ This step requires section 3 to be finished successfully. This results in the ex
    1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
    2. enable "RAP3\_LoginForProduction.ifc"
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
-2. Is there anything we must alter in localsettings.php before going live?
+2. Read and follow the instructions in `localsettings.php` before going live.
 
 
 
