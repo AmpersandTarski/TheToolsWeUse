@@ -238,14 +238,15 @@ I have not yet figured out how to run Smartgit on this machine.
 
 This step requires sections 3 and 5 to be finished successfully.
 
-It requires to run the command-line command:
+It requires to execut the following commands:
 
 ```
 cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
+chmod 757 /home/bitnami/htdocs/RAP3/log
 ```
 
-Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
+Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
 
 ```
 cd ~/git/Ampersand-models/
@@ -254,7 +255,7 @@ git status
 
 If, for whatever reason, you want to delete earlier versions of the deployed RAP3-code, use this command:
 
- `rm -r -f -d /home/bitnami/htdocs/RAP3`
+`rm -r -f -d /home/bitnami/htdocs/RAP3`
 
 ## 9. Local Settings
 
