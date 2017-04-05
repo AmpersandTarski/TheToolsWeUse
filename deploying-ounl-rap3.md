@@ -137,9 +137,9 @@ If there are problems, check the Apache server:
 
 To build an Ampersand-compiler, we need the Ampersand source files, which reside in a GitHub repository. We can download these source files on a fresh server, so this step merely requires section 1 to be finished successfully. The RAP3 source files reside in a GitHub repository as well, so we'll just clone both repositories into the server.
 
-Git comes preconfigured in Bitnami's LAMP configuration. I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
+I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
-I have created `/home/ampersandadmin/git` for storing the local clones. Here is what I did:
+I have created `/home/lru/git` for storing the local clones. Here is what I did:
 
 `mkdir ~/git`
 
@@ -149,7 +149,7 @@ I have created `/home/ampersandadmin/git` for storing the local clones. Here is 
 
 `git clone https://github.com/AmpersandTarski/Ampersand-models`
 
-Now you are done. The directory `/home/ampersandadmin/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/ampersandadmin/git/Ampersand-models` contains the source code of the Ampersand models.
+Now you are done. The directory `/home/lru/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/lru/git/Ampersand-models` contains the source code of the Ampersand models.
 
 To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
 
@@ -187,7 +187,7 @@ Stack works. It is installed to `/usr/local/bin/stack`.
 
 Stack gives a warning about the PATH:
 
-`WARNING: '/home/ampersandadmin/.local/bin' is not on your PATH.`
+`WARNING: '/home/lru/.local/bin' is not on your PATH.`
 
 `For best results, please add it to the beginning of PATH in your profile.`
 
