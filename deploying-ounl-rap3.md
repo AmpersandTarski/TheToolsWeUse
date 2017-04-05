@@ -83,7 +83,7 @@ After logging into phpMyAdmin, create a user called 'ampersand' with password 'a
 
 To run RAP3, the web-application must be installed on `/srv/www/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 8 you will have built that web-application by yourself.
 
-To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work.
+To upload RAP3, I used the SFTP-protocol \(in Filezilla\) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work.
 
 This screenshot shows the situation after the transfer:![](assets/Filezilla transfer confirmation.png)
 
@@ -95,7 +95,7 @@ It should show:
 
 If you need to restart the apache server for whatever reason, here is the command:
 
-`sudo /opt/bitnami/ctlscript.sh restart apache`
+`sudo <TODO: look up on the internet>`
 
 If there are problems, check the Apache server:
 
@@ -257,8 +257,8 @@ It requires to execut the following commands:
 
 ```
 cd ~/git/Ampersand-models/RAP3/
-ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
-chmod 757 /home/bitnami/htdocs/RAP3/log
+ampersand --meta-tables --meta-file -p/srv/www/htdocs/RAP3 RAP3.adl
+chmod 757 /srv/www/htdocs/RAP3/log
 ```
 
 Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
@@ -270,7 +270,7 @@ git status
 
 If, for whatever reason, you want to delete earlier versions of the deployed RAP3-code, use this command:
 
-`rm -r -f -d /home/bitnami/htdocs/RAP3`
+`rm -r -f -d /srv/www/htdocs/RAP3`
 
 ## 9. Local Settings
 
