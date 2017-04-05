@@ -42,7 +42,7 @@ The following settings apply:
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/[RAP3](https://spreg.mydomain.org%29\)', or '[RAP3](https://spreg.mydomain.org%29\).mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/R](https://mydomain.org:8080/spreg)AP3', or [https://RAP3.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-I have checked that the server works by browsing to "http://145.20.188.148/test.php". I have been able to access this machine through SSH, using the Admin user name and password. I If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
+I have checked that the server works by browsing to "[http://145.20.188.148/test.php](http://145.20.188.148/test.php)". I have been able to access this machine through SSH, using the Admin user name and password. I If have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
 
 ## 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
 
