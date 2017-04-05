@@ -35,11 +35,19 @@ The following settings apply:
 | Public IP-adres | 145.20.188.148 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
-| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
-| `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
+| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | wwwrun |
+| `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
+
+/unload gebruiken voor source code bestanden
+
+tijdelijke bestanden op /tmp
+
+standaardpakketten op /opt neerzetten
+
+/var is bedoeld voor logbestanden
 
 I have checked that the server works by browsing to "[http://145.20.188.148/test.php](http://145.20.188.148/test.php)" from outside the OUNL-network. This means that any applicable firewalls allow traffic on port 80 `{APPPORT}`. I have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
@@ -137,15 +145,17 @@ To build an Ampersand-compiler, we need the Ampersand source files, which reside
 
 I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
-I have created `/home/lru/git` for storing the local clones. Here is what I did:
+I have created `/unload/git` for storing the local clones. Here is what I did:
 
-`mkdir ~/git`
+`sudo mkdir /unload/git`
 
-`cd ~/git`
+`cd /unload/git`
 
-`git clone https://github.com/AmpersandTarski/Ampersand`
+`sudo git clone https://github.com/AmpersandTarski/Ampersand`
 
-`git clone https://github.com/AmpersandTarski/Ampersand-models`
+`sudo git clone https://github.com/AmpersandTarski/Ampersand-models`
+
+Unfortunately, this goes wrong: 
 
 Now you are done. The directory `/home/lru/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/lru/git/Ampersand-models` contains the source code of the Ampersand models.
 
