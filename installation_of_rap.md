@@ -24,7 +24,7 @@ This recipe assumes basic knowledge about system administration.
 ```
 
 1. Go to the output directory, \(In the above example 'D:\xampp\htdocs\RAP3\' \) and edit the file localSettings.php. Make sure your settings are right for your needs. Special care should be taken for:
-   1. RAP3 settings
+   1. RAP3 settings: the \(full?\) path to the ampersand.exe
    2. SERVER settings
 2. launch a browser, and go the URL of your RAP3 application \(i.e. `foo.bar.ou/RAP3`\) . If this succeeds, you will find something like:
    ![The initial screen might take a while to load](Initial loading of RAP.JPG)
