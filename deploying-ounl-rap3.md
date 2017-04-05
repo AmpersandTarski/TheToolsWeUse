@@ -85,7 +85,7 @@ To run RAP3, the web-application must be installed on `/srv/www/htdocs`. This st
 
 To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work.
 
-This screenshot shows the situation after the transfer: ![](/assets/import.png)
+This screenshot shows the situation after the transfer:![](assets/Filezilla transfer confirmation.png)
 
 You can test whether this is successful by browsing to `145.20.188.148/RAP3/`
 
@@ -153,7 +153,7 @@ Now you are done. The directory `/home/ampersandadmin/git/Ampersand` contains th
 
 To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
 
-`bitnami@Wolfram:~/git/Ampersand$ git status`
+`lru@lnx-hrl-148v:~/git/Ampersand$ git status`
 
 `On branch development`
 
@@ -163,9 +163,9 @@ To verify that the Ampersand clone has succeeded and that you are in the develop
 
 You can do the same in the `Ampersand-models` directory. There you must verify that you are in the master branch:
 
-`bitnami@Wolfram:~/git/Ampersand$ cd ../Ampersand-models/`
+`lru@lnx-hrl-148v:~/git/Ampersand$ cd ../Ampersand-models/`
 
-`bitnami@Wolfram:~/git/Ampersand-models$ git status`
+`lru@lnx-hrl-148v:~/git/Ampersand-models$ git status`
 
 `On branch master`
 
@@ -179,9 +179,9 @@ In order to build an Ampersand-compiler, we need a Haskell installation. We only
 
 I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
 
-`bitnami@Wolfram:~$ sudo apt-get update`
+`lru@lnx-hrl-148v:~$ sudo apt-get update`
 
-`bitnami@Wolfram:~$ curl -sSL https://get.haskellstack.org/ | sh`
+`lru@lnx-hrl-148v:~$ curl -sSL https://get.haskellstack.org/ | sh`
 
 Stack works. It is installed to `/usr/local/bin/stack`.
 
@@ -221,14 +221,14 @@ When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato an
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
 
-`bitnami@Wolfram:~$ sudo apt-get install texlive-latex-base`
+`lru@lnx-hrl-148v:~$ sudo apt-get install texlive-latex-base`
 
 That worked.
 
 For generating pictures, Ampersand needs the commands `dot` and `neato`. For that purpose I installed:
 
 ```
-bitnami@Wolfram:~$ sudo apt-get install graphviz
+lru@lnx-hrl-148v:~$ sudo apt-get install graphviz
 ```
 
 That too worked.
@@ -240,11 +240,11 @@ For looking into the local Git repository, it is nice to have a Git-client insta
 When updates of Ampersand are being deployed, this is done via GitHub. For this reason it is convenient to have a Git-client on this machine. Sourcetree, however, does not work on Linux. So I installed Smartgit:
 
 ```
-bitnami@Wolfram:~$  sudo add-apt-repository ppa:eugenesan/ppa
+lru@lnx-hrl-148v:~$  sudo add-apt-repository ppa:eugenesan/ppa
 
-bitnami@Wolfram:~$  sudo apt-get update
+lru@lnx-hrl-148v:~$  sudo apt-get update
 
-bitnami@Wolfram:~$  sudo apt-get install smartgit
+lru@lnx-hrl-148v:~$  sudo apt-get install smartgit
 ```
 
 I have not yet figured out how to run Smartgit on this machine.
