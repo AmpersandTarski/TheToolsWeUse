@@ -236,14 +236,25 @@ I have not yet figured out how to run Smartgit on this machine.
 
 ## 8. Generating the RAP3 application
 
-This step requires sections 4 and 5 to be finished successfully.
+This step requires sections 3 and 5 to be finished successfully.
 
 It requires to run the command-line command:
 
 ```
-cd ~/git/Ampersand-models/
+cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
 ```
+
+Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
+
+```
+cd ~/git/Ampersand-models/
+git status
+```
+
+If, for whatever reason, you want to delete earlier versions of the deployed RAP3-code, use this command:
+
+ `rm -r -f -d /home/bitnami/htdocs/RAP3`
 
 ## 9. Local Settings
 
