@@ -77,7 +77,7 @@ However, here the procedure failed:
 
 After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:
 
-![](/assets/MySQL authorization.png)
+![](/assets/import.png)
 
 ## 3. Uploading and running RAP3
 
