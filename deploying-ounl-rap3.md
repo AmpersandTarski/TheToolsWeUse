@@ -23,60 +23,73 @@ The following settings apply:
 
 |  |  |
 | :--- | :--- |
-| server name | Wolfram |
-| type VM-disk | HDD |
-| OS | Ubuntu 14.04.5 |
-| configuration | Bitnami LAMP 5.6.27-0 |
-| documentation | [https://docs.bitnami.com/azure/infrastructure/lamp](https://docs.bitnami.com/azure/infrastructure/lamp) |
-| Admin user name | ampersandadmin |
-| verification type | password \(Stef Joosten knows the password\) |
-| Resource group \(in Azure\) | Ampersand |
-| location \(in Azure\) | Western Europe |
+| server name | lnx-hrl-148v |
+| OS | SUSE Linux Enterprise Server 12 SP2, vs. 12.2 |
+| Admin user name | lru |
+| verification type | password \(Lloyd Rutledge knows the password\) |
 | Size | 4 core, 8 GB, 8 disks, Max. IOP's 8x500 |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: FTP | TCP/21 |
-| Public IP-adres | 52.174.4.78 |
-| PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
-| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
+| Inbound port: SFTP | TCP/22 |
+| Public IP-adres | 145.20.188.148 |
+| PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
+| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
 | `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-I have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+I have checked that the server works by browsing to "[http://145.20.188.148/test.php](http://145.20.188.148/test.php)" from outside the OUNL-network. This means that any applicable firewalls allow traffic on port 80 `{APPPORT}`. I have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
 
-I have verified that that any applicable firewalls allow traffic on port 80 `{APPPORT}` by browsing from outside the network to 52.174.4.78 \(the public IP-address\).
-
-* if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/\](https://letsencrypt.org/%29\) 
+* if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/](https://letsencrypt.org/%29%29\)
 
 ## 2. Getting MySQL and phpMyAdmin to work
 
-To run RAP3 requires Apache and MySQL. Both are already installed on the server. However, you need the database administrator password to set it up for Ampersand. This step requires a server, so you must have finished section 1 successfully.
+To run RAP3 requires Apache and MySQL. On a preinstalled MySQL-server you will need the database administrator password to set it up for Ampersand. This step requires hardware, so you must have finished section 1 successfully.
 
-To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8888/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
+On this server, there is no MySQL, so I had to install it. I followed the instructions on `https://en.opensuse.org/SDB:LAMP_setup#Setting_up_MariaDB`.
 
-Instructions on how to find the initial password for phpMyAdmin are found on [https://docs.bitnami.com/azure/faq/\#find\_credentials](https://docs.bitnami.com/azure/faq/#find_credentials). Since Bitnami-documentation on the web describes different ways to obtain the phpMyAdmin root password and only one of them works, I had a hard time getting the right password. I found it in the diagnostic data for startup, as described in the abovementioned link. When installing the virtual machine, DO NOT switch off the diagnostics for startup, because you will not get the log that contains the root-password.
+First I installed `mariadb`and `mariadb-tools`:
 
-After logging into phpMyAdmin as root, I created a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. I have issued limited authorizations:
+`sudo zypper in mariadb mariadb-tools`
+
+Then I started MariaDB:
+
+`lru@lnx-hrl-148v:~> sudo systemctl start mysql`
+
+To make sure the server will start at every boot:
+
+`lru@lnx-hrl-148v:~> sudo systemctl enable mysql`
+
+To set up MariaDB, I ran:
+
+`sudo mysql_secure_installation`
+
+By carefully following the instructions, I set up the MariaDB and chose root password `RAP3root`.
+
+However, here the procedure failed:
+
+`/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
+
+After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:
 
 ![](/assets/MySQL authorization.png)
 
 ## 3. Uploading and running RAP3
 
-To run RAP3, the web-application must be installed on `/home/bitnami/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 8 you will have built that web-application by yourself.
+To run RAP3, the web-application must be installed on `/srv/www/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 8 you will have built that web-application by yourself.
 
-To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
+To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work. This screenshot shows the situation after the transfer: \(TODO: update the screenshot\)![](/assets/Filezilla transfer confirmation.png)
 
-You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
+You can test whether this is successful by browsing to `145.20.188.148/RAP3/`
 
 It should show:
 
-![](/assets/initial RAP3 screen.png)
+![](assets/initial RAP3 screen.png)
 
 If you need to restart the apache server for whatever reason, here is the command:
 
