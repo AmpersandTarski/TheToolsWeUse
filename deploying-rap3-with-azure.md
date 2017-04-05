@@ -176,13 +176,7 @@ Stack gives a warning about the PATH:
 
 `For best results, please add it to the beginning of PATH in your profile.`
 
-I ignored this warning for now.
-
-## 5. Creating an Ampersand-compiler
-
-To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
-
-Haskell puts the `ampersand` file on `~/.local/bin/`. For this reason I have added this directory to the `$PATH` variable by changing the file `~/.profile`. In this file I edited:
+Haskell puts the binaries it produces on `~/.local/bin/`. For this reason I have added this directory to the `$PATH` variable by changing the file `~/.profile`. In this file I edited:
 
 `# set PATH so it includes user's private bin if it exists`
 
@@ -191,6 +185,10 @@ Haskell puts the `ampersand` file on `~/.local/bin/`. For this reason I have add
 `PATH="$HOME/.local/bin:$PATH"`
 
 `fi`
+
+## 5. Creating an Ampersand-compiler
+
+To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
 
 Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
