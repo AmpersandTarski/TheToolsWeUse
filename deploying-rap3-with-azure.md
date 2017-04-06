@@ -118,7 +118,7 @@ If there are problems, check the Apache server:
 
 * ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
 
-## 3. Filling the Git repository with Ampersand files and Ampersand models
+## 4. Filling the Git repository with Ampersand files and Ampersand models
 
 To build an Ampersand-compiler, we need the Ampersand source files, which reside in a GitHub repository. We can download these source files on a fresh server, so this step merely requires section 1 to be finished successfully. The RAP3 source files reside in a GitHub repository as well, so we'll just clone both repositories into the server.
 
@@ -158,9 +158,9 @@ You can do the same in the `Ampersand-models` directory. There you must verify t
 
 `nothing to commit, working directory clean`
 
-## 4. Installing Haskell
+## 5. Installing Haskell
 
-In order to build an Ampersand-compiler, we need a Haskell installation. We only need a working machine, so this step merely requires section 1 to be finished successfully.
+In order to build an Ampersand-compiler, we need a Haskell installation. This can be done on a clean machine, so this step merely requires section 1 to be finished successfully.
 
 I have used Haskell stack for installing Haskell. First I installed `stack` by following the instructions on the internet for a generic Linux installation:
 
@@ -186,9 +186,9 @@ Haskell puts the binaries it produces on `~/.local/bin/`. For this reason I have
 
 `fi`
 
-## 5. Creating an Ampersand-compiler
+## 6. Creating an Ampersand-compiler
 
-To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 3 and 4 to be finished successfully.
+To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 4 and 5 to be finished successfully.
 
 Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
@@ -200,7 +200,7 @@ Having the source code of the Ampersand-compiler on the system, I created an exe
 
 A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It got stuck without any hints about what is wrong. It did succeed on a 4-core 8GB configuration \(A4\).
 
-## 6. Installing LaTeX and GraphViz
+## 7. Installing LaTeX and GraphViz
 
 When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
 
@@ -218,7 +218,7 @@ bitnami@Wolfram:~$ sudo apt-get install graphviz
 
 That too worked.
 
-## 7. Installing SmartGit \(a nice-to-have\)
+## 8. Installing SmartGit \(a nice-to-have\)
 
 For looking into the local Git repository, it is nice to have a Git-client installed. This step requires section 1 to be finished successfully.
 
@@ -234,9 +234,9 @@ bitnami@Wolfram:~$  sudo apt-get install smartgit
 
 I have not yet figured out how to run Smartgit on this machine.
 
-## 8. Generating the RAP3 application
+## 9. Generating the RAP3 application
 
-This step requires sections 3 and 5 to be finished successfully.
+To generate the code of the RAP3 web-application, you need to run the Ampersand compiler on the RAP3 source code. So, this step requires sections 4 and 6 to be finished successfully.
 
 It requires to execute the following commands:
 
@@ -259,7 +259,7 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
 
 ## 9. Local Settings
 
-This step requires section 3 to be finished successfully. This results in the existence of file`localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read this file and follow the instructions, especially when making the transition from development to production.
+To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
 ## 10. Last minute changes before going to production
 
