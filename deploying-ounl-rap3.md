@@ -99,7 +99,9 @@ It should show:
 
 ![](assets/initial RAP3 screen.png)
 
-Now you are done. If there are problems, check the Apache server:
+Now you are done.
+
+However, if there are problems, check the Apache server:
 
 * Make sure that {APPACC} can read all files in {APPDIR}.
 
