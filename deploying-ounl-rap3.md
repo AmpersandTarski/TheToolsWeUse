@@ -99,11 +99,7 @@ It should show:
 
 ![](assets/initial RAP3 screen.png)
 
-If you need to restart the apache server for whatever reason, here is the command:
-
-`sudo <TODO: look up on the internet>`
-
-If there are problems, check the Apache server:
+Now you are done. If there are problems, check the Apache server:
 
 * Make sure that {APPACC} can read all files in {APPDIR}.
 
@@ -133,11 +129,15 @@ If there are problems, check the Apache server:
 
   &lt;/Directory&gt;
 
-* enable \`mod-rewrite\` extension \(see [http://askubuntu.com/questions/422027/mod-rewrite-is-enabled-but-not-working\](http://askubuntu.com/questions/422027/mod-rewrite-is-enabled-but-not-working%29\)
+* Enable \`mod-rewrite\` extension \(see [http://askubuntu.com/questions/422027/mod-rewrite-is-enabled-but-not-working\](http://askubuntu.com/questions/422027/mod-rewrite-is-enabled-but-not-working%29\)
 
   * you can check if modules are enabled with cmd: apache2ctl -M. You should then find that the \`rewrite\_module\` is listed.
 
-* ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
+* Ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
+
+* If you need to restart the apache server for whatever reason, here is the command:
+
+  `sudo <TODO: look up on the internet>`
 
 ## 3. Filling the Git repository with Ampersand files and Ampersand models
 
