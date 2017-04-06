@@ -259,7 +259,7 @@ It requires to execute the following commands:
 
 ```
 cd ~/git/Ampersand-models/RAP3/
-ampersand.exe --meta-tables --add-semantic-metamodel -p/srv/www/htdocs/RAP3 RAP3.adl
+ampersand --meta-tables --add-semantic-metamodel -p/srv/www/htdocs/RAP3 RAP3.adl
 chmod 757 /srv/www/htdocs/RAP3/log
 ```
 
