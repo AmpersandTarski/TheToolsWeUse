@@ -238,11 +238,11 @@ I have not yet figured out how to run Smartgit on this machine.
 
 This step requires sections 3 and 5 to be finished successfully.
 
-It requires to execut the following commands:
+It requires to execute the following commands:
 
 ```
 cd ~/git/Ampersand-models/RAP3/
-ampersand --meta-tables --meta-file -p/home/bitnami/htdocs/RAP3 RAP3.adl
+ampersand.exe --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
 chmod 757 /home/bitnami/htdocs/RAP3/log
 ```
 
