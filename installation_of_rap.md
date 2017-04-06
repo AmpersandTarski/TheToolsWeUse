@@ -4,57 +4,66 @@ RAP is a tool that is being used by the Open University of the Netherlands in th
 
 We are currently working on a new version, RAP3. We hope to deploy RAP3 on November 1st, 2016. Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how. Even though RAP3 is not ready for use, it can already be installed on a server. It just won't let you use all features.
 
-**NOTE 1**: Because RAP is still in development, the branches to use in this stage are:
-
-* Ampersand: _**development**_ branch \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\)
-* ampersand-models: _**master**_ branch \([https://github.com/AmpersandTarski/ampersand-models.git](https://github.com/AmpersandTarski/ampersand-models.git)\)
-
 **NOTE 2**: Be very cautious not to break RAP2! RAP2 is still needed as a safety precaution, in case we cannot deliver RAP3 in time.
 
-## Recipe to install RAP:
+## Requirements for deploying RAP
 
-Ampersand at the Open University of the Netherlands \(OUNL\)
+##### 1. Setting up a server
 
-In early 2016 the need arose to replace the RAP2 implementation of Ampersand by a RAP3 implementation, because RAP2 was insufficiently maintainable. This environment is used by students for completing the course Rule Based Design \(OBR, code ...\).  This implementation is hosted by ICTS, the IT-department of the university. We chose to implement RAP3 as a maintainable environment.
+You need a server that is connected to the internet, because RAP takes updates from a GitHub repository. A 4-core/8GB server is sufficient. A memory size under 3GB has shown to be insufficient. Ports for HTTP, HTTPS, SSL, and SFTP must be open.
 
-This chapter is an account of the installation process. It serves the following purposes:
+##### 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
 
-1. It is an example for others who want to deploy Ampersand.  
-   We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
+You need a database and a web-server. This explains why a LAMP-server is an obvious choice if you use a preconfigured server.
 
-2. It documents the installation we made for the Open University.  
-   We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
+##### 3. Uploading and running RAP3
 
-3. It contains all information needed to make a deployment script for automated deployment.  
-   We want to automate deployment, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
+A quick way to install is to copy existing RAP3 code on your server. This allows you to test whether you can get the application live and visible to your users.
 
-Each step in the installation process gets a separate section in this text. It is not necessary to do them in the given order.
+##### 4. Filling the Git repository with Ampersand files and Ampersand models
 
-## 1. Setting up the virtual machine
+The source code of Ampersand and the source code of RAP3 must be downloaded from GitHub. The following repositories are used:
 
-## 2. Getting MySQL and phpMyAdmin to work
+* Ampersand: _**development**_ branch \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\). This contains the source code of Ampersand.
+* ampersand-models: _**master**_ branch \([https://github.com/AmpersandTarski/ampersand-models.git](https://github.com/AmpersandTarski/ampersand-models.git)\). This contains the source code of RAP3.
 
-## 3. Uploading and running RAP3
+The source code of Ampersand is needed to build an Ampersand compiler. The source code of RAP3 is needed to compile and generate the RAP3 webapplication. You need Git to create a local clone of these repositories. Git is preferred over copying the files, because it gives assurance over installing the right version\(s\).
 
-## 4. Filling the Git repository with Ampersand files and Ampersand models
+##### 5. Installing Haskell
 
-## 5. Installing Haskell
+You need Haskell to build an Ampersand compiler.
 
-## 6. Creating an Ampersand-compiler
+##### 6. Creating an Ampersand compiler
 
-## 7. Installing LaTeX and GraphViz
+You need an Ampersand compiler to generate RAP3 from its source code.
 
-## 8. Installing SmartGit \(a nice-to-have\)
+##### 7. Installing LaTeX and GraphViz
 
-## 9. Generating the RAP3 application
+LaTeX and GraphViz are called when a RAP3 user generates documentation. Therefore, they must be installed on the server.
 
-## 10. Local Settings
+##### 8. Installing SmartGit \(a nice-to-have\)
 
-## 11. Last minute changes before going to production
+If you want to inspect the Git-repository on you server, it is nice to have a Git client.
+
+##### 9. Generating the RAP3 application
+
+You need to generate RAP3 to facilitate regular updates to the system.
+
+##### 10. Local Settings
+
+Some local settings may apply, which are brought together in one file. Use this to administer things like database account\(s\) and PHP time limit, logging, etcetera.
+
+##### 11. Last minute changes before going to production
+
+Things that are necessary for testing and development, such as logging, can be changed in the production version. These things are usually adapted shortly before going to production. 
 
 # Work in progress!
 
 The application of RAP still is heavily under development. Therefore, this recipe might change. Also, instructions about maintenance will follow. Watch the progress of RAP3 by checking [this issue](https://github.com/AmpersandTarski/Ampersand/issues/449)
+
+## Experience
+
+RAP3 has been installed in different situations. Some of these situations are documented in the sequel. You can use it as example for deployments of your own. A dear wish is to create an installation script that will automate deployment, but we have not yet found the time to do that.
 
 ## Questions? Need help?
 

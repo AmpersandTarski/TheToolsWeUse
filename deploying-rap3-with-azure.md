@@ -257,11 +257,11 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
 
 `rm -r -f -d /home/bitnami/htdocs/RAP3`
 
-## 9. Local Settings
+## 10. Local Settings
 
 To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
-## 10. Last minute changes before going to production
+## 11. Last minute changes before going to production
 
 1. In the source code of RAP3, in the file SIAM\_importer.adl:
    1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
