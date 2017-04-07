@@ -212,7 +212,7 @@ When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato an
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
 
-`bitnami@Wolfram:~$ sudo apt-get install texlive-latex-base`
+`bitnami@Wolfram:~$ sudo apt-get install texlive`
 
 That worked.
 
