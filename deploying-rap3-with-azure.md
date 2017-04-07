@@ -74,7 +74,7 @@ To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/f
 
 This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
 
-To allow the computer to upload files and write logs if needed, you must make `daemon` the owner of these files. That is the Apache server.
+To allow the computer to upload files and write logs if needed, you must make `daemon` the owner of these files. That user represents the Apache server.
 
 `sudo chown -R daemon /opt/bitnami/apache2/htdocs/RAP3/`
 
