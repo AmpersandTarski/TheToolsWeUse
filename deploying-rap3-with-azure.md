@@ -75,7 +75,7 @@ To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/f
 * You must change the authorization of the 'log'\(.../htdocs/RAP3/log/\) directory \(.../htdocs/RAP3/uploads/\) to 757 \(public write access\) if your localsettings have logging switched on.
 * You must change the authorization of the 'uploads' directory \(.../htdocs/RAP3/uploads/\) to 757 \(public write access\) to allow RAP3 users to upload and save their work.
 
- This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
+This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
 
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
