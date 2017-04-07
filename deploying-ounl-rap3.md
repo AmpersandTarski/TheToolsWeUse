@@ -89,9 +89,13 @@ After logging into phpMyAdmin, create a user called 'ampersand' with password 'a
 
 To run RAP3, the web-application must be installed on `/srv/www/htdocs`. This step requires sections 1 and 2 to be finished successfully. It also requires you to have a complete RAP3 web-application available for uploading to the server. If you don't have that web-application, you need to build it. Upon completion of step 8 you will have built that web-application by yourself.
 
-To upload RAP3, I used the SFTP-protocol \(in Filezilla\) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). You must change the authorization of the 'log' directory \(.../htdocs/RAP3/log/\) to 757 \(public write access\) or else the application won't work.
+To upload RAP3, I used the SFTP-protocol \(in Filezilla\) to upload the RAP3 web-application from my laptop onto the server. I put it on `/srv/www/htdocs`, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\).
 
 This screenshot shows the situation after the transfer:![](assets/Filezilla transfer confirmation.png)
+
+To allow the computer to upload files and write logs if needed, you must make `wwwrun` the owner of these files. That is the Apache server.
+
+`sudo chown -R wwwrun /opt/bitnami/apache2/htdocs/RAP3/`
 
 You can test whether this is successful by browsing to `145.20.188.148/RAP3/`
 
