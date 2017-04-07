@@ -147,23 +147,35 @@ To build an Ampersand-compiler, we need the Ampersand source files, which reside
 
 I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
-I have created `/unload/git` for storing the local clones. Here is what I did:
+I have created `/unload/git/` for storing the source code. Here is what I did:
 
-`sudo mkdir /unload/git`
+`lru@lnx-hrl-148v:~> sudo mkdir /unload/git`
 
-`cd /unload/git`
+`lru@lnx-hrl-148v:~> cd /unload/git`
 
-`sudo git clone https://github.com/AmpersandTarski/Ampersand`
+`lru@lnx-hrl-148v:/unload/git> git init`
 
-`sudo git clone https://github.com/AmpersandTarski/Ampersand-models`
+`Initialized empty Git repository in /unload/git/.git/`
+
+`lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand`
+
+`lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand-models`
 
 Unfortunately, this goes wrong:
 
-Now you are done. The directory `/home/lru/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/home/lru/git/Ampersand-models` contains the source code of the Ampersand models.
+`lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand`
 
-To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
+`Cloning into 'Ampersand'...`
 
-`lru@lnx-hrl-148v:~/git/Ampersand$ git status`
+`fatal: unable to access 'https://github.com/AmpersandTarski/Ampersand/': Failed to connect to github.com port 443: Connection timed out`
+
+`lru@lnx-hrl-148v:/unload/git>`
+
+Once you solve this problem, you are done. The directory `/unload/git/Ampersand` contains the source code of the Ampersand compiler. The directory `/unload/git/Ampersand-models` contains the source code of the Ampersand models.
+
+To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `/unload/git/Ampersand` and ask for the Git status:
+
+`lru@lnx-hrl-148v:/unload/git/Ampersand$ git status`
 
 `On branch development`
 
