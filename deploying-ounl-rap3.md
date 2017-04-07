@@ -153,9 +153,9 @@ I have created `/unload/git/` for storing the source code. Here is what I did:
 
 `lru@lnx-hrl-148v:~> cd /unload/git`
 
-`lru@lnx-hrl-148v:/unload/git> git init`
+`lru@lnx-hrl-148v:/unload/git> git init`
 
-`Initialized empty Git repository in /unload/git/.git/`
+`Initialized empty Git repository in /unload/git/.git/`
 
 `lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand`
 
@@ -163,11 +163,11 @@ I have created `/unload/git/` for storing the source code. Here is what I did:
 
 Unfortunately, this goes wrong:
 
-`lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand`
+`lru@lnx-hrl-148v:/unload/git> sudo git clone https://github.com/AmpersandTarski/Ampersand`
 
-`Cloning into 'Ampersand'...`
+`Cloning into 'Ampersand'...`
 
-`fatal: unable to access 'https://github.com/AmpersandTarski/Ampersand/': Failed to connect to github.com port 443: Connection timed out`
+`fatal: unable to access 'https://github.com/AmpersandTarski/Ampersand/': Failed to connect to github.com port 443: Connection timed out`
 
 `lru@lnx-hrl-148v:/unload/git>`
 

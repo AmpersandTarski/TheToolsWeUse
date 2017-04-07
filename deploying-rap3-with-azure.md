@@ -72,9 +72,9 @@ To run RAP3, the web-application must be installed on `/home/bitnami/htdocs`. Th
 
 To upload RAP3, I followed the instructions on [https://docs.bitnami.com/azure/faq/\#how-to-upload-files-to-the-server-with-sftp](https://docs.bitnami.com/azure/faq/#how-to-upload-files-to-the-server-with-sftp) to upload the RAP3 web-application from my laptop onto the server. I put it on /home/bitnami/htdocs, which is the location of web-applications on this particular configuration. \(On vanilla Linux this would be on /var/www, I guess\). This screenshot shows the situation after the transfer:![](/assets/Filezilla with RAP3.png)
 
-To allow the computer to upload files and write logs if needed, you must make `daemon` the owner of these files. That is the Apache server.
-
 This screenshot shows the situation after the transfer:![](/assets/Filezilla transfer confirmation.png)
+
+To allow the computer to upload files and write logs if needed, you must make `daemon` the owner of these files. That is the Apache server.
 
 `sudo chown -R daemon /opt/bitnami/apache2/htdocs/RAP3/`
 
