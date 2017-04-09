@@ -12,4 +12,5 @@
 * [Deploying RAP3 with Azure](deploying-rap3-with-azure.md)
 * [Deploying OUNL RAP3](deploying-ounl-rap3.md)
 * [Functionality of RAP3](functionality-of-rap3.md)
+  * [Student](functionality-of-rap3/student.md)
 
