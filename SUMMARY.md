@@ -13,7 +13,7 @@
 * [Deploying OUNL RAP3](deploying-ounl-rap3.md)
 * [Functionality of RAP3](functionality-of-rap3.md)
   * [Student](functionality-of-rap3/student.md)
-  * Tutor
+  * [Tutor](functionality-of-rap3/tutor.md)
   * Account Manager
   * Graduate Student
 
