@@ -24,5 +24,7 @@ If your script is OK however, it will also tell you, by letting you know that pr
 
 ![](/assets/CompilationOK.png)
 
-Everytime compilation is succesful, a new version of your script will be made. You will see the most recent version. Now you can ask for the artifacts, by checking an appropriate checkbox. 
+Everytime compilation is succesful, a new version of your script will be made. You will see the most recent version. Now you can ask for the artifacts, by checking an appropriate checkbox. This will take some time, and a link will appear at the right of the checkbox. If you follow that link, the result will be shown. 
+
+
 
