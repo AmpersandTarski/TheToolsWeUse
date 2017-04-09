@@ -13,5 +13,9 @@ All of the above users have access to the login page. Further functionality is b
 
 ## Logging in
 
-![](/assets/LogIn.png)When you log in, a userid and password must be entered.
+![](/assets/LogIn.png)
+
+When you log in, a userid and password must be entered. As you leave a field, that field is updated, and rules are checked. You will encounter your first violation of a signal rule:
+
+![](/assets/Login2.png)
 
