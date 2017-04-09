@@ -17,5 +17,13 @@ All of the above users have access to the login page. Further functionality is b
 
 When you log in, a userid and password must be entered. As you leave a field, that field is updated, and rules are checked. You will encounter your first violation of a signal rule:
 
-![](/assets/Login2.png)
+![](/assets/Login2.png)You can click the warning message, and it will show you the violation message and some links where that relation could be solved. These links are still cryptic \(this is a bug\):
+
+![](/assets/violationMessageWithErrounousDropDown.png)
+
+The last option will take you the 'My Account' page, where you can modify your password. 
+
+
+
+
 
