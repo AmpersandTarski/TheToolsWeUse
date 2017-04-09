@@ -8,9 +8,17 @@ As a student, your main objective with RAP3 is to write Ampersand scripts and ha
 
 You might find it interesting to know that RAP3 has been built with Ampersand itself! It can be regarded as a showcase of what can be done today with Ampersand. The downside may be that not all of the functionality is as smoothe as you might want it to be. There is still a lot of work to be done 8-\)\)
 
-
-
 ## Create an Ampersand script
+
+![](/assets/menuNieuwScript.png) 
+
+A new script can be made by hitting the + sign in the menu and go to New Script. A new script is being made, but it doesn't have any content:![](/assets/NieuwScript.png)In the header of the script you can see the \(generated\) identifier of the instance. The big white space in the middle is where you will write your script. You could als choose to upload a script from your computer. It is a good habit to save your scripts at your own computer, because currently we have no functionality to retrieve your script easily. Please take care of your own precious work yourself.
+
+Each time you modify your script, you have to send it to Ampersand by pressing the big blue button below the white space. Only then Ampersand will be notified about your changes. 
+
+After you pressed the blue button, you can check the compile checkbox. Ampersand is launched and it will validate your script. If any error is found, it will notify you:
+
+![](/assets/parseError.png)
 
 
 
