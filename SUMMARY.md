@@ -14,6 +14,6 @@
 * [Functionality of RAP3](functionality-of-rap3.md)
   * [Student](functionality-of-rap3/student.md)
   * [Tutor](functionality-of-rap3/tutor.md)
-  * Account Manager
+  * [Account Manager](functionality-of-rap3/account-manager.md)
   * Graduate Student
 
