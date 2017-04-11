@@ -84,7 +84,7 @@ It should show:
 
 ![](/assets/initial RAP3 screen.png)
 
-Because the Apache server needs to write files and create directories, it is necessary that it has a shell. You can check this in the file `/etc/passwd`. This file contains a line that starts with `daemon`.
+Because the Apache server needs to write files and create directories, it is necessary that it has a shell. You can check this in the file `/etc/passwd`. This file contains a line that starts with `daemon`, which is the user of the Apache server.
 
 daemon:x:1:1:daemon:/usr/sbin:/bin/bash
 

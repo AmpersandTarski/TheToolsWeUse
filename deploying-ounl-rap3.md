@@ -59,11 +59,13 @@ TODO: make sure that `{APPHOST}` can be found by DNS.
 
 To run RAP3 requires Apache and MySQL. On a preinstalled MySQL-server you will need the database administrator password to set it up for Ampersand. This step requires hardware, so you must have finished section 1 successfully.
 
-On this server, there is no MySQL, so I had to install it. I followed the instructions on `https://en.opensuse.org/SDB:LAMP_setup#Setting_up_MariaDB`.
+MySQL has been installed by ICTS. It runs on port 3306 with user root \(Lloyd Rutledge knows the root password\).
+
+If you must install MySQL yourself, you can follow the instructions on `https://en.opensuse.org/SDB:LAMP_setup#Setting_up_MariaDB`.
 
 First I installed `mariadb`and `mariadb-tools`:
 
-`sudo zypper in mariadb mariadb-tools`
+`sudo zypper in mariadb mariadb-toolso`
 
 Then I started MariaDB:
 
@@ -78,10 +80,6 @@ To set up MariaDB, I ran:
 `sudo mysql_secure_installation`
 
 By carefully following the instructions, I set up the MariaDB and chose root password `RAP3root`.
-
-However, here the procedure failed:
-
-`/usr/bin/mysql_secure_installation: line 234: .my.cnf.14336: No space left on device`
 
 After logging into phpMyAdmin, create a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. RAP3 requires at least the following authorizations:![](assets/MySQL authorization.png)
 
