@@ -257,6 +257,8 @@ It requires to execute the following commands:
 ```
 cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
+sudo chgrp -R daemon /home/bitnami/htdocs/RAP3
+sudo chmod -R g+w /home/bitnami/htdocs/RAP3
 ```
 
 Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
