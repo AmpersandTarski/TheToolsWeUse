@@ -90,7 +90,7 @@ daemon:x:1:1:daemon:/usr/sbin:/bin/bash
 
 If the last part of that line reads`/bin/bash`, you know that Apache can execute shell commands. \(I got a SLIM-error, saying that `mkdir()`fails, which was caused by Apache not having a shell at its disposal.\)
 
-Now you are done. 
+Now you are done.
 
 If you need to restart the apache server for whatever reason, here is the command:
 
