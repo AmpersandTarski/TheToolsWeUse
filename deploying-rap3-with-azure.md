@@ -84,6 +84,14 @@ It should show:
 
 ![](/assets/initial RAP3 screen.png)
 
+Because the Apache server needs to write files and create directories, it is necessary that it has a shell. You can check this in the file `/etc/passwd`. This file contains a line that starts with `daemon`.
+
+daemon:x:1:1:daemon:/usr/sbin:/bin/bash
+
+If the last part of that line reads`/bin/bash`, you know that Apache can execute shell commands. \(I got a SLIM-error, saying that `mkdir()`fails, which was caused by Apache not having a shell at its disposal.\)
+
+Now you are done. 
+
 If you need to restart the apache server for whatever reason, here is the command:
 
 `sudo /opt/bitnami/ctlscript.sh restart apache`
@@ -249,7 +257,6 @@ It requires to execute the following commands:
 ```
 cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
-chmod 757 /home/bitnami/htdocs/RAP3/log
 ```
 
 Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
