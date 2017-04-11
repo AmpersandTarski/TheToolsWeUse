@@ -55,7 +55,7 @@ Some local settings may apply, which are brought together in one file. Use this 
 
 ##### 11. Last minute changes before going to production
 
-Things that are necessary for testing and development, such as logging, can be changed in the production version. These things are usually adapted shortly before going to production. 
+Things that are necessary for testing and development, such as logging, can be changed in the production version. These things are usually adapted shortly before going to production.
 
 # Work in progress!
 
@@ -64,6 +64,10 @@ The application of RAP still is heavily under development. Therefore, this recip
 ## Experience
 
 RAP3 has been installed in different situations. Some of these situations are documented in the sequel. You can use it as example for deployments of your own. A dear wish is to create an installation script that will automate deployment, but we have not yet found the time to do that.
+
+## Security
+
+The Apache server writes files and creates directories. Normally, this would be a security risk, but in this case it is designed behaviour.
 
 ## Questions? Need help?
 
