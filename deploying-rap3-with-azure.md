@@ -261,7 +261,7 @@ sudo chgrp -R daemon /home/bitnami/htdocs/RAP3
 sudo chmod -R g+w /home/bitnami/htdocs/RAP3
 ```
 
-Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
+Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The `chgrp` and `chmod` commands are necessary to allow the Apache server write access to the RAP3 directory. Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
 
 ```
 cd ~/git/Ampersand-models/
@@ -275,6 +275,8 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
 ## 10. Local Settings
 
 To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
+
+Logging can be switched on and off \(or tuned\) in your `localsettings.php` file.
 
 ## 11. Last minute changes before going to production
 
