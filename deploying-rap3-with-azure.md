@@ -218,12 +218,6 @@ A 1-core machine with 1.75GB memory has been shown too small to build the Ampers
 
 When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
 
-As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
-
-`bitnami@Wolfram:~$ sudo apt-get install texlive`
-
-That worked.
-
 For generating pictures, Ampersand needs the commands `dot` and `neato`. For that purpose I installed:
 
 ```
@@ -231,6 +225,14 @@ bitnami@Wolfram:~$ sudo apt-get install graphviz
 ```
 
 That too worked.
+
+As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I followed the instructions on `https://www.tug.org/texlive/quickinstall.html`.
+
+The easier way seems to be:
+
+`bitnami@Wolfram:~$ sudo apt-get install texlive`
+
+However, that did not work. On internet, `apt-get install texlive`is discouraged because it results in outdated latex stuff.
 
 ## 8. Installing SmartGit \(a nice-to-have\)
 
