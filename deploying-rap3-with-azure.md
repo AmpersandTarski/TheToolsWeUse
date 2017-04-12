@@ -224,7 +224,7 @@ For generating pictures, Ampersand needs the commands `dot` and `neato`. For tha
 bitnami@Wolfram:~$ sudo apt-get install graphviz
 ```
 
-That too worked.
+That worked.
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I followed the instructions on `https://www.tug.org/texlive/quickinstall.html`.
 
