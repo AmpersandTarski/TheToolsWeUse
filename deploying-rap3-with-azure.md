@@ -284,11 +284,12 @@ Logging can be switched on and off \(or tuned\) in your `localsettings.php` file
    1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
    2. enable "RAP3\_LoginForProduction.ifc"
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
-2. Is there anything we must alter in localsettings.php before going live?
+2. Edit the file `/home/ampersandadmin/git/RAP3/include/localsettings.php` and follow instructions in it before going live.
 
 ## 12. Security measures
 
-1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\)
+1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\)\)
+2. Apache: see https://httpd.apache.org/docs/trunk/misc/security\_tips.html
 
 
 
