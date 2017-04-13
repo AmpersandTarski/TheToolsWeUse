@@ -10,6 +10,7 @@
 * [Sentinel](sentinel.md)
 * [Installation of RAP](installation_of_rap.md)
 * [Deploying RAP3 with Azure](deploying-rap3-with-azure.md)
+  * [Deploying RAP3 with Azure on Windows server](deploying-rap3-with-azure/deploying-rap3-with-azure-on-windows-server.md)
 * [Deploying OUNL RAP3](deploying-ounl-rap3.md)
 * [Functionality of RAP3](functionality-of-rap3.md)
   * [Student](functionality-of-rap3/student.md)
