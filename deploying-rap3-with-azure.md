@@ -41,10 +41,10 @@ The following settings were \(or will be\) made:
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | daemon \(this name is set in /opt/bitnami/apache2/conf/original/httpd.conf\) |
-| `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
+| `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
-| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
-| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
+| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/RAP3', or 'RAP3.mydomain.org'\) |  |
+| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/RAP3](https://mydomain.org:8080/spreg)', or [https://RAP3.mydomain.org\](https://RAP3.mydomain.org%29\) |  |
 
 I have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
