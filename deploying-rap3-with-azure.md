@@ -36,7 +36,7 @@ The following settings were \(or will be\) made:
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: FTP | TCP/21 |
+| Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 52.174.4.78 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
@@ -285,6 +285,10 @@ Logging can be switched on and off \(or tuned\) in your `localsettings.php` file
    2. enable "RAP3\_LoginForProduction.ifc"
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
 2. Is there anything we must alter in localsettings.php before going live?
+
+## 12. Security measures
+
+1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\)
 
 
 
