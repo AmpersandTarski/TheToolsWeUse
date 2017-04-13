@@ -226,6 +226,50 @@ That worked.
 
 As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I followed the instructions on `https://www.tug.org/texlive/quickinstall.html`.
 
+Here is what I did to install texlive:
+
+1. I decided to [Install TeX Live over the Internet](https://www.tug.org/texlive/acquire-netinstall.html).
+2. I downloaded [install-tl-unx.tar.gz](http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz) to my home directory `/home/ampersandadmin`. This gave me the archive file.
+3. I unpacked the archive saying `tar -zxvf install-tl-unx.tar.gz`. This resulted in a directory `install-tl-20170411`.
+4. Then I changed to the new directory by saying: `cd install-tl-20170411`.
+5. I then ran `./install-tl`. \(Somehow it didn't work without ./ up front\). 
+6. In install-tl, I selected options `abcfgkvwXIKPS` \(by running command `C`\) to get a not-too-large installation that does everything Ampersand needs. After selection I returned to the main menu by command `R`. By the way, this can be done using a profile file, which is useful for unattended installation.
+7. Then I ran the installer by running command I. That took a while \(about an hour or so\).
+8. I updated the file `/home/ampersandadmin/.profile` to prepend `"/usr/local/texlive/2016/bin/x86_64-linux"` to the PATH, so that the shell can find the required binaries.
+9. I ran a test to see whether all packages for TeX Live are present. They weren't. When running the test, pdflatex provides the name of a missing package, e.g. "``! LaTeX Error: File `glossaries.sty' not found.``" I used `tlmgr install glossaries` to install the missing package. I did that for each missing package.
+10. 
+The directories used by TeX Live are:
+
+`   TEXDIR (the main TeX directory):`
+
+`     /usr/local/texlive/2016`
+
+`   TEXMFLOCAL (directory for site-wide local files):`
+
+`     /usr/local/texlive/texmf-local`
+
+`   TEXMFSYSVAR (directory for variable and automatically generated data):`
+
+`     /usr/local/texlive/2016/texmf-var`
+
+`   TEXMFSYSCONFIG (directory for local config):`
+
+`     /usr/local/texlive/2016/texmf-config`
+
+`   TEXMFVAR (personal directory for variable and automatically generated data):`
+
+`     ~/.texlive2016/texmf-var`
+
+`   TEXMFCONFIG (personal directory for local config):`
+
+`     ~/.texlive2016/texmf-config`
+
+`   TEXMFHOME (directory for user-specific files):`
+
+`     ~/texmf`
+
+
+
 The easier way seems to be:
 
 `bitnami@Wolfram:~$ sudo apt-get install texlive`
@@ -288,8 +332,8 @@ Logging can be switched on and off \(or tuned\) in your `localsettings.php` file
 
 ## 12. Security measures
 
-1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\)\)
-2. Apache: see https://httpd.apache.org/docs/trunk/misc/security\_tips.html
+1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users%29\)
+2. Apache: see [https://httpd.apache.org/docs/trunk/misc/security\_tips.html](https://httpd.apache.org/docs/trunk/misc/security_tips.html)
 
 
 
