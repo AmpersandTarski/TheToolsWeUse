@@ -51,7 +51,7 @@ Now all the software is in place, some of it needs configuration. This is what I
 | Setup stack for ampersand repo | we need stack to be able to generate ampersand. It will put GHC in place and other stuff. | in c:\git\ampersand say 'stack setup' |
 | Restart the shell | because MSYS2 says so! | restart the shell |
 | Build ampersand.exe | That is what we need to run RAP3 | in c:\git\ampersand say 'stack install' |
-| Let apache listen at port 8088 | Use a non-standard port, so it can be configured with tunneling | Go to the xampp control panel, choose config in the Apache row. httpd.conf wil open in notepad. Edit the listen port number. Also click the config button at the upper right corner of the xampp control panel. Then click Service and Port Settings. Edit the Apache Main Port. |
+| Let apache listen at port 8088 | Use a non-standard port, so it can be configured with tunneling | Go to the xampp control panel, choose config in the Apache row. httpd.conf wil open in notepad. Edit the listen port number. Also click the config button at the upper right corner of the xampp control panel. Then click Service and Port Settings. Edit the Apache Main Port. Also check the Autostart of modules: Apache and MySQL. Stop and start Apache \(from the xampp control panel\) |
 |  |  |  |
 |  |  |  |
 
