@@ -38,6 +38,8 @@ Once the VM has been launched, [connect](https://docs.microsoft.com/en-us/azure/
 2. [Git](https://git-scm.com/download/) \(version 2.12.2.2 - 64-bit\)
 3. [Xampp](https://www.apachefriends.org/download.html) \(version 7.0.15 / PHP 7.0.15\)
 4. [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
+5. [graphviz](http://www.graphviz.org/Download_windows.php)
+6. [MiKTeX](https://miktex.org/download) \(all defaults, except choose to install missing packages on-the-fly: Yes\)
 
 ## 3 Configuring
 
@@ -52,7 +54,7 @@ Now all the software is in place, some of it needs configuration. This is what I
 | Restart the shell | because MSYS2 says so! | restart the shell |
 | Build ampersand.exe | That is what we need to run RAP3 | in c:\git\ampersand say 'stack install' |
 | Let apache listen at port 8088 | Use a non-standard port, so it can be configured with tunneling | Go to the xampp control panel, choose config in the Apache row. httpd.conf wil open in notepad. Edit the listen port number. Also click the config button at the upper right corner of the xampp control panel. Then click Service and Port Settings. Edit the Apache Main Port. Also check the Autostart of modules: Apache and MySQL. Stop and start Apache \(from the xampp control panel\) |
-|  |  |  |
+| Build RAP3 application |  | goto RAP3 directory; say: ampersand.exe --meta-tables --add-semantic-metamodel --verbose  -pD:\xampp\htdocs\RAP3\ RAP3.adl  |
 |  |  |  |
 
 
