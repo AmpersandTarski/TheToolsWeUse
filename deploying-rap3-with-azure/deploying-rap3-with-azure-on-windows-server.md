@@ -1,14 +1,10 @@
 # Deploying on a windows server machine \(Azure cloud\)
 
-In order to obtain a working machine with RAP3, we had difficulties getting everything to work on an Ubuntu machine. This is probably because of a lack of knowledge on our side about that infrastructure. 
+In order to obtain a working machine with RAP3, we had difficulties getting everything to work on an Ubuntu machine. This is probably because of a lack of knowledge on our side about that infrastructure.
 
-Because of these difficulties, we decided to install everything on a Windows server. This is a log of what we did. 
-
-
+Because of these difficulties, we decided to install everything on a Windows server. This is a log of what we did.
 
 ## 1 Setting up the virtual machine
-
-
 
 Resourcegroep\([wijzigen](https://portal.azure.com/)\)
 
@@ -33,6 +29,35 @@ Openbaar IP-adres
 Virtueel netwerk/subnet
 
 [Ampersand-vnet/default](https://portal.azure.com/)
+
+
+
+## 2 Getting the required software
+
+Once the VM has been launched, [connect](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/connect-logon "How to connect to an azure VM") to it. The following software was installed, using default settings, unless stated otherwise:
+
+1. Google Chrome
+2. [Git](https://git-scm.com/download/) \(version 2.12.2.2 - 64-bit\)
+3. [Xampp](https://www.apachefriends.org/download.html) \(version 7.0.15 / PHP 7.0.15\)
+4. [The Haskell Tool Stack](https://docs.haskellstack.org/en/stable/README/)
+
+## 3 Configuring 
+
+Now all the software is in place, some of it needs configuration. This is what I did:
+
+| What | Why | How I did it |
+| :--- | :--- | :--- |
+| We need a place to store all Git repo's | All repo's are nicely together | Create directory **c:\git** |
+| Clone the ampersand repo | So we can build ampersand executable | git clone https://github.com/AmpersandTarski/Ampersand.git |
+| Clone the ampersand-models repo | So we have the models at hand | git clone https://github.com/AmpersandTarski/Ampersand-models.git |
+| Setup stack for ampersand repo | we need stack to be able to generate ampersand. It will put GHC in place and other stuff.  | in c:\git\ampersand say 'stack setup' |
+| Restart the shell | because MSYS2 says so! | restart the shell |
+| Build ampersand.exe | That is what we need to run RAP3 | in c:\git\ampersand say 'stack install' |
+|  |  |  |
+|  |  |  |
+|  |  |  |
+
+
 
 
 

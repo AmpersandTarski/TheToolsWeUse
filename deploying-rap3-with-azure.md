@@ -237,38 +237,35 @@ Here is what I did to install texlive:
 7. Then I ran the installer by running command I. That took a while \(about an hour or so\).
 8. I updated the file `/home/ampersandadmin/.profile` to prepend `"/usr/local/texlive/2016/bin/x86_64-linux"` to the PATH, so that the shell can find the required binaries.
 9. I ran a test to see whether all packages for TeX Live are present. They weren't. When running the test, pdflatex provides the name of a missing package, e.g. "``! LaTeX Error: File `glossaries.sty' not found.``" I used `tlmgr install glossaries` to install the missing package. I did that for each missing package.
-10. 
-The directories used by TeX Live are:
+10. The directories used by TeX Live are:
 
-`   TEXDIR (the main TeX directory):`
+`TEXDIR (the main TeX directory):`
 
-`     /usr/local/texlive/2016`
+`/usr/local/texlive/2016`
 
-`   TEXMFLOCAL (directory for site-wide local files):`
+`TEXMFLOCAL (directory for site-wide local files):`
 
-`     /usr/local/texlive/texmf-local`
+`/usr/local/texlive/texmf-local`
 
-`   TEXMFSYSVAR (directory for variable and automatically generated data):`
+`TEXMFSYSVAR (directory for variable and automatically generated data):`
 
-`     /usr/local/texlive/2016/texmf-var`
+`/usr/local/texlive/2016/texmf-var`
 
-`   TEXMFSYSCONFIG (directory for local config):`
+`TEXMFSYSCONFIG (directory for local config):`
 
-`     /usr/local/texlive/2016/texmf-config`
+`/usr/local/texlive/2016/texmf-config`
 
-`   TEXMFVAR (personal directory for variable and automatically generated data):`
+`TEXMFVAR (personal directory for variable and automatically generated data):`
 
-`     ~/.texlive2016/texmf-var`
+`~/.texlive2016/texmf-var`
 
-`   TEXMFCONFIG (personal directory for local config):`
+`TEXMFCONFIG (personal directory for local config):`
 
-`     ~/.texlive2016/texmf-config`
+`~/.texlive2016/texmf-config`
 
-`   TEXMFHOME (directory for user-specific files):`
+`TEXMFHOME (directory for user-specific files):`
 
-`     ~/texmf`
-
-
+`~/texmf`
 
 The easier way seems to be:
 
