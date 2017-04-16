@@ -57,6 +57,11 @@ Now all the software is in place, some of it needs configuration. This is what I
 | Let apache listen at port 8088 | Use a non-standard port, so it can be configured with tunneling | Go to the xampp control panel, choose config in the Apache row. httpd.conf wil open in notepad. Edit the listen port number. Also click the config button at the upper right corner of the xampp control panel. Then click Service and Port Settings. Edit the Apache Main Port. Also check the Autostart of modules: Apache and MySQL. Stop and start Apache \(from the xampp control panel\) |
 | Build RAP3 application |  | goto RAP3 directory; say: ampersand.exe --meta-tables --add-semantic-metamodel --verbose  -pC:\xampp\htdocs\RAP3 RAP3.adl |
 | Putting Graphviz into your path | So ampersand can use dot and neato executables to build graphics |  |
+|  |  |  |
+
+Changes to Localsettings.php
+
+* Under RAP3 settings, change the path where ampersand can be found. On Remium, this will be C:\\Users\\ampersandadmin\\AppData\\Roaming\\local\\bin\\ampersand.exe
 
 
 
