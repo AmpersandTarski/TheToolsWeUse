@@ -76,6 +76,8 @@ To allow the computer to upload files and write logs if needed, you must make `d
 
 `sudo chown -R daemon /opt/bitnami/apache2/htdocs/RAP3/`
 
+Remark: This is not the way to go. The best practice is to tell Apache2 to behave as ampersandadmin. That way, in case of problems Apache can only "destroy" RAP3-stuff, rather than wreck the entire system because he is "daemon". 
+
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
 It should show:
@@ -331,6 +333,7 @@ Logging can be switched on and off \(or tuned\) in your `localsettings.php` file
 
 1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users%29\)
 2. Apache: see [https://httpd.apache.org/docs/trunk/misc/security\_tips.html](https://httpd.apache.org/docs/trunk/misc/security_tips.html)
+3. HTTPS-cookies need a flag "Secure", "HHTP-only", and "Samesite". This needs to be addressed in the Ampersand code; not in the deployment.
 
 
 
