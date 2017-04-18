@@ -76,7 +76,7 @@ To allow the computer to upload files and write logs if needed, you must make `d
 
 `sudo chown -R daemon /opt/bitnami/apache2/htdocs/RAP3/`
 
-Remark: This is not the way to go. The best practice is to tell Apache2 to behave as ampersandadmin. That way, in case of problems Apache can only "destroy" RAP3-stuff, rather than wreck the entire system because he is "daemon". 
+Remark: This is not the way to go. The best practice is to tell Apache2 to behave as ampersandadmin. That way, in case of problems Apache can only "destroy" RAP3-stuff, rather than wreck the entire system because he is "daemon".
 
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
@@ -84,7 +84,7 @@ It should show:
 
 ![](/assets/initial RAP3 screen.png)
 
-Because the Apache server needs to write files and create directories, it is necessary that it has a shell. You can check this in the file `/etc/passwd`. This file contains a line that starts with `daemon`, which is the user of the Apache server.
+Because the Apache server needs to write files and create directories, it is necessary that it has a shell. I checked this in the file `/etc/passwd`. This file contains a line that starts with `daemon`, which is the user of the Apache server.
 
 daemon:x:1:1:daemon:/usr/sbin:/bin/bash
 
