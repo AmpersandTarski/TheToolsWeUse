@@ -329,10 +329,12 @@ It requires to execute the following commands:
 
 ```
 cd ~/git/Ampersand-models/RAP3/
-ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
-sudo chgrp -R daemon /home/bitnami/htdocs/RAP3
-sudo chmod -R g+w /home/bitnami/htdocs/RAP3
-cp RAP3/include/localSettingsAzure.php /home/bitnami/htdocs/RAP3/localSettings.php
+ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP RAP3.adl
+sudo chgrp -R daemon /home/bitnami/htdocs/RAP4
+sudo chmod -R g+w /home/bitnami/htdocs/RAP4
+cp RAP3/include/localSettingsAzure.php /home/bitnami/htdocs/RAP4/localSettings.php
+sudo rm /home/bitnami/htdocs/RAP3
+sudo mv /home/bitnami/htdocs/RAP4 /home/bitnami/htdocs/RAP3
 ```
 
 Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The `chgrp` and `chmod` commands are necessary to allow the Apache server write access to the RAP3 directory. Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
