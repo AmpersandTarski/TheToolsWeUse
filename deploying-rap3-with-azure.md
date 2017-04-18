@@ -132,11 +132,15 @@ If there are problems, check the Apache server:
 
 * ensure that the following extensions are enabled: curl, mysqli \(you might be able to check that by browsing to {APPURL}/phpinfo.php\).
 
-## 4. Filling the Git repository with Ampersand files and Ampersand models
+## 4. Filling and updating the Git repository with Ampersand files and Ampersand models
 
 To build an Ampersand-compiler, we need the Ampersand source files, which reside in a GitHub repository. We can download these source files on a fresh server, so this step merely requires section 1 to be finished successfully. The RAP3 source files reside in a GitHub repository as well, so we'll just clone both repositories into the server.
 
-Git comes preconfigured in Bitnami's LAMP configuration. I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
+Git comes preconfigured in Bitnami's LAMP configuration.
+
+### First time: make Git repositories
+
+I have used Git on the command line to get the Ampersand source code and the Ampersand model repository cloned onto the server.
 
 I have created `/home/ampersandadmin/git` for storing the local clones. Here is what I did:
 
@@ -171,6 +175,24 @@ You can do the same in the `Ampersand-models` directory. There you must verify t
 `Your branch is up-to-date with 'origin/master'.`
 
 `nothing to commit, working directory clean`
+
+### Subsequent use: update Git repositories
+
+To update RAP3 to a new version, I have pulled the sources from the Github repository into the git-repository on Wolfram:
+
+```
+cd ~/git/Ampersand-models/
+git fetch
+git pull
+```
+
+To update the Ampersand compiler to to a new version, I have pulled the sources from the Github repository into the git-repository on Wolfram:
+
+```
+cd ~/git/Ampersand/
+git fetch
+git pull
+```
 
 ## 5. Installing Haskell
 
