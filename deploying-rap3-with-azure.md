@@ -313,7 +313,15 @@ bitnami@Wolfram:~$  sudo apt-get install smartgit
 
 I have not yet figured out how to run Smartgit on this machine.
 
-## 9. Generating the RAP3 application
+## 9. Local Settings
+
+To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
+
+Logging can be switched on and off \(or tuned\) in your `localsettings.php` file.
+
+I have made a file called `localSettingsAzure.php`, to use for copying the right settings just after RAP3 has been updated from GitHub. The `localSettings.php` in GitHUb is of course not the one needed in Wolfram.
+
+## 10. Generating the RAP3 application
 
 To generate the code of the RAP3 web-application, you need to run the Ampersand compiler on the RAP3 source code. So, this step requires sections 4 and 6 to be finished successfully.
 
@@ -324,6 +332,7 @@ cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
 sudo chgrp -R daemon /home/bitnami/htdocs/RAP3
 sudo chmod -R g+w /home/bitnami/htdocs/RAP3
+cp RAP3/include/localSettingsAzure.php /home/bitnami/htdocs/RAP3/localSettings.php
 ```
 
 Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The `chgrp` and `chmod` commands are necessary to allow the Apache server write access to the RAP3 directory. Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
@@ -336,12 +345,6 @@ git status
 If, for whatever reason, you want to delete earlier versions of the deployed RAP3-code, use this command:
 
 `rm -r -f -d /home/bitnami/htdocs/RAP3`
-
-## 10. Local Settings
-
-To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
-
-Logging can be switched on and off \(or tuned\) in your `localsettings.php` file.
 
 ## 11. Last minute changes before going to production
 
