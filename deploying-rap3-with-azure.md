@@ -333,6 +333,7 @@ ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP RAP3
 sudo chgrp -R daemon /home/bitnami/htdocs/RAP
 sudo chmod -R g+w /home/bitnami/htdocs/RAP
 sudo cp ./include/localSettingsAzure.php /home/bitnami/htdocs/RAP/localSettings.php
+sudo rm -rf RAP.bak
 sudo mv /home/bitnami/htdocs/RAP3 /home/bitnami/htdocs/RAP.bak
 sudo mv /home/bitnami/htdocs/RAP /home/bitnami/htdocs/RAP3
 
@@ -355,13 +356,27 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
    1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
    2. enable "RAP3\_LoginForProduction.ifc"
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
-2. Edit the file `/home/ampersandadmin/git/RAP3/include/localsettings.php` and follow instructions in it before going live.
+2. Edit the file `/home/ampersandadmin/git/RAP3/include/localSettingsAzure.php` and follow instructions in it. Make sure to copy it to `/home/bitnami/htdocs/RAP3/localSettings.php` before going live.
 
 ## 12. Security measures
 
 1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users%29\)
 2. Apache: see [https://httpd.apache.org/docs/trunk/misc/security\_tips.html](https://httpd.apache.org/docs/trunk/misc/security_tips.html)
 3. HTTPS-cookies need a flag "Secure", "HHTP-only", and "Samesite". This needs to be addressed in the Ampersand code; not in the deployment.
+
+## 13. Troubleshooting
+
+### 13.1 When reinstalling the database ...
+
+A symptom of installation problems with the database is excessive waiting for a reponse, while "Hello, world!" is in the browser screen. It does take a while, because all rules must be checked. However, anything over 10 minutes is excessive.
+
+If the browser shows messages in this process, check whether a database exists in the first place. \(See step 2 for instructions\). If there is no database, check the file `/home/bitnami/htdocs/RAP/localSettings.php`
+
+Check the database credentials \(dbUser, dbHost, dbPassword; do not set dbName\) in the local settings. And make sure that `Config::set('productionEnv', 'global', false)` is set to enable the database-reinstall. Be sure to set it back to `true` after a new database is made.
+
+
+
+
 
 
 
