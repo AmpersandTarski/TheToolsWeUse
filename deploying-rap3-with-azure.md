@@ -336,7 +336,6 @@ sudo cp ./include/localSettingsAzure.php /home/bitnami/htdocs/RAP/localSettings.
 sudo rm -rf RAP.bak
 sudo mv /home/bitnami/htdocs/RAP3 /home/bitnami/htdocs/RAP.bak
 sudo mv /home/bitnami/htdocs/RAP /home/bitnami/htdocs/RAP3
-
 ```
 
 Generating RAP3 takes a while. If everything works out, the compiler terminates with the message: "Finished processing your model." Whenever I want to monitor progress, I have appended `--verbose` to the `ampersand` command, to get information about intermediate results. I used the `chgrp` and `chmod` commands to allow the Apache server write access to the RAP3 directory. Generating everything first to a new directory, RAP, keeps the downtime between updates low for the user. Before compiling RAP3, I checked the version and the current branch of the RAP3 source code:
@@ -372,11 +371,6 @@ A symptom of installation problems with the database is excessive waiting for a 
 
 If the browser shows messages in this process, check whether a database exists in the first place. \(See step 2 for instructions\). If there is no database, check the file `/home/bitnami/htdocs/RAP/localSettings.php`
 
-Check the database credentials \(dbUser, dbHost, dbPassword; do not set dbName\) in the local settings. And make sure that `Config::set('productionEnv', 'global', false)` is set to enable the database-reinstall. Be sure to set it back to `true` after a new database is made.
-
-
-
-
-
-
+Check the database credentials \(`dbUser`, `dbHost`, `dbPassword`\) are set to the correct values in the local settings. Do not set `dbName`. Make sure that `Config::set('productionEnv', 'global', false)` is set to enable reinstallation of the database.  
+Be sure to set it back to `true` after a new database is made.
 
