@@ -359,9 +359,11 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
 
 ## 12. Security measures
 
+The following measures have to be taken. Currently, they are not in effect.
+
 1. SSH configuration: prevent that outside users log in as daemon \(nor as root\) \(see for example [http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users\](http://serverfault.com/questions/285800/how-to-disable-ssh-login-with-password-for-some-users%29\)
 2. Apache: see [https://httpd.apache.org/docs/trunk/misc/security\_tips.html](https://httpd.apache.org/docs/trunk/misc/security_tips.html)
-3. HTTPS-cookies need a flag "Secure", "HHTP-only", and "Samesite". This needs to be addressed in the Ampersand code; not in the deployment.
+3. HTTPS-cookies need a flag "Secure", "HHTP-only", and "Samesite". This needs to be addressed in the application code; not in the deployment.
 
 ## 13. Troubleshooting
 
