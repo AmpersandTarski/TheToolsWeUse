@@ -182,15 +182,13 @@ To update RAP3 to a new version, I have pulled the sources from the Github repos
 
 ```
 cd ~/git/Ampersand-models/
-git fetch
 git pull
 ```
 
-To update the Ampersand compiler to to a new version, I have pulled the sources from the Github repository into the git-repository on Wolfram:
+This works, because a pull action does a fetch automatically. To update the Ampersand compiler to to a new version, I have pulled the sources from the Github repository into the git-repository on Wolfram:
 
 ```
 cd ~/git/Ampersand/
-git fetch
 git pull
 ```
 
@@ -328,6 +326,8 @@ To generate the code of the RAP3 web-application, you need to run the Ampersand 
 It requires to execute the following commands:
 
 ```
+ cd ~/git/Ampersand-models/
+git pull
 cd ~/git/Ampersand-models/RAP3/
 ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP RAP3.adl
 sudo chgrp -R daemon /home/bitnami/htdocs/RAP
@@ -335,6 +335,7 @@ sudo chmod -R g+w /home/bitnami/htdocs/RAP
 sudo cp ./include/localSettingsAzure.php /home/bitnami/htdocs/RAP/localSettings.php
 sudo mv /home/bitnami/htdocs/RAP3 /home/bitnami/htdocs/RAP.bak
 sudo mv /home/bitnami/htdocs/RAP /home/bitnami/htdocs/RAP3
+
 ```
 
 Generating RAP3 takes a while. If everything works out, the compiler terminates with the message: "Finished processing your model." Whenever I want to monitor progress, I have appended `--verbose` to the `ampersand` command, to get information about intermediate results. I used the `chgrp` and `chmod` commands to allow the Apache server write access to the RAP3 directory. Generating everything first to a new directory, RAP, keeps the downtime between updates low for the user. Before compiling RAP3, I checked the version and the current branch of the RAP3 source code:
