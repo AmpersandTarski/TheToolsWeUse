@@ -309,7 +309,7 @@ bitnami@Wolfram:~$  sudo apt-get update
 bitnami@Wolfram:~$  sudo apt-get install smartgit
 ```
 
-I have not yet figured out how to run Smartgit on this machine.
+I have not yet figured out how to run Smartgit. I presume to have to make a graphical terminal tunnel of some sort to run it.
 
 ## 9. Local Settings
 
