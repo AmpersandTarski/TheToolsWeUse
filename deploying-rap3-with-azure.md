@@ -375,7 +375,11 @@ Be sure to set it back to `true` after a new database is made.
 
 ### 31.2 Deadlock on all signals table
 
-At some point in time, while Stef and Han were accessing RAP3 in different sessions, we got a timeout \(See [this issue](https://github.com/AmpersandTarski/Ampersand/issues/662)\). While unsure what the exact problem is, we guessed that the all\_sessions table could cause this problem. 
+At some point in time, while Stef and Han were accessing RAP3 in different sessions, we got a timeout \(See [this issue](https://github.com/AmpersandTarski/Ampersand/issues/662)\). While unsure what the exact problem is, we guessed that the all\_sessions table could cause this problem.
+
+After googleing around, I decided that it might be a good idea to increase the timeout value. So I added the following line into the file /opt/bitnami/mysql/my.cnf :
+
+> innodb\_lock\_wait\_timeout=120
 
 
 
