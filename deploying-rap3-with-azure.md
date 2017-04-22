@@ -333,7 +333,6 @@ ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP RAP3
 sudo chgrp -R daemon /home/bitnami/htdocs/RAP
 sudo chmod -R g+w /home/bitnami/htdocs/RAP
 sudo cp ./include/localSettingsAzure.php /home/bitnami/htdocs/RAP/localSettings.php
-
 ```
 
 Generating RAP3 takes a while. If everything works out, the compiler terminates with the message: "Finished processing your model." Whenever I want to monitor progress, I have appended `--verbose` to the `ampersand` command, to get information about intermediate results. I used the `chgrp` and `chmod` commands to allow the Apache server write access to the RAP3 directory. Generating everything first to a new directory, RAP, keeps the downtime between updates low for the user. Before compiling RAP3, I checked the version and the current branch of the RAP3 source code:
@@ -373,4 +372,10 @@ If the browser shows messages in this process, check whether a database exists i
 
 Check the database credentials \(`dbUser`, `dbHost`, `dbPassword`\) are set to the correct values in the local settings. Do not set `dbName`. Make sure that `Config::set('productionEnv', 'global', false)` is set to enable reinstallation of the database.  
 Be sure to set it back to `true` after a new database is made.
+
+### 31.2 Deadlock on all signals table
+
+At some point in time, while Stef and Han were accessing RAP3 in different sessions, we got a timeout. \(See \[this issue\]\(https://github.com/AmpersandTarski/Ampersand/issues/662\)\)
+
+
 
