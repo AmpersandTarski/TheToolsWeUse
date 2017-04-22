@@ -379,7 +379,7 @@ At some point in time, while Stef and Han were accessing RAP3 in different sessi
 
 After googleing around, I decided that it might be a good idea to increase the timeout value. So I added the following line into the file /opt/bitnami/mysql/my.cnf :
 
-> innodb\_lock\_wait\_timeout=120
+> innodb\_lock\_wait\_timeout=600
 
 
 
