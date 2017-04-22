@@ -386,5 +386,7 @@ After googleing around, I decided that it might be a good idea to increase the t
 
 Also, because we do not know what is going on, I decided to enable the logging of deadlocks:
 
-[innodb\_print\_all\_deadlocks](https://dev.mysql.com/doc/refman/5.5/en/innodb-parameters.html#sysvar_innodb_print_all_deadlocks) = ON
+> innodb print all deadlocks = ON
+
+
 
