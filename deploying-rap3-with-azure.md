@@ -334,8 +334,8 @@ git pull
 cd ~/git/Ampersand-models/RAP3/
 sudo chown -R bitnami /home/bitnami/htdocs/RAP3
 ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl --verbose
-sudo chgrp -R daemon /home/bitnami/htdocs/RAP
-sudo chmod -R g+w /home/bitnami/htdocs/RAP
+sudo chgrp -R daemon /home/bitnami/htdocs/RAP3
+sudo chmod -R g+w /home/bitnami/htdocs/RAP3
 sudo cp ./include/localSettingsAzure.php /home/bitnami/htdocs/RAP/localSettings.php
 ```
 
