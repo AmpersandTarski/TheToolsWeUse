@@ -46,15 +46,41 @@ The following settings were \(or will be\) made:
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server".
+The reason to pick CoreOS as flavour for Linux is that this is a minimal installation especially directed towards container computing.
+
+I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server". I have verified the machine was live by logging in via Putty \(a popular SSH-client\).
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
 
 * if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/\](https://letsencrypt.org/%29\) 
 
-## 2. Getting MySQL and phpMyAdmin to work
+## 2. Installing Docker
 
-To run RAP3 requires Apache and MySQL. Both are already installed on the server. However, you need the database administrator password to set it up for Ampersand. This step requires a server, so you must have finished section 1 successfully.
+This step requires a server, so you must have finished section 1 successfully. To install docker I followed the following steps in the given order:
+
+| step | Linux command |
+| :--- | :--- |
+| To work as root | sudo -i |
+| To obtain docker-compose | /usr/bin/mkdir -p /opt/bin/ |
+|  | /usr/bin/curl -o /opt/bin/docker-compose -sL https://github.com/docker/compose/releases/download/1.11.1/run.sh |
+|  | /usr/bin/chmod +x /opt/bin/docker-compose |
+| To add the current user \(ampersandadmin\) to the docker group | usermod -aG docker $\(whoami\) |
+| To start the docker daemon | systemctl enable docker |
+| now reboot the machine | reboot |
+
+I checked that docker is running by:
+
+docker ps
+
+
+
+I checked that docker-compose is available by:
+
+which docker-compose
+
+## 3. Getting MySQL and phpMyAdmin to work
+
+To run RAP3 requires Apache and MySQL. Both are already installed on the server. However, you need the database administrator password to set it up for Ampersand. This step requires docker, so you must have finished section 2 successfully.
 
 To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8080/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
 
@@ -64,9 +90,9 @@ After logging into phpMyAdmin as root, I created a user called 'ampersand' with 
 
 ![](/assets/MySQL authorization.png)
 
-## 3. Uploading and running RAP3
+## 4. Uploading and running RAP3
 
-
+If you have a complete installation of RAP3, you can upload it on the system.
 
 You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
 
@@ -74,11 +100,7 @@ It should show:
 
 ![](/assets/initial RAP3 screen.png)
 
-
-
-## 4. Filling the Git repository with Ampersand files and Ampersand models
-
-
+## 5. Filling the Git repository with Ampersand files and Ampersand models
 
 To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
 
@@ -102,15 +124,13 @@ You can do the same in the `Ampersand-models` directory. There you must verify t
 
 `nothing to commit, working directory clean`
 
-## 5. Installing Haskell
+## 6. Installing Haskell
 
-In order to build an Ampersand-compiler, we need a Haskell installation. This can be done on a clean machine, so this step merely requires section 1 to be finished successfully.
+In order to build an Ampersand-compiler, we need a Haskell installation. This can be done on a clean machine, so this step requires section 2 to be finished successfully.
 
+## 7. Creating an Ampersand-compiler
 
-
-## 6. Creating an Ampersand-compiler
-
-To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 4 and 5 to be finished successfully.
+To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 5 and 6 to be finished successfully.
 
 Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
 
@@ -122,7 +142,7 @@ Having the source code of the Ampersand-compiler on the system, I created an exe
 
 A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It got stuck without any hints about what is wrong. It did succeed on a 4-core 8GB configuration \(A4\).
 
-## 7. Installing LaTeX and GraphViz
+## 8. Installing LaTeX and GraphViz
 
 When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
 
@@ -144,7 +164,7 @@ That too worked.
 
 ## 9. Generating the RAP3 application
 
-To generate the code of the RAP3 web-application, you need to run the Ampersand compiler on the RAP3 source code. So, this step requires sections 4 and 6 to be finished successfully.
+To generate the code of the RAP3 web-application, you need to run the Ampersand compiler on the RAP3 source code. So, this step requires sections 5 and 7 to be finished successfully.
 
 It requires to execute the following commands:
 
@@ -167,7 +187,7 @@ If, for whatever reason, you want to delete earlier versions of the deployed RAP
 
 ## 10. Local Settings
 
-To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
+To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 5 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
 ## 11. Last minute changes before going to production
 
