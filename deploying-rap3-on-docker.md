@@ -23,30 +23,30 @@ The following settings were \(or will be\) made:
 
 |  |  |
 | :--- | :--- |
-| server name | Wolfram |
-| type VM-disk | HDD |
-| OS | Ubuntu 14.04.5 |
-| configuration | Bitnami LAMP 5.6.27-0 |
+| server name | gunther |
+| type VM-disk | SDD |
+| OS | Linux |
+| configuration | CoreOS |
 | documentation | [https://docs.bitnami.com/azure/infrastructure/lamp](https://docs.bitnami.com/azure/infrastructure/lamp) |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | Ampersand |
 | location \(in Azure\) | Western Europe |
-| Size | 4 core, 8 GB, 8 disks, Max. IOP's 8x500 |
+| Size | Standard DS2 v2 \(2 kernen, 7 GB geheugen\) |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
-| Public IP-adres | 52.174.4.78 |
-| PHP version \(RAP3 requires PHP version 5.6 or higher\) | 5.6.27 |
-| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /home/bitnami/htdocs |
-| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | daemon \(this name is set in /opt/bitnami/apache2/conf/original/httpd.conf\) |
+| Public IP-adres | 40.68.94.177 |
+| PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
+| `{APPDIR}`=  the directory into which the RAP3 files will be deployed |  |
+| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
 | `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-I have been able to access this machine through SSH, using the Admin user name and password. I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server".
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
 
