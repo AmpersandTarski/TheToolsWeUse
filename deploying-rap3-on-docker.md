@@ -19,25 +19,30 @@ Each step in the installation process gets a separate section in this text. It i
 
 I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked LAMP by Bitnami.
 
+
+
 The following settings were \(or will be\) made:
 
 |  |  |
 | :--- | :--- |
-| server name | gunther |
+| subscription in Azure | Ordina TC - RT O Pega - Learning |
+| server name | Wolfram |
 | type VM-disk | SDD |
+| Virtueel netwerk | AmpersandRAP3-vnet |
+| subnet | default \(10.0.0.0/24\) |
 | OS | Linux |
 | configuration | CoreOS |
-| documentation | [https://docs.bitnami.com/azure/infrastructure/lamp](https://docs.bitnami.com/azure/infrastructure/lamp) |
+| documentation | https://coreos.com/os/docs/latest/booting-on-azure.html |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
-| Resource group \(in Azure\) | Ampersand |
+| Resource group \(in Azure\) | AmpersandRAP3 |
 | location \(in Azure\) | Western Europe |
-| Size | Standard DS2 v2 \(2 kernen, 7 GB geheugen\) |
+| Size | Standard DS11 v2 \(2 kernen, 14 GB geheugen\) |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
-| Public IP-adres | 40.68.94.177 |
+| Public IP-adres | 52.232.97.91 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed |  |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
@@ -62,7 +67,7 @@ This step requires a server, so you must have finished section 1 successfully. T
 | :--- | :--- |
 | To work as root | sudo -i |
 | To obtain docker-compose | /usr/bin/mkdir -p /opt/bin/ |
-|  | /usr/bin/curl -o /opt/bin/docker-compose -sL https://github.com/docker/compose/releases/download/1.11.1/run.sh |
+|  | /usr/bin/curl -o /opt/bin/docker-compose -sL [https://github.com/docker/compose/releases/download/1.11.1/run.sh](https://github.com/docker/compose/releases/download/1.11.1/run.sh) |
 |  | /usr/bin/chmod +x /opt/bin/docker-compose |
 | To add the current user \(ampersandadmin\) to the docker group | usermod -aG docker $\(whoami\) |
 | To start the docker daemon | systemctl enable docker |
@@ -72,9 +77,8 @@ I checked that docker is running by:
 
 docker ps
 
-
-
-I checked that docker-compose is available by:
+I checked that docker-compose is available  
+ by:
 
 which docker-compose
 
