@@ -19,8 +19,6 @@ Each step in the installation process gets a separate section in this text. It i
 
 I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked LAMP by Bitnami.
 
-
-
 The following settings were \(or will be\) made:
 
 |  |  |
@@ -32,7 +30,7 @@ The following settings were \(or will be\) made:
 | subnet | default \(10.0.0.0/24\) |
 | OS | Linux |
 | configuration | CoreOS |
-| documentation | https://coreos.com/os/docs/latest/booting-on-azure.html |
+| documentation | [https://coreos.com/os/docs/latest/booting-on-azure.html](https://coreos.com/os/docs/latest/booting-on-azure.html) |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | AmpersandRAP3 |
