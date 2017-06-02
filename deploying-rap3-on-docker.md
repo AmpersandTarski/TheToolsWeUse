@@ -17,9 +17,9 @@ Each step in the installation process gets a separate section in this text. It i
 
 ## 1. Setting up the virtual machine
 
-I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked LAMP by Bitnami.
+I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked CoreOS, which seems to be made as a barebones platform for docker installations.
 
-The following settings were \(or will be\) made:
+The following settings were made:
 
 |  |  |
 | :--- | :--- |
@@ -40,7 +40,7 @@ The following settings were \(or will be\) made:
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
-| Public IP-adres | 52.232.97.91 |
+| Public IP-adres | 52.232.97.91 \(static\) |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed |  |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
@@ -82,9 +82,44 @@ which docker-compose
 
 ## 3. Making a Docker image
 
-I cloned `https://github.com/wentinkj/docker-ampersand` into `/home/ampersandadmin/docker-ampersand`
+I cloned `https://github.com/wentinkj/docker-ampersand` \(commit 04c4023\) into `/home/ampersandadmin/docker-ampersand`
 
-Then I ran the command `docker build -t ampersand:latest ampersand` and sat back \(for over an hour\) to watch an image being created.
+Then I ran the command `docker build -t ampersand:latest ampersand` and sat back to watch an image being created. This takes over an hour. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
+
+```
+Wolfram docker-ampersand # docker build -t ampersand:latest ampersand
+Sending build context to Docker daemon 4.096 kB
+Step 1 : FROM php:7-apache
+ ---> 2720c02fc079
+Step 2 : ENV PATH /texlive/bin/x86_64-linux:$PATH
+ ---> Using cache
+ ---> 45d62477f5e2
+Step 3 : RUN apt-get update  && apt-get install -y --no-install-recommends git graphviz wget xorriso  && curl -sSL https://get.haskellstack.org/ | /bin/sh  && rm -rf /var/lib/apt/lists/*
+ ---> Using cache
+ ---> e37542ec9301
+Step 4 : ENV TL_VERSION 2016-20160523
+ ---> Using cache
+ ---> f95346ded414
+Step 5 : ADD texlive.profile /tmp
+ ---> Using cache
+ ---> add9fd911c38
+Step 6 : RUN cd ~  && wget -q   http://mirrors.ctan.org/systems/texlive/Images/texlive$TL_VERSION.iso  && wget -qO- http://mirrors.ctan.org/systems/texlive/Images/texlive$TL_VERSION.iso.sha512 | sha512sum -c  && osirrox -report_about NOTE -indev texlive$TL_VERSION.iso -extract / /usr/src/texlive  && rm texlive$TL_VERSION.iso  && /usr/src/texlive/install-tl -profile /tmp/texlive.profile  && rm -rf /usr/src/texlive  && rm /tmp/texlive.profile
+ ---> Using cache
+ ---> f0ebcd4cf50c
+Step 7 : RUN mkdir ~/git  && cd ~/git  && git clone --branch development https://github.com/AmpersandTarski/Ampersand
+ ---> Using cache
+ ---> 08643d5cce73
+Step 8 : RUN cd ~/git/Ampersand  && stack setup  && stack install --local-bin-path /usr/local/bin
+ ---> Using cache
+ ---> 636036e98214
+Step 9 : RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"  && php composer-setup.php --install-dir=/usr/local/bin --filename=composer  && php -r "unlink('composer-setup.php');"
+ ---> Using cache
+ ---> e8648c6657f6
+Successfully built e8648c6657f6
+
+```
+
+
 
 ## 10. Local Settings
 
