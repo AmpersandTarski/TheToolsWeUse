@@ -59,7 +59,7 @@ TODO: make sure that `{APPHOST}` can be found by DNS.
 
 ## 2. Installing Docker
 
-This step requires a server, so you must have finished section 1 successfully. To install docker I followed the following steps in the given order:
+This step requires a server, so you must have finished section 1 successfully.  Docker is used to simplify the deployment of RAP and make this installation portable to many different computers. To install docker I followed the following steps in the given order:
 
 | step | Linux command |
 | :--- | :--- |
@@ -80,112 +80,11 @@ I checked that docker-compose is available
 
 which docker-compose
 
-## 3. Getting MySQL and phpMyAdmin to work
+## 3. Making a Docker image
 
-To run RAP3 requires Apache and MySQL. Both are already installed on the server. However, you need the database administrator password to set it up for Ampersand. This step requires docker, so you must have finished section 2 successfully.
+I cloned `https://github.com/wentinkj/docker-ampersand` into `/home/ampersandadmin/docker-ampersand`
 
-To get into phpMyAdmin can only be done in localhost. This requires an SSH-tunnel into the server. The instruction is found on [https://docs.bitnami.com/azure/components/phpmyadmin](https://docs.bitnami.com/azure/components/phpmyadmin). I got it done using PuTTY as my SSH-client. Upon success, you can log in to phpMyAdmin in your browser using [http://127.0.0.1:8080/phpmyadmin](http://127.0.0.1:8888/phpmyadmin)  \(case sensitive!\)
-
-The initial password for phpMyAdmin is specified in the .yml file.
-
-After logging into phpMyAdmin as root, I created a user called 'ampersand' with password 'ampersand' and host 'localhost', in compliance with the defaults used in the Ampersand compiler. I have issued limited authorizations:
-
-![](/assets/MySQL authorization.png)
-
-## 4. Uploading and running RAP3
-
-If you have a complete installation of RAP3, you can upload it on the system.
-
-You can test whether this is successful by browsing to `52.174.4.78/RAP3/`
-
-It should show:
-
-![](/assets/initial RAP3 screen.png)
-
-## 5. Filling the Git repository with Ampersand files and Ampersand models
-
-To verify that the Ampersand clone has succeeded and that you are in the development branch, navigate to `~/git/Ampersand` and ask for the Git status:
-
-`bitnami@Wolfram:~/git/Ampersand$ git status`
-
-`On branch development`
-
-`Your branch is up-to-date with 'origin/development'.`
-
-`nothing to commit, working directory clean`
-
-You can do the same in the `Ampersand-models` directory. There you must verify that you are in the master branch:
-
-`bitnami@Wolfram:~/git/Ampersand$ cd ../Ampersand-models/`
-
-`bitnami@Wolfram:~/git/Ampersand-models$ git status`
-
-`On branch master`
-
-`Your branch is up-to-date with 'origin/master'.`
-
-`nothing to commit, working directory clean`
-
-## 6. Installing Haskell
-
-In order to build an Ampersand-compiler, we need a Haskell installation. This can be done on a clean machine, so this step requires section 2 to be finished successfully.
-
-## 7. Creating an Ampersand-compiler
-
-To generate RAP3 we need an Ampersand-compiler. The RAP3 user will also use that compiler. For both reasons, we need a working Ampersand compiler on the server. This step requires sections 5 and 6 to be finished successfully.
-
-Having the source code of the Ampersand-compiler on the system, I created an executable by running `stack install`. Here is what I did:
-
-`cd ~/git/Ampersand`
-
-`stack setup`
-
-`stack install`
-
-A 1-core machine with 1.75GB memory has been shown too small to build the Ampersand-compiler. In that case, stack install does not show any progress. It got stuck without any hints about what is wrong. It did succeed on a 4-core 8GB configuration \(A4\).
-
-## 8. Installing LaTeX and GraphViz
-
-When the RAP3-user generates documentation, RAP3 will call on pdflatex, neato and dot. For this purpose we must install LaTeX and GraphViz. This can be done on a fresh server, so this step only requires section 1 to be finished successfully.
-
-As RAP3 lets the user generate documentation, Ampersand needs the command `pdflatex` . For that purpose I installed:
-
-`bitnami@Wolfram:~$ sudo apt-get install texlive`
-
-That worked.
-
-For generating pictures, Ampersand needs the commands `dot` and `neato`. For that purpose I installed:
-
-```
-bitnami@Wolfram:~$ sudo apt-get install graphviz
-```
-
-That too worked.
-
-## 
-
-## 9. Generating the RAP3 application
-
-To generate the code of the RAP3 web-application, you need to run the Ampersand compiler on the RAP3 source code. So, this step requires sections 5 and 7 to be finished successfully.
-
-It requires to execute the following commands:
-
-```
-cd ~/git/Ampersand-models/RAP3/
-ampersand --meta-tables --add-semantic-metamodel -p/home/bitnami/htdocs/RAP3 RAP3.adl
-chmod 757 /home/bitnami/htdocs/RAP3/log
-```
-
-Generating RAP3 might take a while. If everything works out, the compiler will terminate with the message: "Finished processing your model." If you want to monitor progress, append `--verbose` to the `ampersand` command. It will inform you of intermediate results. The chmod command is needed to ensure that your log directory is writable, in case RAP3 does logging. Logging can be switched on and off in your `localsettings.php` file.  Before compiling RAP3, you may want to check the version and the current branch of the RAP3 source code:
-
-```
-cd ~/git/Ampersand-models/
-git status
-```
-
-If, for whatever reason, you want to delete earlier versions of the deployed RAP3-code, use this command:
-
-`rm -r -f -d /home/bitnami/htdocs/RAP3`
+Then I ran the command `docker build -t ampersand:latest ampersand` and sat back \(for over an hour\) to watch an image being created.
 
 ## 10. Local Settings
 
