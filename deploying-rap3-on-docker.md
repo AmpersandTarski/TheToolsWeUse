@@ -55,8 +55,6 @@ The following settings were made:
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-
-
 I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server". I have verified the machine was live by logging in via Putty \(a popular SSH-client\).
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
