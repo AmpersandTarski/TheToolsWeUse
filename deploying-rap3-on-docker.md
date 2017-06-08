@@ -13,11 +13,17 @@ This chapter is an account of the installation process. It serves the following 
 3. It contains all information needed to make a deployment script for automated deployment.  
    We want to automate deployment, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
-Each step in the installation process gets a separate section in this text. It is not necessary to do them in the given order.dir
+## 0. Deployment approach
+
+To automate the deployment, docker is at the heart of the deployment process. Docker is used to simplify the deployment of RAP and make this installation portable to many different computers.
+
+We took a simple Linux machine, installed docker, and built docker images for RAP3 and created three containers: db, rap3, and phptools. The first one, db, runs MariaDB and contains the administration of RAP3 and the Ampersand scripts of users. The rap3 container contains the RAP3 application proper. It is accessed on port 80. The container phptools is present for maintainers to inspect the database through phpMyAdmin. It is accessible through port 8080.
+
+Each step in the installation process is described by a separate section in the sequel.
 
 ## 1. Setting up the virtual machine
 
-I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina, using the Azure subscription named 'Ordina TC - RT O Pega - Learning'. Azure offers preconfigured installations to kick-start a virtual machine. I picked CoreOS, which seems to be made as a barebones platform for docker installations.
+I needed an Azure account to enter the Azure portal and install a server for Ampersand. I got my account from Ordina. Azure offers preconfigured installations to kick-start a virtual machine. In principle any server that runs docker will work. I picked CoreOS, which is a minimal Linux platform and suitable for container computing with docker.
 
 The following settings were made:
 
@@ -49,7 +55,7 @@ The following settings were made:
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-The reason to pick CoreOS as flavour for Linux is that this is a minimal installation especially directed towards container computing.
+
 
 I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server". I have verified the machine was live by logging in via Putty \(a popular SSH-client\).
 
@@ -57,9 +63,18 @@ TODO: make sure that `{APPHOST}` can be found by DNS.
 
 * if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/\](https://letsencrypt.org/%29\) 
 
-## 2. Installing Docker
+## 2. Port settings
 
-This step requires a server, so you must have finished section 1 successfully.  Docker is used to simplify the deployment of RAP and make this installation portable to many different computers. To install docker I followed the following steps in the given order:
+In order to access the database, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `netwerkinterfaces > beveiligingsgroep > inkomende beveiligingsregels`. Two rules were added:
+
+1. A rule called http, which makes the server listen to port 80/TCP.
+2. A rule called phpmyadmin, which makes the server listen to port 8080/TCP.
+
+No rule was added for the database, so the database is only open to phpMyAdmin and RAP3, or from within its container.
+
+## 3. Installing Docker
+
+This step requires a server, so you must have finished section 1 successfully. To install docker I followed the following steps in the given order:
 
 | step | Linux command |
 | :--- | :--- |
@@ -80,9 +95,11 @@ I checked that docker-compose is available
 
 which docker-compose
 
-## 3. Making a Docker image
+To check whether ampersandadmin is member of the docker group, use command id`. Then logout and login again.`
 
-I cloned `https://github.com/wentinkj/docker-ampersand` \(commit 04c4023\) into `/home/ampersandadmin/docker-ampersand`
+## 4. Making a Docker image
+
+This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/wentinkj/docker-ampersand` \(commit 04c4023\) into `/home/ampersandadmin/docker-ampersand`
 
 Then I ran the command `docker build -t ampersand:latest ampersand` and sat back to watch an image being created. This takes over an hour. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
 
@@ -116,10 +133,38 @@ Step 9 : RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.p
  ---> Using cache
  ---> e8648c6657f6
 Successfully built e8648c6657f6
-
 ```
 
+## 5. Making containers.
 
+This step requires a server with docker and images to build containers with. So you must have finished section 4 successfully. We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
+
+```
+cd /home/ampersandadmin/docker-ampersand call
+docker-compose up -d
+```
+
+This command brings all three containers up, for which it requires the file `docker-compose.ymlt`to be available in the current directory.
+
+I checked whether the containers are running by means of the `docker ps` command.
+
+Completion of this step allowed access to RAP3 from an arbitrary computer on the internet:
+
+![](/assets/import.png)
+
+The database is accessible on port 8080:
+
+![](/assets/phpMyAdmin.png)
+
+## Maintenance
+
+The `docker-compose up` command aggregates the output of each container. When the command exits, all containers are stopped. Running `docker-compose up -d` starts the containers in the background and leaves them running.
+
+To interfere with RAP3 as it is running, you need to get into the Rap3 container. It is not enough just being on the server, because all the data is in the container \(rather than directly on the server\). To go into the Rap3 container, use the command
+
+```
+docker exec -ti dockerampersand_rap3_1 /bin/bash
+```
 
 ## 10. Local Settings
 
