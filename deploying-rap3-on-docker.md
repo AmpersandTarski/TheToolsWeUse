@@ -133,7 +133,7 @@ Step 9 : RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.p
 Successfully built e8648c6657f6
 ```
 
-## 5. Making containers.
+## 5. Making containers
 
 This step requires a server with docker and images to build containers with. So you must have finished section 4 successfully. We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
 
@@ -154,7 +154,7 @@ The database is accessible on port 8080:
 
 ![](/assets/phpMyAdmin.png)
 
-## Maintenance
+## 6. Maintenance
 
 The `docker-compose up` command aggregates the output of each container. When the command exits, all containers are stopped. Running `docker-compose up -d` starts the containers in the background and leaves them running.
 
