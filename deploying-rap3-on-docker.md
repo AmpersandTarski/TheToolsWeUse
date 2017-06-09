@@ -142,7 +142,7 @@ cd /home/ampersandadmin/docker-ampersand call
 docker-compose up -d
 ```
 
-This command brings all three containers up, for which it requires the file `docker-compose.ymlt`to be available in the current directory.
+This command brings all three containers up, for which it requires the file `docker-compose.yml`to be available in the current directory.
 
 I checked whether the containers are running by means of the `docker ps` command.
 
