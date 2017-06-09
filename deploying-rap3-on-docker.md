@@ -138,7 +138,7 @@ Successfully built e8648c6657f6
 This step requires a server with docker and images to build containers with. So you must have finished section 4 successfully. We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
 
 ```
-cd /home/ampersandadmin/docker-ampersand call
+cd /home/ampersandadmin/docker-ampersand
 docker-compose up -d
 ```
 
