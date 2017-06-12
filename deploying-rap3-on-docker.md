@@ -97,7 +97,7 @@ To check whether ampersandadmin is member of the docker group, use command id`. 
 
 ## 4. Making a Docker image
 
-This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/wentinkj/docker-ampersand` \(commit 04c4023\) into `/home/ampersandadmin/docker-ampersand`
+This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand`
 
 Then I ran the command `docker build -t ampersand:latest ampersand` and sat back to watch an image being created. This takes over an hour. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
 
