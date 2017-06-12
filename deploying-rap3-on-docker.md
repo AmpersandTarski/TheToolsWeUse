@@ -63,7 +63,7 @@ TODO: make sure that `{APPHOST}` can be found by DNS.
 
 ## 2. Port settings
 
-In order to access the database, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `netwerkinterfaces > beveiligingsgroep > inkomende beveiligingsregels`. Two rules were added:
+In order to access RAP3 from the internet, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `netwerkinterfaces > beveiligingsgroep > inkomende beveiligingsregels`. Two rules were added:
 
 1. A rule called http, which makes the server listen to port 80/TCP.
 2. A rule called phpmyadmin, which makes the server listen to port 8080/TCP.
