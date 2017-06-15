@@ -2,15 +2,14 @@
 
 In early 2017 the need arose for an Ampersand implementation in Ordina's cloud, to let young professionals get acquainted with Ampersand. We chose to implement RAP3 in Azure, because Ordina has an Azure subscription. RAP3 is the same environment that our students use at the Open Universiteit, so the maintainance of RAP3 can be reused for both target audiences.
 
-This chapter is an account of the installation process. It serves the following purposes:
+This chapter is an account of the deployment of RAP3. You can use it as an example if you want to do it yourself.
 
-1. It is an example for others who want to deploy Ampersand.  
-   We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
+Deployment has been automated using docker, because we want to make the deployment as much as possible automated. The scripts are available in `https://github.com/AmpersandTarski/docker-ampersand/`. This way of deploying means that we can quickly release updates too.
 
-2. It documents the installation we made for Ordina.  
+1. It documents the installation we made for Ordina.  
    We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
 
-3. It contains all information needed to make a deployment script for automated deployment.  
+2. It contains all information needed to make a deployment script for automated deployment.  
    We want to automate deployment, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
 ## 0. Deployment approach
@@ -115,7 +114,6 @@ docker build -t ampersand:latest ampersand
 and sat back to watch an image being created. This takes over an hour. I left the session up and running, because stopping the session means that the docker build process stops. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
 
 ```
-
 Wolfram docker-ampersand # docker build -t ampersand:latest ampersand
 Sending build context to Docker daemon 4.096 kB
 Step 1 : FROM php:7-apache
