@@ -55,7 +55,9 @@ The following settings were made:
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
-I have been able to access this machine through SSH, using the Admin user name and password. In the sequel, I will refer to this machine as "the server". I have verified the machine was live by logging in via Putty \(a popular SSH-client\).
+I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
+
+I have verified the machine was live by logging in via Putty \(a popular SSH-client\). I accessed this machine, using `ampersandadmin@52.232.97.91` and the correct password. In the sequel, I will refer to this machine as "the server".
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
 
@@ -63,7 +65,7 @@ TODO: make sure that `{APPHOST}` can be found by DNS.
 
 ## 2. Port settings
 
-In order to access RAP3 from the internet, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `Resourcegroepen > AmpersandRAP3 > WolframRAP3-nsg (Netwerkbeveiligingsgroep) > inkomende beveiligingsregels`. Two rules were added:
+To perform this step, I didn't wait until step1 was completed. It is sufficient that the Netwerkbeveiligingsgroep `Wolfram-nsg` exists. In order to access RAP3 from the internet, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `Resourcegroepen > AmpersandRAP3 > Wolfram-nsg (Netwerkbeveiligingsgroep) > inkomende beveiligingsregels`. Two rules were added:
 
 1. A rule called http, which makes the server listen to port 80/TCP.
 2. A rule called phpmyadmin, which makes the server listen to port 8080/TCP.
@@ -81,27 +83,39 @@ This step requires a server, so you must have finished section 1 successfully. T
 |  | /usr/bin/curl -o /opt/bin/docker-compose -sL [https://github.com/docker/compose/releases/download/1.11.1/run.sh](https://github.com/docker/compose/releases/download/1.11.1/run.sh) |
 |  | /usr/bin/chmod +x /opt/bin/docker-compose |
 | To add the current user \(ampersandadmin\) to the docker group | usermod -aG docker $\(whoami\) |
-| To start the docker daemon | systemctl enable docker |
+| To start the docker daemon |  |
 | now reboot the machine | reboot |
 
-I checked that docker is running by:
+Of course, the last step \(reboot\) requires reconnecting to the machine.
 
-docker ps
+Then I checked that docker is running by:
+
+```
+ sudo docker ps
+```
 
 I checked that docker-compose is available  
  by:
 
-which docker-compose
+`which docker-compose`
 
-To check whether ampersandadmin is member of the docker group, use command id`. Then logout and login again.`
+To check whether ampersandadmin is member of the docker group, use command cat /etc/group`.`
 
 ## 4. Making a Docker image
 
-This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand`
-
-Then I ran the command `docker build -t ampersand:latest ampersand` and sat back to watch an image being created. This takes over an hour. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
+This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
 
 ```
+sudo -i
+git clone https://github.com/AmpersandTarski/docker-ampersand/ /home/$(whoami)/docker-ampersand
+cd docker-ampersand/
+docker build -t ampersand:latest ampersand
+```
+
+and sat back to watch an image being created. This takes over an hour. I left the session up and running, because stopping the session means that the docker build process stops. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
+
+```
+
 Wolfram docker-ampersand # docker build -t ampersand:latest ampersand
 Sending build context to Docker daemon 4.096 kB
 Step 1 : FROM php:7-apache
@@ -132,6 +146,8 @@ Step 9 : RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.p
  ---> e8648c6657f6
 Successfully built e8648c6657f6
 ```
+
+If you want to leave docker running in the background, while you close your session, `https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/` will help. Best thing is to anticipate on it. However, if you didn't, there is only one option left: send docker to the background by `^Z` and give the `disown -h` command.
 
 ## 5. Making containers
 
