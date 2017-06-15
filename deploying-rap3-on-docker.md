@@ -6,11 +6,7 @@ This chapter is an account of the deployment of RAP3. You can use it as an examp
 
 Deployment has been automated using docker, because we want to make the deployment as much as possible automated. The scripts are available in `https://github.com/AmpersandTarski/docker-ampersand/`. Automated deployment by docker means that we can quickly release updates too.
 
-1. It documents the installation we made for Ordina.  
-   We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
 
-2. It contains all information needed to make a deployment script for automated deployment.  
-   We want to automate deployment, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
 ## 0. Deployment approach
 
