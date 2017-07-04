@@ -6,8 +6,6 @@ This chapter is an account of the deployment of RAP3. You can use it as an examp
 
 Deployment has been automated using docker, because we want to make the deployment as much as possible automated. The scripts are available in `https://github.com/AmpersandTarski/docker-ampersand/`. Automated deployment by docker means that we can quickly release updates too.
 
-
-
 ## 0. Deployment approach
 
 To automate the deployment, docker is at the heart of the deployment process. Docker is used to simplify the deployment of RAP and make this installation portable to many different computers.
@@ -48,7 +46,7 @@ The following settings were made:
 | `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
-| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
+| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) | ampersand.tarski.nl/RAP3 |
 
 I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
 
