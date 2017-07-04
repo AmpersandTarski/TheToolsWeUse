@@ -40,13 +40,13 @@ The following settings were made:
 | Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
 | Public IP-adres | 52.232.97.91 \(static\) |
-| PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
-| `{APPDIR}`=  the directory into which the RAP3 files will be deployed |  |
-| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) |  |
-| `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
+| PHP version \(RAP3 requires PHP version 5.6 or higher\) | PHP 7.1.6 |
+| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /var/www/html/ |
+| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | www\_data |
+| `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) | ampersand.tarski.nl |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
-| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
-| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) | ampersand.tarski.nl/RAP3 |
+| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) | ampersand.tarski.nl/RAP3 |
+| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) | http://ampersand.tarski.nl/RAP3 |
 
 I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
 
