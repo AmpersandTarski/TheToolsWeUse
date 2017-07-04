@@ -46,7 +46,7 @@ The following settings were made:
 | `{APPHOST}` =  the URI of the machine that hosts the SPReg application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) | ampersand.tarski.nl |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) | ampersand.tarski.nl/RAP3 |
-| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) | http://ampersand.tarski.nl/RAP3 |
+| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) | [http://ampersand.tarski.nl/RAP3](http://ampersand.tarski.nl/RAP3) |
 
 I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
 
@@ -139,7 +139,7 @@ Step 9 : RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.p
 Successfully built e8648c6657f6
 ```
 
-If you want to leave docker running in the background, while you close your session, `https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/` will help. Best thing is to anticipate on it. However, if you didn't, there is only one option left: send docker to the background by `^Z` and give the `disown -h` command.
+When you build an image where nothing changes \(as shown above\), this takes virtually no time at all. However, if you run a fresh image from scratch, it takes a while. Should you want to close your SSH-session in which docker is running, that docker process will be killed. If you want to leave docker running in the background, `https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/` will help. Best thing is to anticipate on it. However, if you didn't anticipate this, you can still send docker to the background by `^Z` and give the `disown -h` command. \(The latter is however the least elegant way.\)
 
 ## 5. Making containers
 
