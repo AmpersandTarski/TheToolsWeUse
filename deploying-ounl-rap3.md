@@ -36,7 +36,7 @@ The following settings apply:
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | wwwrun |
-| `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) |  |
+| `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) | rap.cs.ou.nl |
 | `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
 | `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
