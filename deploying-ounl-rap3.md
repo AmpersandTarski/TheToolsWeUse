@@ -23,7 +23,7 @@ The following settings apply:
 
 |  |  |
 | :--- | :--- |
-| server name | lnx-hrl-148v |
+| server name |  lnx-hrl-202v |
 | OS | SUSE Linux Enterprise Server 12 SP2, vs. 12.2 |
 | Admin user name | lru |
 | verification type | password \(Lloyd Rutledge knows the password\) |
@@ -32,7 +32,7 @@ The following settings apply:
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Inbound port: SFTP | TCP/22 |
-| Public IP-adres | 145.20.188.148 |
+| Public IP-adres | 145.20.188.96 |
 | PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | wwwrun |
