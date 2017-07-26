@@ -23,10 +23,10 @@ The following settings apply:
 
 |  |  |
 | :--- | :--- |
-| server name |  lnx-hrl-202v |
-| OS | SUSE Linux Enterprise Server 12 SP2, vs. 12.2 |
-| Admin user name | lru |
-| verification type | password \(Lloyd Rutledge knows the password\) |
+| server name | lnx-hrl-202v |
+| OS | Ubuntu 16.04.2 LTS \(GNU/Linux 4.4.0-83-generic x86\_64\) |
+| Admin user name | sjo |
+| verification type | password \(Stef Joosten knows the password\) |
 | Size | 4 core, 8 GB, 8 disks, Max. IOP's 8x500 |
 | Inbound port: HTTP | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
@@ -49,7 +49,7 @@ standaardpakketten op /opt neerzetten
 
 /var is bedoeld voor logbestanden
 
-I have checked that the server works by browsing to "[http://145.20.188.148/test.php](http://145.20.188.148/test.php)" from outside the OUNL-network. This means that any applicable firewalls allow traffic on port 80 `{APPPORT}`. I have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
+I have checked that the server works by browsing to "[http://145.20.188.96/test.php](http://145.20.188.148/test.php)" from outside the OUNL-network. This means that any applicable firewalls allow traffic on port 80 `{APPPORT}`. I have been able to access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  I have verified the PHP-version  by using the command `php --version`. In the sequel, I will refer to this machine as "the server".
 
 TODO: make sure that `{APPHOST}` can be found by DNS.
 

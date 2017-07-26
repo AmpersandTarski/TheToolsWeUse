@@ -5,15 +5,13 @@
 
 In early 2017 the need arose for an Ampersand implementation in Ordina's cloud, to let young professionals get acquainted with Ampersand. We chose to implement RAP3 in Azure, because Ordina has an Azure subscription. RAP3 is the same environment that our students use at the Open Universiteit, so the maintainance of RAP3 can be reused for both target audiences.
 
-This chapter is an account of the installation process. It serves the following purposes:
+This chapter is an account of the installation process. It is an example for those who want to deploy Ampersand by hand.  
+I suppose this is useless, because we can now deploy Ampersand automatically, using docker. But I cannot exclude there are reasons for doing this.
 
-1. It is an example for others who want to deploy Ampersand.  
-   We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
-
-2. It documents the installation we made for Ordina.  
+1. It documents the installation we made for Ordina.  
    We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
 
-3. It contains all information needed to make a deployment script for automated deployment.  
+2. It contains all information needed to make a deployment script for automated deployment.  
    We want to automate deployment, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
 Each step in the installation process gets a separate section in this text. It is not necessary to do them in the given order.dir
