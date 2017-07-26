@@ -76,6 +76,24 @@ I did the same for `docker-compose`:
 sjo@lnx-hrl-202v:~$ sudo apt install docker-compose
 ```
 
+I checked that everything went successfully by means of the `which`-command:
+
+```
+sjo@lnx-hrl-202v:~$ which docker
+/usr/bin/docker
+sjo@lnx-hrl-202v:~$ which docker-compose
+/usr/bin/docker-compose
+```
+
+## Git
+
+Git comes pre-installed, which I checked by means of the `which`-command:
+
+```
+sjo@lnx-hrl-202v:~$ which git
+/usr/bin/git
+```
+
 ## 10. Local Settings
 
 To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
