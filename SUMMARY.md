@@ -17,4 +17,5 @@
   * [Tutor](functionality-of-rap3/tutor.md)
   * [Account Manager](functionality-of-rap3/account-manager.md)
   * [Graduate Student](functionality-of-rap3/graduate-student.md)
+* [Making Docker images](making-docker-images.md)
 
