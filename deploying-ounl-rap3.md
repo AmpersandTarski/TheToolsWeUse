@@ -42,19 +42,22 @@ The following settings apply:
 | `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
 
 ## Conventions for OU servers
-- `/unload` for source code
-- `/tmp` for temporary files
-- `/opt` for package software
-- `/var` for log files
+
+* `/unload` for source code
+* `/tmp` for temporary files
+* `/opt` for package software
+* `/var` for log files
 
 In the current installation I didn't adhere to these conventions.
 
 ## Getting access to the server
+
 At the OUNL, we need VPN to gain access with SSH to a server. This requires approval from the IT department. I got a raw Ubuntu machine, meaning that the port settings \(specified above\) and VPN have to be requested at the IT-servicedesk.
 
 I can now access this machine through SSH \(using PUTTY, which I downloaded from the Internet\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server". This gave me access through a command line interface \(CLI\). Ubuntu gave me bash as its CLI.
 
 ## Git
+
 With Ubuntu 16.04, Git comes pre-installed. I checked this by means of the `which`-command:
 
 ```
@@ -63,6 +66,7 @@ sjo@lnx-hrl-202v:~$ which git
 ```
 
 ## Installing Docker
+
 Since this is a fresh machine, docker has to be installed. By just typing `docker`, the server advised to install Docker by means of the command `sudo apt install docker.io`. This turned out to be a bad advice, because it resulted in a too old version of docker. Instead, I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
 
 Then I checked that everything went successfully by means of the `which`-command:
@@ -75,42 +79,36 @@ sjo@lnx-hrl-202v:~$ which docker-compose
 ```
 
 ## Obtaining the files we need
-The RAP3 source
-To get the docker files, I used the `wget` command, which gets stuff from the web:
+
+We need only one file: `docker-compose.yml`  
+To get it, I used the `wget` command, which gets stuff from the web:
+
 ```
 sjo@lnx-hrl-202v:~$ mkdir ampersand-models
 sjo@lnx-hrl-202v:~$ cd ampersand-models
-sjo@lnx-hrl-202v:~/ampersand-models$
-sjo@lnx-hrl-202v:~$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand/feature/dockerize/docker/docker-compose-sample.yml
-```
-```
-sjo@lnx-hrl-202v:~$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand/feature/dockerize/docker/Dockerfile.sample
+sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand-models/RAP3/docker-compose.yml
 ```
 
 ## Installing RAP3
-To install RAP3: 
+
+To install RAP3:
+
 ```
 sjo@lnx-hrl-202v:~$ docker up -d
 ```
-To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/`.
-It took a while te get started, because it was building a fresh database.
+
+To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/`.  
+It took a while to get started, because it was building a fresh database.
 
 ## Security
+
 TODO: make sure that `{APPHOST}` can be found by DNS.
 
 * if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/](https://letsencrypt.org/%29%29%29\)
 
 ## 10. Local Settings
 
-To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 4 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
-
-## 11. Last minute changes before going to production
-
-1. In the source code of RAP3, in the file SIAM\_importer.adl:
-   1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
-   2. enable "RAP3\_LoginForProduction.ifc"
-   3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
-2. Read and follow the instructions in `localsettings.php` before going live.
+To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
 
 
