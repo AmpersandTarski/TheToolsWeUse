@@ -4,7 +4,9 @@ Before anyone can deploy an ampersand-repository (RAP3) the following images mus
 - `ampersandtarski/ampersandtarski/ampersand-prototype-db`
 - `ampersandtarski/ampersand-prototype`
 
-This chapter explains the deployment of RAP3 and gives a recipe for creating those images. (If you are only installing, you do not need this chapter.)
+This chapter first explains the deployment of RAP3. Then it gives a recipe for creating those images. It ends with remarks about maintaining RAP3.
+
+If you are only interested in installing RAP3, you do not need this chapter.
 
 ## Requirements for deploying RAP
 Let us first explain the things that need to be done to deploy RAP. After that, there is a cookbook recipe for doing it.
@@ -53,13 +55,6 @@ Some local settings may apply, which are brought together in one file. Use this 
 
 Things that are necessary for testing and development, such as logging, can be changed in the production version. These things are usually adapted shortly before going to production.
 
-# Work in progress!
-
-The application of RAP still is heavily under development. Therefore, this recipe might change. Also, instructions about maintenance will follow. Watch the progress of RAP3 by checking [this issue](https://github.com/AmpersandTarski/Ampersand/issues/449)
-
-## Experience
-
-RAP3 has been installed in different situations. Some of these situations are documented in the sequel. You can use it as example for deployments of your own. A dear wish is to create an installation script that will automate deployment, but we have not yet found the time to do that.
 
 ## Security
 
