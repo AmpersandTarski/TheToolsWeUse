@@ -2,26 +2,21 @@
 
 RAP is a tool that is being used by the Open University of the Netherlands in the course [Rule Based Design](http://portal.ou.nl/web/ontwerpen-met-bedrijfsregels). It lets students analyse Ampersand models, generate functional specifications and make prototypes of information systems. It is the primary tool for students in relation to Ampersand.
 
-We are currently working on a new version, RAP3. We hope to deploy RAP3 on November 1st, 2016. Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how. Even though RAP3 is not ready for use, it can already be installed on a server. It just won't let you use all features.
+We are currently working on a new version, RAP3. We hope to deploy RAP3 on November 1st, 2017. Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how. Even though RAP3 is lacking some features, it can already be installed on a server.
 
-**NOTE 2**: Be very cautious not to break RAP2! RAP2 is still needed as a safety precaution, in case we cannot deliver RAP3 in time.
+This chapter starts with an overview of the things that must be done to deploy RAP. After that, there is a cookbook recipe for doing it.
 
 ## Requirements for deploying RAP
-
 ##### 1. Setting up a server
-
-You need a server that is connected to the internet, because RAP takes updates from a GitHub repository. A 4-core/8GB server is sufficient. A memory size under 3GB has shown to be insufficient. Ports for HTTP, HTTPS, SSL, and SFTP must be open.
+You need a server that is connected to the internet, because RAP takes updates from a GitHub repository. A 2-core/8GB server is sufficient. A memory size under 3GB has shown to be insufficient. Ports for HTTP, HTTPS, SSL, and SFTP must be open.
 
 ##### 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
-
 You need a database and a web-server. This explains why a LAMP-server is an obvious choice if you use a preconfigured server.
 
 ##### 3. Uploading and running RAP3
-
 A quick way to install is to copy existing RAP3 code on your server. This allows you to test whether you can get the application live and visible to your users.
 
 ##### 4. Filling the Git repository with Ampersand files and Ampersand models
-
 The source code of Ampersand and the source code of RAP3 must be downloaded from GitHub. The following repositories are used:
 
 * Ampersand: _**development**_ branch \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\). This contains the source code of Ampersand.
@@ -30,8 +25,7 @@ The source code of Ampersand and the source code of RAP3 must be downloaded from
 The source code of Ampersand is needed to build an Ampersand compiler. The source code of RAP3 is needed to compile and generate the RAP3 webapplication. You need Git to create a local clone of these repositories. Git is preferred over copying the files, because it gives assurance over installing the right version\(s\).
 
 ##### 5. Installing Haskell
-
-You need Haskell to build an Ampersand compiler.
+You need Haskell to build an Ampersand compiler. For deploying RAP, we use the latest executable Ampersand-compiler for Linux, which is published periodically on the internet.
 
 ##### 6. Creating an Ampersand compiler
 

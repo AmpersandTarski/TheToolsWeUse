@@ -1,3 +1,24 @@
+# Docker image
+Before anyone can deploy an ampersand-repository (RAP3) the following images must be present on docker-hub.
+- `ampersandtarski/ampersand-rap`
+- `ampersandtarski/ampersandtarski/ampersand-prototype-db`
+- `ampersandtarski/ampersand-prototype`
+
+This chapter is a recipe for creating those images. (If you are only installing, you do not need this chapter.)
+
+## Installing Docker
+
+I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
+
+Then I checked that docker was installed by means of the `which`-command:
+
+```
+sjo@lnx-hrl-202v:~$ which docker
+/usr/bin/docker
+sjo@lnx-hrl-202v:~$ which docker-compose
+/usr/bin/docker-compose
+```
+
 ## 4. Making a Docker image
 
 This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
