@@ -144,6 +144,8 @@ docker push ampersandtarski/ampersand-prototype-db
 docker push ampersandtarski/ampersand-prototype
 ~~~
 
+At this point the images are published and this chapter is done. However, it is good to discuss a few collateral issues: deployment, maintenance and security.
+
 ## 6. Deploying directly on this server
 We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin[^1]. Containers are built from images by the command `docker-compose`:
 
@@ -152,7 +154,7 @@ cd /home/ampersandadmin/docker-ampersand
 docker-compose up -d
 ```
 
-This command brings all three containers up, for which it requires the file `docker-compose.yml` to be available in the current directory.
+This command brings all three containers up and runs them in the background. For this to happen, the file `docker-compose.yml` must be in the current directory.
 
 I checked whether the containers are running by means of the `docker ps` command.
 
@@ -164,7 +166,7 @@ The database is accessible on port 8080:
 
 ![](/assets/phpMyAdmin.png)
 
-## 6. Maintenance
+## 7. Maintenance
 
 The `docker-compose up` command aggregates the output of each container. When the command exits, all containers are stopped. Running `docker-compose up -d` starts the containers in the background and leaves them running.
 
