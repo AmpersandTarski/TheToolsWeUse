@@ -102,7 +102,7 @@ To install RAP3:
 sjo@Wolfram:~$ docker up -d
 ```
 
-To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/`.  
+To check whether this worked, I went to my browser and navigated to `http://52.232.97.91/`.  
 It took a while to get started, because it was building a fresh database.
 
 I checked whether the containers are running by means of the `docker ps` command.
