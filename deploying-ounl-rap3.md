@@ -33,7 +33,7 @@ The following settings apply:
 | Inbound port: SSH | TCP/22 |
 | Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
-| PHP version \(RAP3 requires PHP version 5.6 or higher\) | 7.0.7 |
+| PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
 | `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
 | `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | wwwrun |
 | `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) | rap.cs.ou.nl |
@@ -51,32 +51,27 @@ standaardpakketten op /opt neerzetten
 
 /var is bedoeld voor logbestanden
 
-## Port Settings
+## Getting access to the server
 
 At the OU, we need VPN to gain access with SSH to a server. This requires approval from the IT department. I got a raw Ubuntu machine, meaning that the port settings \(specified above\) and VPN have to be requested at the IT-servicedesk.
 
-I can now access this machine through SSH \(using PUTTY\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server".
+I can now access this machine through SSH \(using PUTTY, which I downloaded from the Internet\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server". This gave me access through a command line interface \(CLI\). Ubuntu gave me bash as its CLI.
 
-TODO: make sure that `{APPHOST}` can be found by DNS.
 
-* if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/](https://letsencrypt.org/%29%29%29\)
+## Git
+
+With Ubuntu 16.04, Git comes pre-installed. I checked this by means of the `which`-command:
+
+```
+sjo@lnx-hrl-202v:~$ which git
+/usr/bin/git
+```
 
 ## Installing Docker
 
-Since this is a fresh machine, docker has to be installed. By just typing `docker`, the server advised to install Docker by means of the following command:
+Since this is a fresh machine, docker has to be installed. By just typing `docker`, the server advised to install Docker by means of the command `sudo apt install docker.io`. This turned out to be a bad advice, because it resulted in a too old version of docker. Instead, I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
 
-```
-sjo@lnx-hrl-202v:~$ sudo apt install docker.io
-[sudo] password for sjo:
-```
-
-I did the same for `docker-compose`:
-
-```
-sjo@lnx-hrl-202v:~$ sudo apt install docker-compose
-```
-
-I checked that everything went successfully by means of the `which`-command:
+Then I checked that everything went successfully by means of the `which`-command:
 
 ```
 sjo@lnx-hrl-202v:~$ which docker
@@ -85,14 +80,12 @@ sjo@lnx-hrl-202v:~$ which docker-compose
 /usr/bin/docker-compose
 ```
 
-## Git
+## Security
+TODO: make sure that `{APPHOST}` can be found by DNS.
 
-Git comes pre-installed, which I checked by means of the `which`-command:
+* if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/](https://letsencrypt.org/%29%29%29\)
 
-```
-sjo@lnx-hrl-202v:~$ which git
-/usr/bin/git
-```
+
 
 ## 10. Local Settings
 
