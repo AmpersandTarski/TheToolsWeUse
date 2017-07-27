@@ -1,13 +1,74 @@
-# Docker image
+# Docker images
 Before anyone can deploy an ampersand-repository (RAP3) the following images must be present on docker-hub.
 - `ampersandtarski/ampersand-rap`
 - `ampersandtarski/ampersandtarski/ampersand-prototype-db`
 - `ampersandtarski/ampersand-prototype`
 
-This chapter is a recipe for creating those images. (If you are only installing, you do not need this chapter.)
+This chapter explains the deployment of RAP3 and gives a recipe for creating those images. (If you are only installing, you do not need this chapter.)
+
+## Requirements for deploying RAP
+Let us first explain the things that need to be done to deploy RAP. After that, there is a cookbook recipe for doing it.
+
+##### 1. Setting up a server
+You need a server that is connected to the internet, because RAP takes updates from a GitHub repository. A 2-core/8GB server is sufficient. A memory size under 3GB has shown to be insufficient. Ports for HTTP, HTTPS, SSL, and SFTP must be open.
+
+##### 2. Getting MariaDB \(MySQL\) and phpMyAdmin to work
+You need a database and a web-server. This explains why a LAMP-server is an obvious choice if you use a preconfigured server.
+
+##### 3. Uploading and running RAP3
+A quick way to install is to copy existing RAP3 code on your server. This allows you to test whether you can get the application live and visible to your users.
+
+##### 4. Filling the Git repository with Ampersand files and Ampersand models
+The source code of Ampersand and the source code of RAP3 must be downloaded from GitHub. The following repositories are used:
+
+* Ampersand: _**development**_ branch \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\). This contains the source code of Ampersand.
+* ampersand-models: _**master**_ branch \([https://github.com/AmpersandTarski/ampersand-models.git](https://github.com/AmpersandTarski/ampersand-models.git)\). This contains the source code of RAP3.
+
+The source code of Ampersand is needed to build an Ampersand compiler. The source code of RAP3 is needed to compile and generate the RAP3 webapplication. You need Git to create a local clone of these repositories. Git is preferred over copying the files, because it gives assurance over installing the right version\(s\).
+
+##### 5. Avoiding to install Haskell
+You need Haskell to build an Ampersand compiler. For deploying RAP, we use the latest executable Ampersand-compiler for Linux, which is published periodically on the internet. This way, Haskell need not be installed
+
+##### 6. Creating an Ampersand compiler
+
+If you want, create your own Ampersand compiler. This way, you can pick a version by which to generate RAP3.
+
+##### 7. Installing LaTeX and GraphViz
+
+LaTeX and GraphViz are called by RAP3 to generate documentation. Therefore, both must be installed on the server.
+
+##### 8. Installing SmartGit \(a nice-to-have\)
+
+If you want to inspect the Git-repository on you server, it is nice to have a Git client.
+
+##### 9. Generating the RAP3 application
+
+You need to generate RAP3 to facilitate regular updates to the system.
+
+##### 10. Local Settings
+
+Some local settings may apply, which are brought together in one file. Use this to administer things like database account\(s\) and PHP time limit, logging, etcetera.
+
+##### 11. Last minute changes before going to production
+
+Things that are necessary for testing and development, such as logging, can be changed in the production version. These things are usually adapted shortly before going to production.
+
+# Work in progress!
+
+The application of RAP still is heavily under development. Therefore, this recipe might change. Also, instructions about maintenance will follow. Watch the progress of RAP3 by checking [this issue](https://github.com/AmpersandTarski/Ampersand/issues/449)
+
+## Experience
+
+RAP3 has been installed in different situations. Some of these situations are documented in the sequel. You can use it as example for deployments of your own. A dear wish is to create an installation script that will automate deployment, but we have not yet found the time to do that.
+
+## Security
+
+The Apache server writes files and creates directories. Normally, this would be a security risk, but in this case it is designed behaviour.
+
+# A recipe for creating images
+Knowing what needs to be done allows you to understand how we make Ampersand's docker images. If you just want to do it, follow the steps below. We assume that you are working on an Ubuntu machine with `bash` as its command line interface. 
 
 ## Installing Docker
-
 I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
 
 Then I checked that docker was installed by means of the `which`-command:
@@ -20,7 +81,6 @@ sjo@lnx-hrl-202v:~$ which docker-compose
 ```
 
 ## 4. Making a Docker image
-
 This step requires a server with docker, so you must have finished section 3 successfully. I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
 
 ```
@@ -66,16 +126,33 @@ Successfully built e8648c6657f6
 
 When you build an image where nothing changes \(as shown above\), this takes virtually no time at all. However, if you run a fresh image from scratch, it takes a while. Should you want to close your SSH-session in which docker is running, that docker process will be killed. If you want to leave docker running in the background, `https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/` will help. Best thing is to anticipate on it. However, if you didn't anticipate this, you can still send docker to the background by `^Z` and give the `disown -h` command. \(The latter is however the least elegant way.\)
 
-## 5. Making containers
+I checked whether all images are built by the `docker images` command:
+~~~
+sjo@lnx-hrl-202v:~/ampersand-models/RAP3$ docker images
+REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
+ampersandtarski/ampersand-rap            latest              636643166a78        2 hours ago         3.62GB
+ampersandtarski/ampersand-prototype-db   latest              d267da36fb90        4 hours ago         395MB
+ampersandtarski/ampersand-prototype      texlive             efd0dccd6b4b        6 hours ago         3.11GB
+phpmyadmin/phpmyadmin                    latest              200931982ab6        6 days ago          110MB
+~~~
 
-This step requires a server with docker and images to build containers with. So you must have finished section 4 successfully. We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
+## 5. Publishing to docker-hub
+For this step, you need an account on docker-hub. Then Docker will simply push the generated images to docker hub by means of the push-command:
+~~~
+docker push ampersandtarski/ampersand-rap
+docker push ampersandtarski/ampersand-prototype-db
+docker push ampersandtarski/ampersand-prototype
+~~~
+
+## 6. Deploying directly on this server
+We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin[^1]. Containers are built from images by the command `docker-compose`:
 
 ```
 cd /home/ampersandadmin/docker-ampersand
 docker-compose up -d
 ```
 
-This command brings all three containers up, for which it requires the file `docker-compose.yml`to be available in the current directory.
+This command brings all three containers up, for which it requires the file `docker-compose.yml` to be available in the current directory.
 
 I checked whether the containers are running by means of the `docker ps` command.
 
@@ -110,4 +187,4 @@ To inspect and change the local settings, you need the file `localsettings.php` 
 2. Is there anything we must alter in localsettings.php before going live?
 
 
-
+[^1] This is decribed in the file `docker-compose.yml`
