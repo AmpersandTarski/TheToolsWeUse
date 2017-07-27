@@ -33,13 +33,7 @@ The following settings apply:
 | Inbound port: SSH | TCP/22 |
 | Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
-| PHP version \(RAP3 requires PHP version 5.6 or higher\) |  |
-| `{APPDIR}`=  the directory into which the RAP3 files will be deployed | /srv/www/htdocs |
-| `{APPACC}`=  the account under which the RAP3 application will run \(the apache account, i.e. ${APACHE\_RUN\_USER} c.q. ${APACHE\_RUN\_GROUP} as defined in apache2.conf\) | wwwrun |
-| `{APPHOST}` =  the URI of the machine that hosts the RAP3 application \(e.g. 'mydomain.org', or 'rap3.mydomain.org'\) | rap.cs.ou.nl |
-| `{APPPORT}` =  the port at which the Apache server will be listening | 80 |
-| `{APPURI}` = the URI at which the RAP3 application will be accessible for browsers \(e.g. 'mydomain.org/spreg', or 'spreg.mydomain.org'\) |  |
-| `{APPURL}` = the full name for calling the application \(e.g. [https://mydomain.org:8080/spreg](https://mydomain.org:8080/spreg)', or [https://spreg.mydomain.org\](https://spreg.mydomain.org%29\) |  |
+| URL for calling the application | http://rap.cs.ou.nl/ |
 
 ## Conventions for OU servers
 
@@ -55,15 +49,6 @@ In the current installation I didn't adhere to these conventions.
 At the OUNL, we need VPN to gain access with SSH to a server. This requires approval from the IT department. I got a raw Ubuntu machine, meaning that the port settings \(specified above\) and VPN have to be requested at the IT-servicedesk.
 
 I can now access this machine through SSH \(using PUTTY, which I downloaded from the Internet\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server". This gave me access through a command line interface \(CLI\). Ubuntu gave me bash as its CLI.
-
-## Git
-
-With Ubuntu 16.04, Git comes pre-installed. I checked this by means of the `which`-command:
-
-```
-sjo@lnx-hrl-202v:~$ which git
-/usr/bin/git
-```
 
 ## Installing Docker
 
@@ -99,16 +84,4 @@ sjo@lnx-hrl-202v:~$ docker up -d
 
 To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/`.  
 It took a while to get started, because it was building a fresh database.
-
-## Security
-
-TODO: make sure that `{APPHOST}` can be found by DNS.
-
-* if you want to use HTTPS, then ensure you install a valid server certificate \(e.g. through [https://letsencrypt.org/](https://letsencrypt.org/%29%29%29\)
-
-## 10. Local Settings
-
-To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
-
-
 
