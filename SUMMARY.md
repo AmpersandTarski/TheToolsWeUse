@@ -7,7 +7,6 @@
   * [Getting started with GitBook](gitbook/getting_started_with_gitbook.md)
   * [Do's and Dont's in Ampersand documentation](gitbook/dos_and_donts_in_ampersand_documentation.md)
 * [Haskell](haskell.md)
-* [Sentinel](sentinel.md)
 * [Installation of RAP](installation_of_rap.md)
   * [Deploying OUNL RAP3](deploying-ounl-rap3.md)
   * [Deploying RAP3 with Azure on Ubuntu](deploying-rap3-on-docker.md)
@@ -17,4 +16,5 @@
   * [Tutor](functionality-of-rap3/tutor.md)
   * [Account Manager](functionality-of-rap3/account-manager.md)
   * [Graduate Student](functionality-of-rap3/graduate-student.md)
+* [Sentinel](sentinel.md)
 

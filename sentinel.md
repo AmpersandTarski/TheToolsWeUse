@@ -1,6 +1,6 @@
 # Sentinel
 
-**Sentinel has seased to exist. We no longer use it. However, we are grateful for the good work it once did!**
+**Sentinel has ceased to exist. We no longer use it. However, we are grateful for the good work it once did!**
 
 ---
 
