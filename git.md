@@ -6,26 +6,28 @@ Git is the version control system we use. Understanding the basics is essential 
 
 ## Getting started with Git
 
-* Create yourself an account at [GitHub](https://www.github.com), if you don't have one already. 
-* Ask one of the administrators of Ampersand to add you as member to the team.
-* Make sure to install the appropriate related Git tools, for ease of working.
-* 
-### Tools for Git
-
-To work with Git in an easy way, it is recommended to install some extra tooling.
-
+* Create yourself an account at [GitHub](https://www.github.com), if you don't have one already. This allows us to give you write access to the Ampersand repo.
+* Ask one of the administrators of Ampersand to add you as member to the team if you want/need write access to the Ampersand repo or any other repo in the project.
 * Install [Git for Windows](http://msysgit.github.io/).
+
   * Accept all defaults, except:
-    * 4th screen check "Windows Explorer integration" / "Simple context menu" / "Git Bash here"
-    * 6th screen "Use Git from the Windows Command Prompt"
-* Install [TortoiseGit](https://tortoisegit.org/). 
+  * 4th screen check "Windows Explorer integration" / "Simple context menu" / "Git Bash here"
+  * 6th screen "Use Git from the Windows Command Prompt"
+
+* Make sure to install the appropriate related Git tools, for ease of working.
+
+## Tools for Git
+
+To work with Git in an easy way, there are some tools that can make life easier.
+
+* Install [TortoiseGit](https://tortoisegit.org/) to use Git in your Windows Explorer. 
   * Accept all defaults
-* Install [SourceTree](http://www.sourcetreeapp.com).
+* Install [SourceTree](http://www.sourcetreeapp.com) to visualize the history in the most popular Git client.
   * No global ignore, further everything default
   * When at _Add an account_, select _GitHub_ and supply your credentials.
-* Install [KDiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/)
+* Install [KDiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/) to get help in merging conflicts. To avoid KDiff3, you can merge conflicts from your editor or IDE as well.
   * To select KDiff3 in SourceTree, go to SourceTree / Tools / Options / Diff and select KDiff3 for External Diff Tool and Merge Tool.
-* Pin Git Bash to Start menu
+* Pin Git Bash to Start menu to use Git from a command line interface.
 
 ## Configuring Security
 
