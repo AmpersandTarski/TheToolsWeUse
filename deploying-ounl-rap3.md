@@ -15,7 +15,7 @@ This chapter is an account of the installation process. It serves the following 
 
 Each step in the installation process gets a separate section in this text.
 
-## 1. Setting up the virtual machine
+## 1. Setting up the virtual machine[^1]
 
 I got a server from the Open University's IT-department.
 
@@ -33,7 +33,7 @@ The following settings apply:
 | Inbound port: SSH | TCP/22 |
 | Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
-| URL for calling the application | http://rap.cs.ou.nl/ |
+| URL for calling the application | [http://rap.cs.ou.nl/](http://rap.cs.ou.nl/) |
 
 ## Conventions for OU servers
 
@@ -94,4 +94,6 @@ Completion of this step allowed access to RAP3 from an arbitrary computer on the
 The database is accessible on port 8080:
 
 ![](/assets/phpMyAdmin.png)
+
+[^1]: If you deploy on a container platform, you can skip the virtual machine and deploy straight away.
 
