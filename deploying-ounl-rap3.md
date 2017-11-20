@@ -1,6 +1,8 @@
 # Ampersand at the Open University of the Netherlands \(OUNL\)
 
-In early 2016 the need arose to replace the RAP2 implementation of Ampersand by a RAP3 implementation, because RAP2 was insufficiently maintainable. This environment is used by students for completing the course Rule Based Design \(OBR, code IM0103\).  This implementation is hosted by ICTS, the IT-department of the university. We chose to implement RAP3 as a maintainable environment.
+If you want to deploy RAP3 on your own server, you might try to copy how I deployed RAP3 at the OUNL. This chapter tells you how.
+
+In early 2016 the need arose to replace the RAP2 implementation of Ampersand by a RAP3 implementation, because RAP2 was insufficiently maintainable. This environment is used by students for completing the course Rule Based Design \(OBR, code IM0103\).  This implementation is hosted by ICTS, the IT-department of the university.
 
 This chapter is an account of the installation process. It serves the following purposes:
 
