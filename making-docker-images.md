@@ -2,7 +2,7 @@
 
 This chapter gives a recipe for creating docker images. If you are only interested in installing RAP3, you do not need this chapter.
 
-Docker images are created (baked) when the Ampersand source code for RAP is ready to be deployed. The result is three files, stored on Docker hub:
+Docker images are created (baked) when the Ampersand source code for RAP3 is ready to be deployed. The result is three files, stored on Docker hub:
 ![](/assets/Docker store.png)
 
 # A recipe for creating images
