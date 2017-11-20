@@ -1,18 +1,12 @@
 # Docker images
 
-When the Ampersand source code for RAP is ready to be deployed, you can make an image and store it in [Docker Hub](https://docs.docker.com/docker-hub/repos/).
+This chapter gives a recipe for creating docker images. If you are only interested in installing RAP3, you do not need this chapter.
 
-Before anyone can deploy an ampersand-repository \(RAP3\) the following images must be present on docker-hub.
+Docker images are created (baked) when the Ampersand source code for RAP is ready to be deployed. The result is three files, stored on Docker hub
 
-* `ampersandtarski/ampersand-rap`
-* `ampersandtarski/ampersandtarski/ampersand-prototype-db`
-* `ampersandtarski/ampersand-prototype`
+![](/assets/Docker store.png)
 
-This chapter first explains the deployment of RAP3. Then it gives a recipe for creating those images. It ends with remarks about maintaining RAP3.
-
-If you are only interested in installing RAP3, you do not need this chapter.
-
-## Security
+# Security
 
 The Apache server writes files and creates directories. Note that you might typically not allow software \(such as an Apache server\) to write files and create directories, as this may incur security issues. In this case it is designed behaviour.
 
