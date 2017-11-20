@@ -17,9 +17,7 @@ Knowing what needs to be done allows you to understand how we make Ampersand's d
 
 ## Installing Docker
 
-I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
-
-Then I checked that docker was installed by means of the `which`-command:
+First I checked that docker and docker-compose are installed on my computer:
 
 ```
 sjo@lnx-hrl-202v:~$ which docker
@@ -27,6 +25,7 @@ sjo@lnx-hrl-202v:~$ which docker
 sjo@lnx-hrl-202v:~$ which docker-compose
 /usr/bin/docker-compose
 ```
+If you need to install docker, follow the instructions on https://docs.docker.com/engine/installation .
 
 ## 4. Making a Docker image
 
