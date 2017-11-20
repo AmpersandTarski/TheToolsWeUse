@@ -15,7 +15,7 @@ RAP3 is deployed as shown in this picture
 
 Knowing what needs to be done allows you to understand how we make Ampersand's docker images. If you just want to do it, follow the steps below. We assume that you are working on an Ubuntu machine with `bash` as its command line interface.
 
-## Installing Docker
+## Check your Docker installationr
 
 First I checked that docker and docker-compose are installed on my computer:
 
