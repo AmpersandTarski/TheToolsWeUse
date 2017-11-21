@@ -8,9 +8,3 @@ The instructions to install Stack are pretty clear. Make sure you read the part 
 
 Then, go to the path where you have `ampersand.cabal`. 'stack install' will do the rest.
 
-
-
-
-
-bla bla
-
