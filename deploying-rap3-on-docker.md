@@ -56,7 +56,7 @@ No rule was added for the database, so the database is only open to phpMyAdmin a
 
 ## 3. Installing Docker
 
-This step requires a server, so you must have finished section 1 successfully.  (If `docker` and `docker-compose` are available, this step is superfluous.) To install docker I followed the following steps in the given order:
+This step requires a server, so you must have finished section 1 successfully.  \(If `docker` and `docker-compose` are available, this step is superfluous.\) To install docker I followed the following steps in the given order:
 
 | step | Linux command |
 | :--- | :--- |
@@ -99,7 +99,7 @@ sjo@Wolfram:~/ampersand-models$ wget https://raw.githubusercontent.com/Ampersand
 To install RAP3:
 
 ```
-sjo@Wolfram:~$ docker up -d
+sjo@Wolfram:~$ docker-compose up -d
 ```
 
 To check whether this worked, I went to my browser and navigated to `http://52.232.97.91/`.  
@@ -114,5 +114,4 @@ Completion of this step allowed access to RAP3 from an arbitrary computer on the
 The database is accessible on port 8080:
 
 ![](/assets/phpMyAdmin.png)
-
 
