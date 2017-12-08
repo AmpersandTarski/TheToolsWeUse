@@ -15,7 +15,7 @@ RAP3 is deployed as shown in this picture
 
 Knowing what needs to be done allows you to understand how we make Ampersand's docker images. If you just want to do it, follow the steps below. We assume that you are working on an Ubuntu machine with `bash` as its command line interface.
 
-## Check your Docker installationr
+## Check your Docker installation
 
 First I checked that docker and docker-compose are installed on my computer:
 
@@ -27,7 +27,14 @@ sjo@lnx-hrl-202v:~$ which docker-compose
 ```
 If you need to install docker, follow the instructions on https://docs.docker.com/engine/installation .
 
+## 4. Building an Ampersand image
+RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image.
+Run *./build-basecontainers.sh* to build the initial ampersand container that serves as a base for the RAP3 application
+  this base images holds all required packages and the (at that moment) latest version of the ampersand compiler
+  the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container (*docker rmi ampersand:latest*)
+
 ## 4. Making a Docker image
+
 
 I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
 

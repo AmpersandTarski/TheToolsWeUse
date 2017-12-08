@@ -20,7 +20,7 @@ The last section of this chapter discusses the [making of docker images](/making
 
 Docker is sheer magic. You don't have to understand it to run it. However, if you insist on knowing how it is done...
 
-Here are ten steps to install RAP3 manually on a freshly created server:
+Here are ten steps to install RAP3 manually, without Docker, on a freshly created server:
 
 #### 1. Setting up a server
 
@@ -32,20 +32,17 @@ You need a database and a web-server. This explains why a LAMP-server is an obvi
 
 #### 3. Uploading and running RAP3
 
-A quick way to install is to copy existing RAP3 code on your server. This allows you to test whether you can get the application live and visible to your users.
+A quick way to install is to copy the source code of RAP3 on your server and compile it with Ampersand. That gives you the RAP3 webapplication. You will find the complete Ampersand source code of RAP3 on [https://github.com/AmpersandTarski/RAP](https://github.com/AmpersandTarski/RAP). The main file is ``./RAP3/RAP3.adl``.
 
 #### 4. Filling the Git repository with Ampersand files and Ampersand models
 
-The source code of Ampersand and the source code of RAP3 must be downloaded from GitHub. The following repositories are used:
+If you don't have an Ampersand compiler, you can build one using the Haskell sources of that compiler. You will find the source code on the development branch of the Ampersand repository \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\).
 
-* Ampersand: _**development**_ branch \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\). This contains the source code of Ampersand.
-* ampersand-models: _**master**_ branch \([https://github.com/AmpersandTarski/ampersand-models.git](https://github.com/AmpersandTarski/ampersand-models.git)\). This contains the source code of RAP3.
-
-The source code of Ampersand is needed to build an Ampersand compiler. The source code of RAP3 is needed to compile and generate the RAP3 webapplication. You need Git to create a local clone of these repositories. Git is preferred over copying the files, because it gives assurance over installing the right version\(s\).
+Use Git to create a local clone of these repositories. Git is preferred over copying the files, because you can repeatedly use it to ensure you get the right version.
 
 #### 5. Avoiding to install Haskell
 
-You need Haskell to build an Ampersand compiler. For deploying RAP, we use the latest executable Ampersand-compiler for Linux, which is published periodically on the internet. This way, Haskell need not be installed
+To build an Ampersand compiler, you need Haskell. However, you can also use the latest executable Ampersand-compiler, which is published periodically on [http://ampersandtarski.github.io/](http://ampersandtarski.github.io/). This way, you don't need to build Ampersand and you can avoid installing Haskell.
 
 #### 6. Creating an Ampersand compiler
 

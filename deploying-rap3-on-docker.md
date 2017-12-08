@@ -25,10 +25,8 @@ The following settings were made:
 | subscription in Azure | Ordina TC - RT O Pega - Learning |
 | server name | Wolfram |
 | type VM-disk | SDD |
-| Virtueel netwerk | AmpersandRAP3-vnet |
-| subnet | default \(10.0.0.0/24\) |
 | OS | Linux |
-| configuration | CoreOS |
+| configuration | Ubuntu|
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | AmpersandRAP3 |
@@ -39,7 +37,7 @@ The following settings were made:
 | Inbound port: SSH | TCP/22 |
 | Inbound port: FTP | TCP/21 |
 | Public IP-adres | 52.232.97.91 \(static\) |
-| the full name for calling the application | [http://ampersand.tarski.nl/RAP3](http://ampersand.tarski.nl/RAP3) |
+| the full name for calling the application | [http://52.232.97.91/RAP3](http://ampersand.tarski.nl/RAP3) |
 
 I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
 
@@ -61,9 +59,7 @@ This step requires a server, so you must have finished section 1 successfully.  
 | step | Linux command |
 | :--- | :--- |
 | To work as root | sudo -i |
-| To obtain docker-compose | /usr/bin/mkdir -p /opt/bin/ |
-|  | /usr/bin/curl -o /opt/bin/docker-compose -sL [https://github.com/docker/compose/releases/download/1.11.1/run.sh](https://github.com/docker/compose/releases/download/1.11.1/run.sh) |
-|  | /usr/bin/chmod +x /opt/bin/docker-compose |
+| To obtain both docker and docker-compose | apt-get install docker-compose |
 | To add the current user \(ampersandadmin\) to the docker group | usermod -aG docker $\(whoami\) |
 | To start the docker daemon |  |
 | now reboot the machine | reboot |
@@ -89,9 +85,9 @@ We need only one file: `docker-compose.yml`
 To get it, I used the `wget` command, which gets stuff from the web:
 
 ```
-sjo@Wolfram:~$ mkdir ampersand-models
-sjo@Wolfram:~$ cd ampersand-models
-sjo@Wolfram:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand-models/RAP3/docker-compose.yml
+sjo@Wolfram:~$ mkdir docker-RAP3
+sjo@Wolfram:~$ cd docker-RAP3
+sjo@Wolfram:~/docker-RAP3$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand-models/RAP3/docker-compose.yml
 ```
 
 ## 5. Installing RAP3
