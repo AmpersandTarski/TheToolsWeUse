@@ -64,7 +64,7 @@ To get it, I used the `wget` command, which gets stuff from the web:
 ```
 sjo@lnx-hrl-202v:~$ mkdir ampersand-models
 sjo@lnx-hrl-202v:~$ cd ampersand-models
-sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/RAP3/docker-compose.yml
+sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/docker-compose.yml
 ```
 
 ## Installing RAP3
