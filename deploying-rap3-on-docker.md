@@ -32,10 +32,10 @@ The following settings were made:
 | Resource group \(in Azure\) | AmpersandRAP3 |
 | location \(in Azure\) | Western Europe |
 | Size | Standard DS11 v2 \(2 cores, 14 GB memory\) |
-| Inbound port: HTTP | TCP/80 |
+| Inbound port: RAP3 (HTTP) | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: FTP | TCP/21 |
+| Inbound port: phpMyAdmin (HTTP)| TCP/8080 |
 | Public IP-adres | 52.232.97.91 \(static\) |
 | the full name for calling the application | [http://52.232.97.91/RAP3](http://ampersand.tarski.nl/RAP3) |
 
