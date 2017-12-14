@@ -30,10 +30,10 @@ The following settings apply:
 | Admin user name | sjo |
 | verification type | password \(Stef Joosten knows the password\) |
 | Size | 2 core, 7GB |
-| Inbound port: HTTP | TCP/80 |
+| Inbound port: RAP3 (HTTP) | TCP/80 |
+| Inbound port: phpMyAdmin (HTTP) | TCP/8080 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: SFTP | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
 | URL for calling the application | [http://rap.cs.ou.nl/RAP3](http://rap.cs.ou.nl/RAP3) |
 
