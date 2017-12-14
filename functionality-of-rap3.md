@@ -15,17 +15,11 @@ All of the above users have access to the login page. Further functionality is b
 
 ![](/assets/login.png)
 
-When you log in, a userid and password must be entered. As you leave a field, that field is updated, and rules are checked. You will encounter your first violation of a signal rule:
-
-![](/assets/Login2.png)You can click the warning message, and it will show you the violation message and some links where that relation could be solved. These links are still cryptic \(this is a bug\):
-
-![](/assets/violationMessageWithErrounousDropDown.png)
-
-The last option will take you the 'My Account' page, where you can modify your password. If you do so, you will see that the signal message will disapear, because there is no longer a rule violation for your account.
+When you log in, a userid and password must be entered. 
 
 ## Logging out
 
-Logging out can be done at the login screen, while your session is still active. When you are at that screen, just check the checkbox to logout:
+After you have logged in, this screen turns into a logout-screen. The menu bar gives you the options you are entitled to by the role\(s\) you have. In this case you get `MyScripts` and `My Account`:
 
 ![](/assets/logout.png)
 
