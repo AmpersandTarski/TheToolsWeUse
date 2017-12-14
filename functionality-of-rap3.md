@@ -1,6 +1,6 @@
 # RAP3 user manual
 
-These pages are ment to describe the functionality of RAP3. As RAP3 is still under development, some of this functionality is still work in progress. We will tell the current status of everything mentioned here. While doing so, this document will grow until it describes everything one can do with RAP3.
+These pages are meant to describe the functionality of RAP3. As RAP3 is still under development, some of this functionality is still work in progress. We will tell the current status of everything mentioned here. While doing so, this document will grow until it describes everything one can do with RAP3.
 
 The purpose of RAP3 is to be a platform for people to learn how to work with Ampersand. We distinguage the following ROLEs:
 
@@ -13,7 +13,7 @@ All of the above users have access to the login page. Further functionality is b
 
 ## Logging in {#rap3-login}
 
-![](/assets/LogIn.png)
+![](/assets/login.png)
 
 When you log in, a userid and password must be entered. As you leave a field, that field is updated, and rules are checked. You will encounter your first violation of a signal rule:
 
@@ -29,5 +29,5 @@ Logging out can be done at the login screen, while your session is still active.
 
 ![](/assets/logout.png)
 
-In the next pages, the functionality is described by role. 
+In the next pages, the functionality is described by role.
 
