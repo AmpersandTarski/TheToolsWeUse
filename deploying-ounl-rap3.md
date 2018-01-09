@@ -30,8 +30,8 @@ The following settings apply:
 | Admin user name | sjo |
 | verification type | password \(Stef Joosten knows the password\) |
 | Size | 2 core, 7GB |
-| Inbound port: RAP3 (HTTP) | TCP/80 |
-| Inbound port: phpMyAdmin (HTTP) | TCP/8080 |
+| Inbound port: RAP3 \(HTTP\) | TCP/80 |
+| Inbound port: phpMyAdmin \(HTTP\) | TCP/8080 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
@@ -45,7 +45,7 @@ I can now access this machine through SSH \(using PUTTY, which I downloaded from
 
 ## Installing Docker
 
-Since this is a fresh machine, docker has to be installed. By just typing `docker`, the server advised to install Docker by means of the command `sudo apt install docker.io`. This turned out to be a bad advice, because it resulted in a too old version of docker. Instead, I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` .
+Since this is a fresh machine, docker has to be installed. By just typing `docker`, the server advised to install Docker by means of the command `sudo apt install docker.io`. This turned out to be a bad advice, because it resulted in a too old version of docker. Instead, I followed the instructions on `https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/` for installing docker. The instructions for docker-compose are found on `https://docs.docker.com/compose/install/` .
 
 Then I checked that everything went successfully by means of the `which`-command:
 
@@ -72,7 +72,7 @@ sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/Ampe
 To install RAP3:
 
 ```
-sjo@lnx-hrl-202v:~/ampersand-models$ docker up -d
+sjo@lnx-hrl-202v:~/ampersand-models$ docker-compose up -d
 ```
 
 To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/RAP3`.  
