@@ -26,7 +26,8 @@ Recently we have decided to release every four weeks. Of course, we want this to
 2. Push your modifications to Github. (this will trigger automated testing by Travis)
 3. Ensure travis-ci builds succesfully:
   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
-4. Create a pull request to the [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development):<sup>[2](#myfootnote2)</sup> ![](create pull request.PNG)
+4. Create a pull request to the [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development):<sup>[2](#myfootnote2)</sup> ![](/assets/Comparing master and development.PNG) ![](/assets/create pull request.PNG) <br> Press the green button to create the pull request. 
+
 5. Wait in [Travis](https://travis-ci.org/AmpersandTarski/Ampersand) for all tests to complete, and then pull the pull-request into the [master](https://github.com/AmpersandTarski/Ampersand/)<sup>[3](#myfootnote3)</sup>.
 6. Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable. This is a good time to prepare the releasenotes of the development branch for the new development cycle: Add a new title for unreleased changes to the releasenotes. 
 7. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
