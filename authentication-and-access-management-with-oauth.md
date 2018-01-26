@@ -4,6 +4,10 @@ An Ampersand application may grant access to named users. We have done this befo
 
 I made a separate Github organization, RAP-OUNL, to serve as access provider for RAP3.
 
+
+
+callback URL: http://example.com/AmpersandPrototypes/RAP3/api/v1/oauthlogin/callback/github
+
 ## Experimenting from a laptop
 
 For experimentation purposes, I added the following line to `C:\Windows\System32\drivers\etc` on my Windows 7 laptop.
