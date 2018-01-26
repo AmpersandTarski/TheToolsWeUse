@@ -17,4 +17,5 @@
   * [Account Manager](functionality-of-rap3/account-manager.md)
   * [Graduate Student](functionality-of-rap3/graduate-student.md)
 * [Sentinel](sentinel.md)
+* [Authentication and access management with OAuth](authentication-and-access-management-with-oauth.md)
 
