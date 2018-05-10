@@ -1,23 +1,18 @@
-# Ampersand at the Open University of the Netherlands \(OUNL\)
+# Deploying OUNL RAP3
 
 If you want to deploy RAP3 on your own server, you might try to copy how I deployed RAP3 at the OUNL. This chapter tells you how.
 
-In early 2016 the need arose to replace the RAP2 implementation of Ampersand by a RAP3 implementation, because RAP2 was insufficiently maintainable. This environment is used by students for completing the course Rule Based Design \(OBR, code IM0103\).  This implementation is hosted by ICTS, the IT-department of the university.
+In early 2016 the need arose to replace the RAP2 implementation of Ampersand by a RAP3 implementation, because RAP2 was insufficiently maintainable. This environment is used by students for completing the course Rule Based Design \(OBR, code IM0103\). This implementation is hosted by ICTS, the IT-department of the university.
 
 This chapter is an account of the installation process. It serves the following purposes:
 
-1. It is an example for others who want to deploy Ampersand.  
-   We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
-
-2. It documents the installation we made for the Open University.  
-   We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
-
-3. It contains all information needed to make a deployment script for automated deployment.  
-   We have automated the deployment with Docker, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
+1. It is an example for others who want to deploy Ampersand. We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
+2. It documents the installation we made for the Open University. We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
+3. It contains all information needed to make a deployment script for automated deployment. We have automated the deployment with Docker, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
 Each step in the installation process gets a separate section in this text.
 
-## 1. Setting up the virtual machine[^1]
+## 1. Setting up the virtual machine
 
 I got a server from the Open University's IT-department.
 
@@ -41,7 +36,7 @@ The following settings apply:
 
 At the OUNL, we need VPN to gain access with SSH to a server. This requires approval from the IT department. I got a raw Ubuntu machine, meaning that the port settings \(specified above\) and VPN have to be requested at the IT-servicedesk.
 
-I can now access this machine through SSH \(using PUTTY, which I downloaded from the Internet\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\).  In the sequel, I will refer to this machine as "the server". This gave me access through a command line interface \(CLI\). Ubuntu gave me bash as its CLI.
+I can now access this machine through SSH \(using PUTTY, which I downloaded from the Internet\), but only after installing a VPN-tunnel to the server \(using Pulse Secure\). In the sequel, I will refer to this machine as "the server". This gave me access through a command line interface \(CLI\). Ubuntu gave me bash as its CLI.
 
 ## Installing Docker
 
@@ -49,7 +44,7 @@ Since this is a fresh machine, docker has to be installed. By just typing `docke
 
 Then I checked that everything went successfully by means of the `which`-command:
 
-```
+```text
 sjo@lnx-hrl-202v:~$ which docker
 /usr/bin/docker
 sjo@lnx-hrl-202v:~$ which docker-compose
@@ -61,7 +56,7 @@ sjo@lnx-hrl-202v:~$ which docker-compose
 We need only one file: `docker-compose.yml`  
 To get it, I used the `wget` command, which gets stuff from the web:
 
-```
+```text
 sjo@lnx-hrl-202v:~$ mkdir ampersand-models
 sjo@lnx-hrl-202v:~$ cd ampersand-models
 sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/docker-compose.yml
@@ -71,7 +66,7 @@ sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/Ampe
 
 To install RAP3:
 
-```
+```text
 sjo@lnx-hrl-202v:~/ampersand-models$ docker-compose up -d
 ```
 
@@ -82,11 +77,9 @@ I checked whether the containers are running by means of the `docker ps` command
 
 Completion of this step allowed access to RAP3 from an arbitrary computer on the internet:
 
-![](/assets/import.png)
+![](../.gitbook/assets/import%20%281%29.png)
 
 The database is accessible on port 8080:
 
-![](/assets/phpMyAdmin.png)
-
-[^1]: If you deploy on a container platform, you can skip the virtual machine and deploy straight away.
+![](../.gitbook/assets/phpmyadmin%20%281%29.png)
 

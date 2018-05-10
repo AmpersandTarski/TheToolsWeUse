@@ -1,44 +1,45 @@
-# Docker images
+# Making Docker images
 
-This chapter discusses the process of baking (i.e. creating) images for docker hub. It also gives a recipe for creating docker images. If you are interested only in installing RAP3, you do not need this chapter.
+## Docker images
 
-Docker images are baked when the Ampersand source code for RAP3 is ready to be deployed. This results in three files, to be stored on Docker hub:  
-![](/assets/Docker store.png)
+This chapter discusses the process of baking \(i.e. creating\) images for docker hub. It also gives a recipe for creating docker images. If you are interested only in installing RAP3, you do not need this chapter.
 
-# The release train
+Docker images are baked when the Ampersand source code for RAP3 is ready to be deployed. This results in three files, to be stored on Docker hub:
+
+![](../.gitbook/assets/docker-store.png)
+
+## The release train
 
 RAP3 is deployed as shown in this picture
 
-![](/assets/Release train RAP3.png)
+![](../.gitbook/assets/release-train-rap3.png)
 
-# A recipe for creating images
+## A recipe for creating images
 
 Knowing what needs to be done allows you to understand how we make Ampersand's docker images. If you just want to do it, follow the steps below. We assume that you are working on an Ubuntu machine with `bash` as its command line interface.
 
-## Check your Docker installation
+### Check your Docker installation
 
 First I checked that docker and docker-compose are installed on my computer:
 
-```
+```text
 sjo@lnx-hrl-202v:~$ which docker
 /usr/bin/docker
 sjo@lnx-hrl-202v:~$ which docker-compose
 /usr/bin/docker-compose
 ```
-If you need to install docker, follow the instructions on https://docs.docker.com/engine/installation .
 
-## 4. Building an Ampersand image
-RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image.
-Run *./build-basecontainers.sh* to build the initial ampersand container that serves as a base for the RAP3 application
-  this base images holds all required packages and the (at that moment) latest version of the ampersand compiler
-  the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container (*docker rmi ampersand:latest*)
+If you need to install docker, follow the instructions on [https://docs.docker.com/engine/installation](https://docs.docker.com/engine/installation) .
 
-## 4. Making a Docker image
+### 4. Building an Ampersand image
 
+RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image. Run _./build-basecontainers.sh_ to build the initial ampersand container that serves as a base for the RAP3 application this base images holds all required packages and the \(at that moment\) latest version of the ampersand compiler the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container \(_docker rmi ampersand:latest_\)
+
+### 4. Making a Docker image
 
 I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
 
-```
+```text
 sudo -i
 git clone https://github.com/AmpersandTarski/docker-ampersand/ /home/$(whoami)/docker-ampersand
 cd docker-ampersand/
@@ -47,7 +48,7 @@ docker build -t ampersand:latest ampersand
 
 and sat back to watch an image being created. This takes over an hour. I left the session up and running, because stopping the session means that the docker build process stops. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
 
-```
+```text
 Wolfram docker-ampersand # docker build -t ampersand:latest ampersand
 Sending build context to Docker daemon 4.096 kB
 Step 1 : FROM php:7-apache
@@ -83,7 +84,7 @@ When you build an image where nothing changes \(as shown above\), this takes vir
 
 I checked whether all images are built by the `docker images` command:
 
-```
+```text
 sjo@lnx-hrl-202v:~/ampersand-models/RAP3$ docker images
 REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
 ampersandtarski/ampersand-rap            latest              636643166a78        2 hours ago         3.62GB
@@ -92,11 +93,11 @@ ampersandtarski/ampersand-prototype      texlive             efd0dccd6b4b       
 phpmyadmin/phpmyadmin                    latest              200931982ab6        6 days ago          110MB
 ```
 
-## 5. Publishing to docker-hub
+### 5. Publishing to docker-hub
 
 For this step, you need an account on docker-hub. Then Docker will simply push the generated images to docker hub by means of the push-command:
 
-```
+```text
 docker push ampersandtarski/ampersand-rap
 docker push ampersandtarski/ampersand-prototype-db
 docker push ampersandtarski/ampersand-prototype
@@ -104,11 +105,11 @@ docker push ampersandtarski/ampersand-prototype
 
 At this point the images are published and this chapter is done. However, it is good to discuss a few collateral issues: deployment, maintenance and security.
 
-## 6. Deploying directly on this server
+### 6. Deploying directly on this server
 
-We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin[^1]. Containers are built from images by the command `docker-compose`:
+We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
 
-```
+```text
 cd /home/ampersandadmin/docker-ampersand
 docker-compose up -d
 ```
@@ -119,27 +120,27 @@ I checked whether the containers are running by means of the `docker ps` command
 
 Completion of this step allowed access to RAP3 from an arbitrary computer on the internet:
 
-![](/assets/import.png)
+![](../.gitbook/assets/import.png)
 
 The database is accessible on port 8080:
 
-![](/assets/phpMyAdmin.png)
+![](../.gitbook/assets/phpmyadmin.png)
 
-## 7. Maintenance
+### 7. Maintenance
 
 The `docker-compose up` command aggregates the output of each container. When the command exits, all containers are stopped. Running `docker-compose up -d` starts the containers in the background and leaves them running.
 
 To interfere with RAP3 as it is running, you need to get into the Rap3 container. It is not enough just being on the server, because all the data is in the container \(rather than directly on the server\). To go into the Rap3 container, use the command
 
-```
+```text
 docker exec -ti dockerampersand_rap3_1 /bin/bash
 ```
 
-## 10. Local Settings
+### 10. Local Settings
 
 To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 5 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
-## 11. Last minute changes before going to production
+### 11. Last minute changes before going to production
 
 1. In the source code of RAP3, in the file SIAM\_importer.adl:
    1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
@@ -147,5 +148,5 @@ To inspect and change the local settings, you need the file `localsettings.php` 
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
 2. Is there anything we must alter in localsettings.php before going live?
 
-[^1] This is decribed in the file `docker-compose.yml`
+ This is decribed in the file `docker-compose.yml`
 

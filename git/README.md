@@ -1,4 +1,4 @@
-# Git / Github
+# Git
 
 Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:
 
@@ -9,11 +9,9 @@ Git is the version control system we use. Understanding the basics is essential 
 * Create yourself an account at [GitHub](https://www.github.com), if you don't have one already. This allows us to give you write access to the Ampersand repo.
 * Ask one of the administrators of Ampersand to add you as member to the team if you want/need write access to the Ampersand repo or any other repo in the project.
 * Install [Git for Windows](http://msysgit.github.io/).
-
   * Accept all defaults, except:
   * 4th screen check "Windows Explorer integration" / "Simple context menu" / "Git Bash here"
   * 6th screen "Use Git from the Windows Command Prompt"
-
 * Make sure to install the appropriate related Git tools, for ease of working.
 
 ## Tools for Git
@@ -35,7 +33,9 @@ To work with Git in an easy way, there are some tools that can make life easier.
   * Start / All programs / Git / Git GUI: Help / Show SSH Key
   * Press Generate Key. You can supply a pass phrase, but that's optional. You should of course keep it for yourself. \(it is in _$home/.ssh/id\_rsa_\). When you use a pass phrase, you will have to supply it now and then.
 * **Access to Sentinel**. If you need access to the Sentinel, copy your public key to Clipboard and mail to [Martijn](mailto:martijn@oblomov.com).
+
   He will make sure that you can log in with your key on Sentinel and your own account at sentinel.tarski.nl
+
 * **Access to repositories of AmpersandTarski** \(GitHub\). 
   * Go to your [personal settings](https://github.com/settings/profile)
   * press _Add SSH Key_
@@ -61,6 +61,4 @@ As soon as your key is registered at sentinel.tarski.nl, you can log in with
 
 * ssh sentinel@sentinel.tarski.nl
 * ssh USERNAME@sentinel.tarski.nl
-
-
 

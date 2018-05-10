@@ -1,4 +1,4 @@
-# RAP3 user manual
+# Functionality of RAP3
 
 These pages are meant to describe the functionality of RAP3. As RAP3 is still under development, some of this functionality is still work in progress. We will tell the current status of everything mentioned here. While doing so, this document will grow until it describes everything one can do with RAP3.
 
@@ -13,15 +13,15 @@ All of the above users have access to the login page. Further functionality is b
 
 ## Logging in {#rap3-login}
 
-![](/assets/login.png)
+![](../.gitbook/assets/login.png)
 
-When you log in, a userid and password must be entered. 
+When you log in, a userid and password must be entered.
 
 ## Logging out
 
 After you have logged in, this screen turns into a logout-screen. The menu bar gives you the options you are entitled to by the role\(s\) you have. In this case you get `MyScripts` and `My Account`:
 
-![](/assets/logout.png)
+![](../.gitbook/assets/logout.png)
 
 In the next pages, the functionality is described by role.
 

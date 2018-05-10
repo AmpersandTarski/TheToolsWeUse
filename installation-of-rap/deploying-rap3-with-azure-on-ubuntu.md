@@ -1,4 +1,4 @@
-# Ampersand in Ordina's cloud
+# Deploying RAP3 with Azure on Ubuntu
 
 In early 2017 the need arose for an Ampersand implementation in Ordina's cloud, to let young professionals get acquainted with Ampersand. We chose to implement RAP3 in Azure, because Ordina has an Azure subscription. RAP3 is the same environment that our students use at the Open Universiteit, so the maintainance of RAP3 can be reused for both target audiences.
 
@@ -26,16 +26,16 @@ The following settings were made:
 | server name | Wolfram |
 | type VM-disk | SDD |
 | OS | Linux |
-| configuration | Ubuntu|
+| configuration | Ubuntu |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | AmpersandRAP3 |
 | location \(in Azure\) | Western Europe |
 | Size | Standard DS11 v2 \(2 cores, 14 GB memory\) |
-| Inbound port: RAP3 (HTTP) | TCP/80 |
+| Inbound port: RAP3 \(HTTP\) | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: phpMyAdmin (HTTP)| TCP/8080 |
+| Inbound port: phpMyAdmin \(HTTP\) | TCP/8080 |
 | Public IP-adres | 52.232.97.91 \(static\) |
 | the full name for calling the application | [http://52.232.97.91/RAP3](http://ampersand.tarski.nl/RAP3) |
 
@@ -54,7 +54,7 @@ No rule was added for the database, so the database is only open to phpMyAdmin a
 
 ## 3. Installing Docker
 
-This step requires a server, so you must have finished section 1 successfully.  \(If `docker` and `docker-compose` are available, this step is superfluous.\) To install docker I followed the following steps in the given order:
+This step requires a server, so you must have finished section 1 successfully. \(If `docker` and `docker-compose` are available, this step is superfluous.\) To install docker I followed the following steps in the given order:
 
 | step | Linux command |
 | :--- | :--- |
@@ -68,12 +68,12 @@ Of course, the last step \(reboot\) requires reconnecting to the machine.
 
 Then I checked that docker is running by:
 
-```
+```text
  sudo docker ps
 ```
 
 I checked that docker-compose is available  
- by:
+by:
 
 `which docker-compose`
 
@@ -84,7 +84,7 @@ To check whether ampersandadmin is member of the docker group, use command cat /
 We need only one file: `docker-compose.yml`  
 To get it, I used the `wget` command, which gets stuff from the web:
 
-```
+```text
 sjo@Wolfram:~$ mkdir docker-RAP3
 sjo@Wolfram:~$ cd docker-RAP3
 sjo@Wolfram:~/docker-RAP3$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand-models/RAP3/docker-compose.yml
@@ -94,7 +94,7 @@ sjo@Wolfram:~/docker-RAP3$ wget https://raw.githubusercontent.com/AmpersandTarsk
 
 To install RAP3:
 
-```
+```text
 sjo@Wolfram:~$ docker-compose up -d
 ```
 
@@ -105,9 +105,9 @@ I checked whether the containers are running by means of the `docker ps` command
 
 Completion of this step allowed access to RAP3 from an arbitrary computer on the internet:
 
-![](/assets/import.png)
+![](../.gitbook/assets/import.png)
 
 The database is accessible on port 8080:
 
-![](/assets/phpMyAdmin.png)
+![](../.gitbook/assets/phpmyadmin.png)
 
