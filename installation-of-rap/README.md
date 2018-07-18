@@ -4,20 +4,37 @@ RAP is a **R**epository for **A**mpersand **P**rojects. This tool is being used 
 
 Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how.
 
-## Automated deployment
+## The short story
+You will find the complete and most recent source code of RAP3 on https://github.com/AmpersandTarski/RAP. The two steps are:
+1. Build a docker-image from that source code.
+2. Run that image on a docker platform.
 
-We use Docker for automating the deployment and making RAP portable over different platforms. The following two sections report what we have done:
+It works on any computer that runs Docker. To do it you need two commands, one for each step.
 
-* to [deploy RAP on an Ordina server](deploying-rap3-with-azure-on-ubuntu.md) in the Azure cloud;
-* to [deploy RAP at the Open University](deploying-ounl-rap3.md) on a server in the OUNL-datacenter.
+To build a docker-image of RAP3, open a command line interface, clone the RAP repository (if you haven't already), go to the root directory of RAP and give the following command:
+```
+   .../git/RAP> docker build --tag ampersandtarski/ampersand-rap:latest .
+```
 
-These two reports will most likely contain enough information to let you reproduce the installation on a server of your own.
+If you want to deploy it, use
+```
+   .../git/RAP> docker-compose up -d
+```
+This deploys the RAP3 service on your docker-platform using the file ``docker-compose.yml``.
 
-The last section of this chapter discusses the [making of docker images](making-docker-images.md). You need a docker image in order to deploy RAP3.
+Now browse (preferrably in Chrome or Firefox) to http://localhost/RAP3 to see it work. If you want to deploy on different servers, you must adapt the `docker-compose.yml`-file in the root directory of the RAP repository.
 
-## What Docker needs to do...
+## Examples of RAP3 deployment
 
-Docker is sheer magic. You don't have to understand it to run it. However, if you insist on knowing how it is done...
+We have deployed RAP3 on two servers and documented what we have done. Taken as examples, it might help you reproduce the installation on a server of your own:
+
+* [deploying RAP on an Ordina server](deploying-rap3-with-azure-on-ubuntu.md) in the Azure cloud;
+* [deploying RAP at the Open University](deploying-ounl-rap3.md) on a server in the OUNL-datacenter.
+
+
+## What Docker does for you...
+
+Docker is sheer magic. So stop reading here if you enjoy the magic. After all, you don't have to understand the process to run it. However, if you insist... Read on and learn how the trick is done. Don't blame us for spoiling the trick, though!
 
 Here are ten steps to install RAP3 manually, without Docker, on a freshly created server:
 
