@@ -12,7 +12,7 @@ Every time someone pulls a feature branch into the [development branch](https://
 
 ## Releasing at Github
 
-Recently we have decided to release every four weeks. Of course, we want this to happen as smoothly as can be. Ideally, we want it fully automated. Yet, some manual tasks are required. This is described in the following paragraph.
+We release Ampersand every four weeks. Of course, we want this to happen as smoothly as can be. Ideally, we want it fully automated. Yet, some manual tasks are required. This is described in the following paragraph.
 
 ## Pre-release steps \(what to do\)
 

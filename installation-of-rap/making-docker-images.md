@@ -33,17 +33,17 @@ If you need to install docker, follow the instructions on [https://docs.docker.c
 
 ### 4. Building an Ampersand image
 
-RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image. Run _./build-basecontainers.sh_ to build the initial ampersand container that serves as a base for the RAP3 application this base images holds all required packages and the \(at that moment\) latest version of the ampersand compiler the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container \(_docker rmi ampersand:latest_\)
+RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image. Run _./build.sh_ to build the initial ampersand container that serves as a base for the RAP3 application \(or any other Ampersand application\). This base images holds all required packages and the \(at that moment\) latest version of the ampersand compiler the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container \(_docker rmi ampersand:latest_\)
 
 ### 4. Making a Docker image
 
-I cloned `https://github.com/docker-ampersand/docker-ampersand`into `/home/ampersandadmin/docker-ampersand by the following command`:
+I cloned the docker files into a local directory  by the following command:
 
-```text
+```bash
 sudo -i
 git clone https://github.com/AmpersandTarski/docker-ampersand/ /home/$(whoami)/docker-ampersand
 cd docker-ampersand/
-docker build -t ampersand:latest ampersand
+./build.sh
 ```
 
 and sat back to watch an image being created. This takes over an hour. I left the session up and running, because stopping the session means that the docker build process stops. After coming back a day later, I verified that the image is present by running the same command again. That produced the following output:
