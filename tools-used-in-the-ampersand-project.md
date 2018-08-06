@@ -1,11 +1,13 @@
 ---
 description: >-
-  This list gives an exhaustive overview of tools and technologies
-  used in the Ampersand project. It explains the purpose for using it and the
-  project member(s) who know about it.
+  This list gives an exhaustive overview of tools and technologies used in the
+  Ampersand project. It explains the purpose for using it and the project
+  member(s) who know about it.
 ---
 
-# Specific tools used in the Ampersand project
+# Tools used in the Ampersand project
+
+## Specific tools used in the Ampersand project
 
 | Tool | Purpose | Knowledge holder |
 | :--- | :--- | :--- |
@@ -18,7 +20,7 @@ description: >-
 | [Rule Based Design](https://www.ou.nl/-/IM0403_Rule-Based-Design) | an Ampersand Course | [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Rogier](https://github.com/rvandewetering) |
 | Travis | a service, which runs automated tests on every commit of the Ampersand repository on Github \(the origin\). | [Han](https://github.com/hanjoosten) |
 
-# Generic tools used in the Ampersand project
+## Generic tools used in the Ampersand project
 
 | Tool | Purpose | Knowledge holder |
 | :--- | :--- | :--- |
@@ -34,6 +36,4 @@ description: >-
 | [Pandoc](https://pandoc.org/) | a system for document translation and markup, which we use to create a host of different document formats | [Han](https://github.com/hanjoosten) |
 | [Stack](https://www.haskellstack.org/) | the installation environment for Haskell, which guarantees consistency of module dependencies within the Haskell world. | [Han](https://github.com/hanjoosten), [Martijn](https://github.com/Oblosys) |
 | [VS-code](https://code.visualstudio.com/) | an editor for development of Ampersand and Ampersand-projects | [Han](https://github.com/hanjoosten), [Rieks](https://github.com/RieksJ) |
-
-
 

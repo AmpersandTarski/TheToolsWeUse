@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Tools used in the Ampersand project](tools-used-in-the-ampersand-project.md)
 * [Git](git/README.md)
   * [Releasing Ampersand \(And workflow details\)](git/releasing-ampersand-and-workflow-details.md)
 * [GitBook](gitbook/README.md)
@@ -18,5 +19,4 @@
   * [Graduate Student](functionality-of-rap3/graduate-student.md)
 * [Sentinel](sentinel.md)
 * [Authentication and access management with OAuth](authentication-and-access-management-with-oauth.md)
-* [Tools used in the Ampersand project](tools-used-in-the-ampersand-project.md)
 
