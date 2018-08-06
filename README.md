@@ -13,20 +13,18 @@ In the early days of the development of Ampersand, it was a single person's proj
 The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-tools-we-use-for-ampersand/) is published automatically every time a commit is done to the master branch.
 
 ## Specific tools used in the Ampersand project
-
 | Tool | Purpose \(the hyperlink navigates to the section in this book\) | Knowledge holder |
 | :--- | :--- | :--- |
-| [Ampersand](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code | [Rieks](https://github.com/RieksJ), [Stef](https://github.com/stefjoosten), [Michiel](https://github.com/Michiel-s), [Esther](https://github.com/EstherHageraats) |
+| [Ampersand](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code and manage the issues wrt Ampersand | [Rieks](https://github.com/RieksJ), [Stef](https://github.com/stefjoosten), [Michiel](https://github.com/Michiel-s), [Esther](https://github.com/EstherHageraats) |
 | [Appveyor](https://ci.appveyor.com/project/hanjoosten/ampersand) | a service that [releases the Ampersand compiler](git/releasing-ampersand-and-workflow-details.md) automatically, provided all automated tests have passed | [Han](https://github.com/hanjoosten) |
 | [Docker Hub](https://hub.docker.com/u/ampersandtarski/) | a repository in which we keep [Ampersand images](installation-of-rap/making-docker-images.md) | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
 | [GitBook](https://www.ou.nl/-/IM0403_Rule-Based-Design) | a repository in which we keep [Ampersand Documentation](gitbook/) | [Han](https://github.com/hanjoosten), [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Hidde-Jan](https://github.com/hidde-jan) |
 | [GitHub](https://github.com/AmpersandTarski/) | a project in which we keep all Ampersand git-repos | all |
-| RAP | a [web-based application](installation-of-rap/) for [the public at large](functionality-of-rap3/) to use Ampersand | [Stef](https://github.com/stefjoosten), [Han](https://github.com/hanjoosten), [Michiel](https://github.com/Michiel-s) |
+| RAP3 | a [web-based application](functionality-of-rap3/) for the public at large to use Ampersand | [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Stef](https://github.com/stefjoosten) |
+| [RAP-repo](https://github.com/AmpersandTarski/RAP/) | a Github repository in which we keep the [source code of RAP applications](installation-of-rap/) | [Stef](https://github.com/stefjoosten) |
 | [Rule Based Design](https://www.ou.nl/-/IM0403_Rule-Based-Design) | an Ampersand Course | [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Rogier](https://github.com/rvandewetering) |
 | Travis | a service, which runs automated tests on every commit of the Ampersand repository on Github \(the origin\). | [Han](https://github.com/hanjoosten) |
-
 ## Generic tools used in the Ampersand project
-
 | Tool | Purpose | Knowledge holder |
 | :--- | :--- | :--- |
 | [Docker](https://www.docker.com/) | the platform for technology agnostic, fully automated deployment of Ampersand and applications developed in Ampersand. | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
@@ -42,13 +40,23 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [Stack](https://www.haskellstack.org/) | the installation environment for Haskell, which guarantees consistency of module dependencies within the Haskell world. | [Han](https://github.com/hanjoosten), [Martijn](https://github.com/Oblosys) |
 | [VS-code](https://code.visualstudio.com/) | an editor for development of Ampersand and Ampersand-projects | [Han](https://github.com/hanjoosten), [Rieks](https://github.com/RieksJ) |
 
-### Contributions to the documentation
+## Working Practices
+
+* The Ampersand project produces free open source software, available to everyone.
+* We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership whereever appropriate.
+* We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandibility of all software artifacts. It means we document code to be relevant (for new team members), complete (for finding everything you need), and minimal (to save readers some reading effort). It implies we reuse code and strive for orthogonal design.
+* We automate the production of software to the max, to obtain robust and fast deployments and save ourselves repeated work.
+* When in trouble, we write an issue on [GitHub](https://github.com/AmpersandTarski/Ampersand/). We diagnose each problem before suggesting solutions. The diagnosis is documented on Github by means of comments to the issue. Once an issue is closed, we edit the issue to minimize text and focus on the correct diagnosis.
+* We accept the consequences of being "under construction" all the time.
+* We believe in a formal foundation of software engineering.
+
+## Contributions to the documentation
 
 If you have anything to fix or details to add, just post a comment next to the paragraph. We really appreciate if you do so, because our readers know best what it is they are looking for in the docs.
 
 You can do that by clicking the '+' icon that appears when you hover above the paragraph. Don't be shy! Try it out!
 
-### Licence
+## Licence
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
 
