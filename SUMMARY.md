@@ -18,4 +18,5 @@
   * [Graduate Student](functionality-of-rap3/graduate-student.md)
 * [Sentinel](sentinel.md)
 * [Authentication and access management with OAuth](authentication-and-access-management-with-oauth.md)
+* [Tools used in the Ampersand project](tools-used-in-the-ampersand-project.md)
 
