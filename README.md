@@ -16,7 +16,8 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 
 | Tool | Purpose \(the hyperlink navigates to the section in this book\) | Knowledge holder |
 | :--- | :--- | :--- |
-| [Ampersand](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code and manage the issues wrt Ampersand | [Rieks](https://github.com/RieksJ), [Stef](https://github.com/stefjoosten), [Michiel](https://github.com/Michiel-s), [Esther](https://github.com/EstherHageraats) |
+| [Ampersand compiler](https://hub.docker.com/r/ampersandtarski/ampersand-prototype/) | a docker-image in which we keep the latest version of the Ampersand compiler in executable form | all |
+| [Ampersand repository](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code and manage the issues wrt Ampersand | all |
 | [Appveyor](https://ci.appveyor.com/project/hanjoosten/ampersand) | a service that [releases the Ampersand compiler](git/releasing-ampersand-and-workflow-details.md) automatically, provided all automated tests have passed | [Han](https://github.com/hanjoosten) |
 | [Docker Hub](https://hub.docker.com/u/ampersandtarski/) | a repository in which we keep [Ampersand images](installation-of-rap/making-docker-images.md) | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
 | [GitBook](https://www.ou.nl/-/IM0403_Rule-Based-Design) | a repository in which we keep [Ampersand Documentation](gitbook/) | [Han](https://github.com/hanjoosten), [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Hidde-Jan](https://github.com/hidde-jan) |
@@ -44,7 +45,6 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [VS-code](https://code.visualstudio.com/) | an editor for development of Ampersand and Ampersand-projects | [Han](https://github.com/hanjoosten), [Rieks](https://github.com/RieksJ) |
 
 ## Working Practices
-
 * The Ampersand project produces free open source software, available to everyone.
 * We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership whereever appropriate.
 * We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandibility of all software artifacts. It means we document code to be relevant \(for new team members\), complete \(for finding everything you need\), and minimal \(to save readers some reading effort\). It implies we reuse code and strive for orthogonal design.
