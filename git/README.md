@@ -29,13 +29,11 @@ To work with Git in an easy way, there are some tools that can make life easier.
 
 ## Configuring Security
 
+To avoid typing a password for every commit you make, [install an SSH-key](https://help.github.com/articles/connecting-to-github-with-ssh/). Here is the short version:
+
 * **Generate a SSH Key**
   * Start / All programs / Git / Git GUI: Help / Show SSH Key
   * Press Generate Key. You can supply a pass phrase, but that's optional. You should of course keep it for yourself. \(it is in _$home/.ssh/id\_rsa_\). When you use a pass phrase, you will have to supply it now and then.
-* **Access to Sentinel**. If you need access to the Sentinel, copy your public key to Clipboard and mail to [Martijn](mailto:martijn@oblomov.com).
-
-  He will make sure that you can log in with your key on Sentinel and your own account at sentinel.tarski.nl
-
 * **Access to repositories of AmpersandTarski** \(GitHub\). 
   * Go to your [personal settings](https://github.com/settings/profile)
   * press _Add SSH Key_

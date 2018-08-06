@@ -13,6 +13,7 @@ In the early days of the development of Ampersand, it was a single person's proj
 The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-tools-we-use-for-ampersand/) is published automatically every time a commit is done to the master branch.
 
 ## Specific tools used in the Ampersand project
+
 | Tool | Purpose \(the hyperlink navigates to the section in this book\) | Knowledge holder |
 | :--- | :--- | :--- |
 | [Ampersand](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code and manage the issues wrt Ampersand | [Rieks](https://github.com/RieksJ), [Stef](https://github.com/stefjoosten), [Michiel](https://github.com/Michiel-s), [Esther](https://github.com/EstherHageraats) |
@@ -24,7 +25,9 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [RAP-repo](https://github.com/AmpersandTarski/RAP/) | a Github repository in which we keep the [source code of RAP applications](installation-of-rap/) | [Stef](https://github.com/stefjoosten) |
 | [Rule Based Design](https://www.ou.nl/-/IM0403_Rule-Based-Design) | an Ampersand Course | [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Rogier](https://github.com/rvandewetering) |
 | Travis | a service, which runs automated tests on every commit of the Ampersand repository on Github \(the origin\). | [Han](https://github.com/hanjoosten) |
+
 ## Generic tools used in the Ampersand project
+
 | Tool | Purpose | Knowledge holder |
 | :--- | :--- | :--- |
 | [Docker](https://www.docker.com/) | the platform for technology agnostic, fully automated deployment of Ampersand and applications developed in Ampersand. | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
@@ -44,7 +47,7 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 
 * The Ampersand project produces free open source software, available to everyone.
 * We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership whereever appropriate.
-* We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandibility of all software artifacts. It means we document code to be relevant (for new team members), complete (for finding everything you need), and minimal (to save readers some reading effort). It implies we reuse code and strive for orthogonal design.
+* We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandibility of all software artifacts. It means we document code to be relevant \(for new team members\), complete \(for finding everything you need\), and minimal \(to save readers some reading effort\). It implies we reuse code and strive for orthogonal design.
 * We automate the production of software to the max, to obtain robust and fast deployments and save ourselves repeated work.
 * When in trouble, we write an issue on [GitHub](https://github.com/AmpersandTarski/Ampersand/). We diagnose each problem before suggesting solutions. The diagnosis is documented on Github by means of comments to the issue. Once an issue is closed, we edit the issue to minimize text and focus on the correct diagnosis.
 * We accept the consequences of being "under construction" all the time.
