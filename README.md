@@ -45,6 +45,7 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [VS-code](https://code.visualstudio.com/) | an editor for development of Ampersand and Ampersand-projects | [Han](https://github.com/hanjoosten), [Rieks](https://github.com/RieksJ) |
 
 ## Working Practices
+
 * The Ampersand project produces free open source software, available to everyone.
 * We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership whereever appropriate.
 * We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandibility of all software artifacts. It means we document code to be relevant \(for new team members\), complete \(for finding everything you need\), and minimal \(to save readers some reading effort\). It implies we reuse code and strive for orthogonal design.
