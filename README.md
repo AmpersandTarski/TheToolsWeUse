@@ -22,10 +22,10 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [Docker Hub](https://hub.docker.com/u/ampersandtarski/) | a repository in which we keep [Ampersand images](installation-of-rap/making-docker-images.md) | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
 | [GitBook](https://www.ou.nl/-/IM0403_Rule-Based-Design) | a repository in which we keep [Ampersand Documentation](gitbook/) | [Han](https://github.com/hanjoosten), [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Hidde-Jan](https://github.com/hidde-jan) |
 | [GitHub](https://github.com/AmpersandTarski/) | a project in which we keep all Ampersand git-repos | all |
-| RAP3 | a [web-based application](functionality-of-rap3/) for the public at large to use Ampersand | [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Stef](https://github.com/stefjoosten) |
+| [RAP3](http://ampersand.tarski.nl/RAP3/) | a [web-based application](functionality-of-rap3/) for the public at large to use Ampersand | [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Stef](https://github.com/stefjoosten) |
 | [RAP-repo](https://github.com/AmpersandTarski/RAP/) | a Github repository in which we keep the [source code of RAP applications](installation-of-rap/) | [Stef](https://github.com/stefjoosten) |
 | [Rule Based Design](https://www.ou.nl/-/IM0403_Rule-Based-Design) | an Ampersand Course | [Stef](https://github.com/stefjoosten), [Esther](https://github.com/EstherHageraats), [Lloyd](https://github.com/LloydRutledge), [Rogier](https://github.com/rvandewetering) |
-| Travis | a service, which runs automated tests on every commit of the Ampersand repository on Github \(the origin\). | [Han](https://github.com/hanjoosten) |
+| [Travis](https://travis-ci.org/AmpersandTarski/Ampersand) | a service, which runs automated tests on every commit of the Ampersand repository on Github \(the origin\). | [Han](https://github.com/hanjoosten) |
 
 ## Generic tools used in the Ampersand project
 
