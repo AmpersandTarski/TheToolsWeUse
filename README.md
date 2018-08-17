@@ -16,7 +16,7 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 
 | Tool | Purpose \(the hyperlink navigates to the section in this book\) | Knowledge holder |
 | :--- | :--- | :--- |
-| [Ampersand compiler](https://hub.docker.com/r/ampersandtarski/ampersand-prototype/) | a docker-image in which we keep the latest version of the Ampersand compiler in executable form | all |
+| [Ampersand image](https://hub.docker.com/r/ampersandtarski/ampersand-prototype/) | a docker-image in which we keep the latest version of the Ampersand compiler in executable form | all |
 | [Ampersand repository](https://github.com/AmpersandTarski/Ampersand/) | a [repository](gitbook/getting-started-with-gitbook.md) in which we keep Ampersand source code and manage the issues wrt Ampersand | all |
 | [Appveyor](https://ci.appveyor.com/project/hanjoosten/ampersand) | a service that [releases the Ampersand compiler](git/releasing-ampersand-and-workflow-details.md) automatically, provided all automated tests have passed | [Han](https://github.com/hanjoosten) |
 | [Docker Hub](https://hub.docker.com/u/ampersandtarski/) | a repository in which we keep [Ampersand images](installation-of-rap/making-docker-images.md) | [Hidde-Jan](https://github.com/hidde-jan), [Stef](https://github.com/stefjoosten) |
