@@ -18,14 +18,14 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
 1. In `development` branch, modify the following files[1](releasing-ampersand-and-workflow-details.md#myfootnote1):
    * `ampersand.cabal`: 
-     * bump the version number to release
+     * Change the version number to the next release number.
    * `ReleaseNotes.md` : 
-     * rename the "unreleased changes" section to the new version
-     * add new "unreleased changes" section
-2. Push your modifications to Github. \(this will trigger automated testing by Travis\)
-3. Ensure travis-ci builds succesfully:
+     * Rename the "unreleased changes" section to the new version
+     * Add a new "unreleased changes" section for the next release.
+2. Push your modifications to GitHub. This will trigger automated testing by Travis.
+3. Ensure that travis-ci builds succesfully:
    * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
-4. Create a pull request to the 
+4. Create a pull request to the
 
    [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development)
 
@@ -37,29 +37,24 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
    ![](../.gitbook/assets/create-pull-request.PNG)
 
-    Press the green button to create the pull request.
+   Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub.
 
 5. Wait in [Travis](https://travis-ci.org/AmpersandTarski/Ampersand) for all tests to complete, and then pull the pull-request into the [master](https://github.com/AmpersandTarski/Ampersand/)[3](releasing-ampersand-and-workflow-details.md#myfootnote3).
 6. Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable.
 7. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
 8. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
-
    * press the edit button, and add the current date to the title. 
-   * Also add the following line into the description field: 
+   * Also add the following line into the description field:
 
      ```text
      [Release notes](https://github.com/AmpersandTarski/Ampersand/blob/master/ReleaseNotes.md)
      ```
 
+![](../.gitbook/assets/modify-release-title.PNG)
 
-
-   ![](../.gitbook/assets/modify-release-title.PNG)
-
-9. Check that the build contains the ampersand windows executable. It should. If it isn't there, build it and update the release manually. The log of the Appveyor should probably contain a hint why the executable wasn't built.
+1. Check that the build contains the ampersand windows executable. It should. If it isn't there, build it and update the release manually. The log of the Appveyor should probably contain a hint why the executable wasn't built.
 
 Notes, tips and tricks:
 
-[1](releasing-ampersand-and-workflow-details.md): Looking for `ampersand.cabal` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current \(!\) version. Please make sure your Git is working in the development branch.
-[2](releasing-ampersand-and-workflow-details.md): This and most of the following actions are done from within the ampersand repository at github.
-[3](releasing-ampersand-and-workflow-details.md): At the bottom of the page in GitHub, you will find the buttons to merge this release. Please drop a note to describe new features.
+[1](releasing-ampersand-and-workflow-details.md): Looking for `ampersand.cabal` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current \(!\) version. Please make sure your Git is working in the development branch. [2](releasing-ampersand-and-workflow-details.md): This and most of the following actions are done from within the ampersand repository at github. [3](releasing-ampersand-and-workflow-details.md): At the bottom of the page in GitHub, you will find the buttons to merge this release. Please drop a note to describe new features.
 

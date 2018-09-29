@@ -87,7 +87,7 @@ To get it, I used the `wget` command, which gets stuff from the web:
 ```text
 sjo@Wolfram:~$ mkdir docker-RAP3
 sjo@Wolfram:~$ cd docker-RAP3
-sjo@Wolfram:~/docker-RAP3$ wget https://raw.githubusercontent.com/AmpersandTarski/Ampersand-models/RAP3/docker-compose.yml
+sjo@Wolfram:~/docker-RAP3$ wget https://github.com/AmpersandTarski/RAP/raw/master/docker-compose.yml
 ```
 
 ## 5. Installing RAP3
