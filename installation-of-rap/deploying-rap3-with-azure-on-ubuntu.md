@@ -36,12 +36,12 @@ The following settings were made:
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Inbound port: phpMyAdmin \(HTTP\) | TCP/8080 |
-| Public IP-adres | 52.232.97.91 \(static\) |
-| the full name for calling the application | [http://52.232.97.91/RAP3](http://ampersand.tarski.nl/RAP3) |
+| Public IP-adres | 137.117.190.28 \(static\) |
+| the full name for calling the application | http://137.117.190.28/RAP3 |
 
 I verified completion of this step by checking the Azure dashboard. It shows machine `Wolfram` running.
 
-I have verified the machine was live by logging in via Putty \(a popular SSH-client\). I accessed this machine, using `ampersandadmin@52.232.97.91` and the correct password. In the sequel, I will refer to this machine as "the server".
+I have verified the machine was live by logging in via Putty \(a popular SSH-client\). I accessed this machine, using `ampersandadmin@137.117.190.28` and the correct password. In the sequel, I will refer to this machine as "the server".
 
 ## 2. Port settings
 
@@ -99,7 +99,7 @@ To install RAP3:
 sjo@Wolfram:~$ sudo docker-compose up -d
 ```
 
-To check whether this worked, I went to my browser and navigated to `http://52.232.97.91/`.  
+To check whether this worked, I went to my browser and navigated to `http://137.117.190.28/`.  
 It took a while to get started, because it was building a fresh database.
 
 I checked whether the containers are running by means of the `docker ps` command.
