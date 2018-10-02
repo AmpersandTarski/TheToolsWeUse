@@ -12,6 +12,7 @@
   * [Deploying OUNL RAP3](installation-of-rap/deploying-ounl-rap3.md)
   * [Deploying RAP3 with Azure on Ubuntu](installation-of-rap/deploying-rap3-with-azure-on-ubuntu.md)
   * [Making Docker images](installation-of-rap/making-docker-images.md)
+  * [Deployment Configuration](installation-of-rap/deployment-configuration.md)
 * [Functionality of RAP3](functionality-of-rap3/README.md)
   * [Student](functionality-of-rap3/student.md)
   * [Tutor](functionality-of-rap3/tutor.md)

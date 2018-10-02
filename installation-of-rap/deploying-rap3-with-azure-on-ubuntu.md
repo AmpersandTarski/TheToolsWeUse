@@ -26,7 +26,7 @@ The following settings were made:
 | server name | Wolfram |
 | type VM-disk | SDD |
 | OS | Linux |
-| configuration | Ubuntu |
+| configuration | Ubuntu 18.04 |
 | Admin user name | ampersandadmin |
 | verification type | password \(Stef Joosten knows the password\) |
 | Resource group \(in Azure\) | AmpersandRAP3 |
@@ -59,7 +59,8 @@ This step requires a server, so you must have finished section 1 successfully. \
 | step | Linux command |
 | :--- | :--- |
 | To work as root | sudo -i |
-| To obtain both docker and docker-compose | apt-get install docker-compose |
+| To install docker, I followed the instructions on [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04). |  |
+| To install docker-compose | apt-get install docker-compose |
 | To add the current user \(ampersandadmin\) to the docker group | usermod -aG docker $\(whoami\) |
 | To start the docker daemon |  |
 | now reboot the machine | reboot |
@@ -95,7 +96,7 @@ sjo@Wolfram:~/docker-RAP3$ wget https://github.com/AmpersandTarski/RAP/raw/maste
 To install RAP3:
 
 ```text
-sjo@Wolfram:~$ docker-compose up -d
+sjo@Wolfram:~$ sudo docker-compose up -d
 ```
 
 To check whether this worked, I went to my browser and navigated to `http://52.232.97.91/`.  
