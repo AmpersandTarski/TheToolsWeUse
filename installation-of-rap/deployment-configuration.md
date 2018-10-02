@@ -7,3 +7,7 @@ description: >-
 
 # Deployment Configuration
 
+## Permissions for log files
+
+Write permission is needed for log files. The pod in which RAP runs defines a volume called `log` in which the log files are written. This means that the files are stored outside the container on the machine that hosts the docker platform. 
+
