@@ -1,3 +1,7 @@
+---
+description: This page contains useful information for getting started with Git
+---
+
 # Git
 
 Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:
@@ -53,10 +57,12 @@ By default, the Git directory in your home directory will be used for all local 
     * Start / All Programs / TortoiseGit / Network:
     * At "SSH Client" just fill in:   C:\Program Files \(x86\)\Git\bin\ssh.exe
 
-## Using Sentinel
+## Working Practices
 
-As soon as your key is registered at sentinel.tarski.nl, you can log in with
+1. The [Ampersand repository at Github](https://github.com/AmpersandTarski/Ampersand/) contains the authoritative source code of Ampersand.
+2. The master branch is used for releases only. @hanjoosten is currently the primary guardian of the release process.
+3. The development branch is used only to commit developments that are ready to be tested by the Ampersand inner-circle.
+4. Every developer develops on his or her own branch\(es\). Typically these are spawned from the development branch.
 
-* ssh sentinel@sentinel.tarski.nl
-* ssh USERNAME@sentinel.tarski.nl
+
 

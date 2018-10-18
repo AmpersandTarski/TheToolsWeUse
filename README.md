@@ -44,7 +44,7 @@ The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-too
 | [Stack](https://www.haskellstack.org/) | the installation environment for Haskell, which guarantees consistency of module dependencies within the Haskell world. | [Han](https://github.com/hanjoosten), [Martijn](https://github.com/Oblosys) |
 | [VS-code](https://code.visualstudio.com/) | an editor for development of Ampersand and Ampersand-projects | [Han](https://github.com/hanjoosten), [Rieks](https://github.com/RieksJ) |
 
-## Working Practices
+## Working Principles
 
 * The Ampersand project produces free open source software, available to everyone.
 * We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership whereever appropriate.
