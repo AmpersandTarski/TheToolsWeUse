@@ -12,6 +12,8 @@ In the early days of the development of Ampersand, it was a single person's proj
 
 The [up to date version of this book](http://ampersandtarski.gitbooks.io/the-tools-we-use-for-ampersand/) is published automatically every time a commit is done to the master branch.
 
+Documentation on actually using Ampersand - e.g. for making and running prototypes (including the ways to install on your computer what it takes to do so) - is in another document, called [Ampersand Documentation](https://ampersandtarski.gitbook.io/documentation/)
+
 ## Specific tools used in the Ampersand project
 
 | Tool | Purpose \(the hyperlink navigates to the section in this book\) | Knowledge holder |
