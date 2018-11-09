@@ -1,7 +1,3 @@
----
-description: This page contains useful information for getting started with Git
----
-
 # Git
 
 Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:

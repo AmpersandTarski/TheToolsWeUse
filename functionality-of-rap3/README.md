@@ -11,7 +11,7 @@ The purpose of RAP3 is to be a platform for people to learn how to work with Amp
 
 All of the above users have access to the login page. Further functionality is based on specific roles.
 
-## Logging in {#rap3-login}
+## Logging in <a id="rap3-login"></a>
 
 ![](../.gitbook/assets/login.png)
 

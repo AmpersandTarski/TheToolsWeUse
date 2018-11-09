@@ -1,10 +1,3 @@
----
-description: >-
-  This page gives an overview of the tools we use, to document the purpose of
-  use. For details on how we use a particular tool, please read the appropriate
-  chapter.
----
-
 # Tools used in the Ampersand project
 
 ## Git
