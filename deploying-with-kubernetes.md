@@ -14,141 +14,178 @@ Deploying your Ampersand application to production can be done fast and frequent
 ## Way of working
 
 1. You need a Kubernetes cluster, which you get from your provider, from your data center, or you create one yourself \(e.g. on your laptop\). A cluster is built on top of virtual or physical machines and hosts the services that expose \(i.e. to internet\).
-2. 
+2. On the platform I need a registry from which Kubernetes can pull the image\(s\).
 
+I tried it out for myself. I stole my inspiration from [Kevin Smets' instruction](https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7). Thank you Kevin! I ran the following from my terminal \(i.e. MacOS cli\)
 
-## A use case
+### Requirements
 
-I tried it out for myself. First I got a cluster from Azure:
+To make a Kubernetes cluster, I used Minikube. Minikube requires that VT-x/AMD-v virtualization is enabled in BIOS. To check that this is enabled on OSX / macOS, I ran:
 
-# Requirements
-
-Minikube requires that VT-x/AMD-v virtualization is enabled in BIOS. To check that this is enabled on OSX / macOS run:
-
-    sysctl -a | grep machdep.cpu.features | grep VMX
-
-If there's output, you're good!
-
-# Prerequisites
-
-- kubectl
-- docker (for Mac)
-- minikube
-- virtualbox
-
+```text
+sysctl -a | grep machdep.cpu.features | grep VMX
 ```
+
+If there's output, it works!
+
+### Prerequisites
+
+* kubectl
+* docker \(for Mac\)
+* minikube
+* virtualbox
+
+```text
 brew update && brew install kubectl && brew cask install docker minikube virtualbox
 ```
 
-# Verify
+### Verify
 
-    docker --version                # Docker version 17.09.0-ce, build afdb6d4
-    docker-compose --version        # docker-compose version 1.16.1, build 6d1ac21
-    docker-machine --version        # docker-machine version 0.12.2, build 9371605
-    minikube version                # minikube version: v0.22.3
-    kubectl version --client        # Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.1", GitCommit:"f38e43b221d08850172a9a4ea785a86a3ffa3b3a", GitTreeState:"clean", BuildDate:"2017-10-12T00:45:05Z", GoVersion:"go1.9.1", Compiler:"gc", Platform:"darwin/amd64"}      
-    
-# Start
+```text
+docker --version                # Docker version 17.09.0-ce, build afdb6d4
+docker-compose --version        # docker-compose version 1.16.1, build 6d1ac21
+docker-machine --version        # docker-machine version 0.12.2, build 9371605
+minikube version                # minikube version: v0.22.3
+kubectl version --client        # Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.1", GitCommit:"f38e43b221d08850172a9a4ea785a86a3ffa3b3a", GitTreeState:"clean", BuildDate:"2017-10-12T00:45:05Z", GoVersion:"go1.9.1", Compiler:"gc", Platform:"darwin/amd64"}      
+```
 
-    minikube start
-    
+### Start
+
+```text
+minikube start
+```
+
 This can take a while, expected output:
 
-    Starting local Kubernetes cluster...
-    Kubectl is now configured to use the cluster.
+```text
+Starting local Kubernetes cluster...
+Kubectl is now configured to use the cluster.
+```
 
 Great! You now have a running Kubernetes cluster locally. Minikube started a virtual machine for you, and a Kubernetes cluster is now running in that VM.
 
-# Check k8s
+### Check k8s
 
-    kubectl get nodes
-    
+```text
+kubectl get nodes
+```
+
 Should output something like:
 
-    NAME       STATUS    ROLES     AGE       VERSION
-    minikube   Ready     <none>    40s       v1.7.5
-    
-# Use minikube's built-in docker daemon:
-
-    eval $(minikube docker-env)
-    
-Add this line to `.bash_profile` or `.zshrc` or ... if you want to use minikube's daemon by default (or if you do not want to set this every time you open a new terminal).
-
-You can revert back to the host docker daemon by running:
-
-    eval $(docker-machine env -u)
-    
-If you now run `docker ps`, it should now output something like:
-
-```
-CONTAINER ID        IMAGE                                         COMMAND                 CREATED             STATUS              PORTS               NAMES
-e97128790bf9        gcr.io/google-containers/kube-addon-manager   "/opt/kube-addons.sh"   22 seconds ago      Up 22 seconds                           k8s_kube-addon-manager_kube-addon-manager-minikube_kube-system_c654b2f084cf26941c334a2c3d6db53d_0
-69707e54d1d0        gcr.io/google_containers/pause-amd64:3.0      "/pause"                33 seconds ago      Up 33 seconds                           k8s_POD_kube-addon-manager-minikube_kube-system_c654b2f084cf26941c334a2c3d6db53d_0
+```text
+NAME       STATUS    ROLES     AGE       VERSION
+minikube   Ready     <none>    40s       v1.7.5
 ```
 
-# Build, deploy and run an image on your local k8s setup
+Within minikube, a docker platform is running. However, on my Mac I have another docker daemon running. But  when we talk to docker, we definitely want to talk to the docker daemon that is inside minikube...
 
-First setup a local registry, so Kubernetes can pull the image(s) from there:
+### Use minikube's built-in docker daemon
 
-    docker run -d -p 5000:5000 --restart=always --name registry registry:2
+```text
+eval $(minikube docker-env)
+```
 
-## Build
+\(You might add this line to `.bash_profile` or `.zshrc` or ...  to use minikube's daemon by default. Or if you do not want to set this every time you open a new terminal\).
 
-First of, store all files (Dockerfile, my-app.yml, index.html) in this gist locally in some new (empty) directory.
+If I want to talk to the docker daemon on my Mac, I have to revert back to it by running:
+
+```text
+eval $(docker-machine env -u)
+```
+
+When running `docker ps`, it showed the following output:
+
+```text
+CONTAINER ID        IMAGE                                      COMMAND                  CREATED             STATUS              PORTS               NAMES
+3835176d93bb        k8s.gcr.io/k8s-dns-sidecar-amd64           "/sidecar --v=2 --lo…"   30 minutes ago      Up 30 minutes                           k8s_sidecar_kube-dns-86f4d74b45-4b48w_kube-system_91346644-e424-11e8-bae2-080027501972_0
+3c803544be8a        k8s.gcr.io/kubernetes-dashboard-amd64      "/dashboard --insecu…"   30 minutes ago      Up 30 minutes                           k8s_kubernetes-dashboard_kubernetes-dashboard-6f4cfc5d87-mvtgw_kube-system_962829f4-e424-11e8-bae2-080027501972_0
+1d74c735c1df        k8s.gcr.io/coredns                         "/coredns -conf /etc…"   30 minutes ago      Up 30 minutes                           k8s_coredns_coredns-c4cffd6dc-xn62h_kube-system_961c845a-e424-11e8-bae2-080027501972_0
+308bd132b35a        gcr.io/k8s-minikube/storage-provisioner    "/storage-provisioner"   31 minutes ago      Up 30 minutes                           k8s_storage-provisioner_storage-provisioner_kube-system_963bf651-e424-11e8-bae2-080027501972_0
+```
+
+The list was in fact a little bet longer: it contained 22 containers.
+
+#### Build, deploy and run an image on your local k8s setup
+
+First setup a local registry, so Kubernetes can pull the image\(s\) from there:
+
+```text
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+```
+
+### Build
+
+First of, store all files \(Dockerfile, my-app.yml, index.html\) in this gist locally in some new \(empty\) directory.
 
 You can build the Dockerfile below locally if you want to follow this guide to the letter. Store the Dockerfile locally, preferably in an empty directory and run:
 
-    docker build . --tag my-app
-    
-You should now have an image named 'my-app' locally, check by using `docker images` (or your own image of course). You can then publish it to your local docker registry:
+```text
+docker build . --tag my-app
+```
 
-    docker tag my-app localhost:5000/my-app:0.1.0
-    
+You should now have an image named 'my-app' locally, check by using `docker images` \(or your own image of course\). You can then publish it to your local docker registry:
+
+```text
+docker tag my-app localhost:5000/my-app:0.1.0
+```
+
 Running `docker images` should now output the following:
 
-```
+```text
 REPOSITORY                                             TAG                 IMAGE ID            CREATED             SIZE
 my-app                                                 latest              cc949ad8c8d3        44 seconds ago      89.3MB
 localhost:5000/my-app                                  0.1.0               cc949ad8c8d3        44 seconds ago      89.3MB
 httpd                                                  2.4-alpine          fe26194c0b94        7 days ago          89.3MB
 ```
 
-## Deploy and run
+### Deploy and run
 
 Store the file below `my-app.yml` on your system and run the following:
 
-    kubectl create -f my-app.yml
-    
+```text
+kubectl create -f my-app.yml
+```
+
 You should now see your pod and your service:
 
-    kubectl get all
+```text
+kubectl get all
+```
 
 The configuration exposes `my-app` outside of the cluster, you can get the address to access it by running:
 
-    minikube service my-app --url
-    
-This should give an output like `http://192.168.99.100:30304` (the port will most likely differ). Go there with your favorite browser, you should see "Hello world!". You just accessed your application from outside of your local Kubernetes cluster!
-    
-# Kubernetes GUI
+```text
+minikube service my-app --url
+```
 
-    minikube dashboard
-    
-# Delete deployment of my-app
+This should give an output like `http://192.168.99.100:30304` \(the port will most likely differ\). Go there with your favorite browser, you should see "Hello world!". You just accessed your application from outside of your local Kubernetes cluster!
 
-    kubectl delete deploy my-app
-    kubectl delete service my-app
-    
+### Kubernetes GUI
+
+```text
+minikube dashboard
+```
+
+### Delete deployment of my-app
+
+```text
+kubectl delete deploy my-app
+kubectl delete service my-app
+```
+
 You're now good to go and deploy other images!
 
-# Reset everything
+## Reset everything
 
-    minikube stop;
-    minikube delete;
-    rm -rf ~/.minikube .kube;
-    brew uninstall kubectl;
-    brew cask uninstall docker virtualbox minikube;
+```text
+minikube stop;
+minikube delete;
+rm -rf ~/.minikube .kube;
+brew uninstall kubectl;
+brew cask uninstall docker virtualbox minikube;
+```
 
-# Version
+### Version
 
-Last tested on 2017 October 20th 
-macOS Sierra 10.12.6
+Last tested on 2017 October 20th macOS Sierra 10.12.6
+
