@@ -13,7 +13,7 @@ Deploying your Ampersand application to production can be done fast and frequent
 
 ## Way of working
 
-1. You need a Kubernetes cluster, which you get from your provider, from your data center, or you create one yourself \(e.g. on your laptop\). A cluster is built on top of virtual or physical machines and hosts the services that expose \(i.e. to internet\).
+1. A Kubernetes cluster is needed as the platform from which to launch and maintain the application. If it is there, that's fine. Otherwise you get one from a provider, from a data center, or you create one yourself \(e.g. on your laptop\). The cluster is built on top of virtual or physical machines and hosts and exposes the services that constitute the application.
 2. On the platform I need a registry from which Kubernetes can pull the image\(s\).
 
 I tried it out for myself. I stole my inspiration from [Kevin Smets' instruction](https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7). Thank you Kevin! I ran the following from my terminal \(i.e. MacOS cli\)
@@ -77,7 +77,7 @@ NAME       STATUS    ROLES     AGE       VERSION
 minikube   Ready     <none>    40s       v1.7.5
 ```
 
-Within minikube, a docker platform is running. However, on my Mac I have another docker daemon running. But  when we talk to docker, we definitely want to talk to the docker daemon that is inside minikube...
+Within minikube, a docker platform is running. However, on my Mac I have another docker daemon running. So which docker do we want to talk to? In this case that is definitely the docker daemon that is inside minikube...
 
 ### Use minikube's built-in docker daemon
 
@@ -103,14 +103,23 @@ CONTAINER ID        IMAGE                                      COMMAND          
 308bd132b35a        gcr.io/k8s-minikube/storage-provisioner    "/storage-provisioner"   31 minutes ago      Up 30 minutes                           k8s_storage-provisioner_storage-provisioner_kube-system_963bf651-e424-11e8-bae2-080027501972_0
 ```
 
-The list was in fact a little bet longer: it contained 22 containers.
+The list was in fact a little bit longer: it contained 22 containers.
 
 #### Build, deploy and run an image on your local k8s setup
 
-First setup a local registry, so Kubernetes can pull the image\(s\) from there:
+To setup a local registry, so Kubernetes can pull the image\(s\) from there:
 
 ```text
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
+```
+
+To test whether there is a local registry, ask docker:
+
+```bash
+BA92-C02VP224HTDF:RAP stefjoosten$ docker ps | grep registry
+97dc5ed7102d        registry:2                                 "/entrypoint.sh /etc…"   4 days ago          Up 4 days           0.0.0.0:5000->5000/tcp   registry
+BA92-C02VP224HTDF:RAP stefjoosten$ 
+
 ```
 
 ### Build
@@ -138,7 +147,78 @@ localhost:5000/my-app                                  0.1.0               cc949
 httpd                                                  2.4-alpine          fe26194c0b94        7 days ago          89.3MB
 ```
 
-### Deploy and run
+### Deploy and run from docker-compose.yml
+
+I have a file called `docker-compose.yml`, which I have used to deploy RAP with docker-compose \(rather than Kubernetes\). I used `kompose` to transform that into the necessary Kubernetes .yaml files.
+
+```text
+brew install kompose
+```
+
+I deployed straight from the `docker-compose.yml` file:
+
+```text
+kompose up
+```
+
+However, I can also create the necessary Kubernetes files and deploy from `kubectl`:
+
+```text
+kompose convert
+```
+
+This converts `docker-compose.yml` into the following files:
+
+```text
+db-claim0-persistentvolumeclaim.yaml
+db-deployment.yaml
+phptools-deployment.yaml
+phptools-service.yaml
+rap3-claim0-persistentvolumeclaim.yaml
+rap3-claim1-persistentvolumeclaim.yaml
+rap3-deployment.yaml
+rap3-service.yaml
+```
+
+Having run `kompose up` to deploy the three RAP services, I now have the following situation on my minikube:
+
+```text
+BA92-C02VP224HTDF:RAP stefjoosten$ kubectl get all
+NAME                            READY   STATUS    RESTARTS   AGE
+pod/db-56c6b7b6cc-442k9         1/1     Running   1          3d
+pod/phptools-555cc5db49-w7z6k   1/1     Running   0          3d
+pod/rap3-668d94bb95-cp8vs       1/1     Running   0          3d
+
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/kubernetes   ClusterIP   10.96.0.1        <none>        443/TCP    4d
+service/phptools     ClusterIP   10.107.212.219   <none>        8080/TCP   3d
+service/rap3         ClusterIP   10.101.81.211    <none>        80/TCP     3d
+
+NAME                       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/db         1         1         1            1           3d
+deployment.apps/phptools   1         1         1            1           3d
+deployment.apps/rap3       1         1         1            1           3d
+
+NAME                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/db-56c6b7b6cc         1         1         1       3d
+replicaset.apps/phptools-555cc5db49   1         1         1       3d
+replicaset.apps/rap3-668d94bb95       1         1         1       3d
+```
+
+\(I got even more information with the command `kubectl get all --output=wide`.\)
+
+So we see three pods \(containers\) running. Each of the pods is wrapped in a service of its own and exposed internally on the local network of this cluster. \(In Kubernetes, [nodes](https://kubernetes.io/docs/admin/node), [pods](https://kubernetes.io/docs/user-guide/pods) and [services](https://kubernetes.io/docs/user-guide/services) all have their own IPs. In many cases, the node IPs, pod IPs, and some service IPs on a cluster will not be routable, so they will not be reachable from a machine outside the cluster, such as your desktop machine.\)
+
+To access these services from a browser, we now  need to expose these services to localhost. I did this by exposing both services from the minikube platform:
+
+```text
+BA92-C02VP224HTDF:RAP stefjoosten$ minikube service rap3
+Opening kubernetes service default/rap3 in default browser...
+BA92-C02VP224HTDF:RAP stefjoosten$ minikube service phptools
+Opening kubernetes service default/phptools in default browser...
+```
+
+### Deploy and run from Kubernetes yml files
 
 Store the file below `my-app.yml` on your system and run the following:
 
