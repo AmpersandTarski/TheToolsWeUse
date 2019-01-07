@@ -8,7 +8,7 @@
   * [Getting started with GitBook](gitbook/getting-started-with-gitbook.md)
   * [Do's and Dont's in Ampersand documentation](gitbook/dos-and-donts-in-ampersand-documentation.md)
 * [Haskell](haskell.md)
-* [Prototype framework](prototype-framework/README.md)
+* [Prototype framework](prototype-framework.md)
 * [Installation of RAP](installation-of-rap/README.md)
   * [Deploying OUNL RAP3](installation-of-rap/deploying-ounl-rap3.md)
   * [Deploying RAP3 with Azure on Ubuntu](installation-of-rap/deploying-rap3-with-azure-on-ubuntu.md)

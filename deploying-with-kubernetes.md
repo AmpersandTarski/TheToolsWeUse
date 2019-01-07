@@ -1,8 +1,8 @@
 ---
 description: >-
-  (under construction) Deploying an Ampersand application in the cloud gives
-  many benefits: continuous deployment, zero downtime, unlimited scalability.
-  This is done on the Kubernetes platform.
+  Deploying an Ampersand application in the cloud gives many benefits:
+  continuous deployment, zero downtime, unlimited scalability. This is done on
+  the Kubernetes platform.
 ---
 
 # Deploying with Kubernetes
