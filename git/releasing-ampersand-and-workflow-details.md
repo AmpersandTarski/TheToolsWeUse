@@ -52,7 +52,7 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
 ![](../.gitbook/assets/modify-release-title.PNG)
 
-1. Check that the build contains the ampersand windows executable. It should. If it isn't there, build it and update the release manually. The log of the Appveyor should probably contain a hint why the executable wasn't built.
+1. Currently, the windows executables are not deployed by appveyor. This is to be fixed. Until then, you can generate them for yourself on a windows machine. use \` stack install --flag ampersand:buildAll\` to generate them and add them to the release.
 
 Notes, tips and tricks:
 
