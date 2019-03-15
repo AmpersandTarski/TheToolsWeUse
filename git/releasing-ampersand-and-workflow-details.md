@@ -17,7 +17,7 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 ## Pre-release steps \(what to do\)
 
 1. In `development` branch, modify the following files[1](releasing-ampersand-and-workflow-details.md#myfootnote1):
-   * `ampersand.cabal`: 
+   * `package.yaml (and ampersand.cabal)`: 
      * Change the version number to the next release number.
    * `ReleaseNotes.md` : 
      * Rename the "unreleased changes" section to the new version
@@ -40,9 +40,10 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
    Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub.
 
 5. Wait in [Travis](https://travis-ci.org/AmpersandTarski/Ampersand) for all tests to complete, and then pull the pull-request into the [master](https://github.com/AmpersandTarski/Ampersand/)[3](releasing-ampersand-and-workflow-details.md#myfootnote3).
-6. Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable.
-7. Wait until [appveyor is ready crafting the release](https://ci.appveyor.com/project/hanjoosten/ampersand). This should take about 15 minutes.
-8. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
+6. Unfortunatly, currently Appveyor does not build properly. This will be fixed when cabal version 3.0 wil be used. Therefor, both executables have to be build manually on a windows machine and added to the released artefacts. For the time being, the next steps are not working:
+7. ~~Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable.~~
+8. ~~Wait until~~ [~~appveyor is ready crafting the release~~](https://ci.appveyor.com/project/hanjoosten/ampersand)~~. This should take about 15 minutes.~~
+9. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
    * press the edit button, and add the current date to the title. 
    * Also add the following line into the description field:
 
