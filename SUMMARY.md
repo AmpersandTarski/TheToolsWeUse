@@ -12,6 +12,7 @@
 * [Automation of releasing \(CI/CD\)](automation-of-releasing-ci-cd.md)
 * [Installation of RAP](installation-of-rap/README.md)
   * [Deploying OUNL RAP3](installation-of-rap/deploying-ounl-rap3.md)
+  * [Redeploying RAP3](installation-of-rap/redeploying-rap3.md)
   * [Deploying RAP3 with Azure on Ubuntu](installation-of-rap/deploying-rap3-with-azure-on-ubuntu.md)
   * [Making Docker images](installation-of-rap/making-docker-images.md)
   * [Deployment Configuration](installation-of-rap/deployment-configuration.md)
