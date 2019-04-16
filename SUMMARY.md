@@ -24,4 +24,5 @@
 * [Deploying with Kubernetes](deploying-with-kubernetes.md)
 * [Sentinel](sentinel.md)
 * [Authentication and access management with OAuth](authentication-and-access-management-with-oauth.md)
+* [Ampersand language support](ampersand-language-support.md)
 
