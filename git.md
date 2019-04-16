@@ -9,12 +9,12 @@ description: >-
 
 We use Git for the following purposes:
 
-## Getting started with Git
-
-1. to have a shared source code repository;
-2. to work on different features in parallel without having to coordinate that with each other;
+1. to have a shared repository that contains our source code;
+2. to work on different features in parallel without interference and without having to wait for each other;
 3. to prevent loss of code because multiple copies exist on multiple sites;
-4. to have an accurate registration of changes, their authors, and the time each change has occured.
+4. to have an accurate registration of changes, their authors, and the time each change has occurred.
+
+## Getting started with Git
 
 Understanding the basics of Git is essential for anyone working on Ampersand. Fortunately, there is good help available:
 
@@ -73,6 +73,10 @@ By default, the Git directory in your home directory will be used for all local 
 2. The master branch is used for releases only. @hanjoosten is currently the primary guardian of the release process.
 3. The development branch is used only to commit developments that are ready to be tested by the Ampersand inner-circle.
 4. Every developer develops on his or her own branch\(es\). Typically these are spawned from the development branch.
+
+## Done?
+
+You are done with this page once you have your local copy of the Ampersand source code on your own computer, under Git. Do this only if you want to change the Ampersand software; not if you only want to use Ampersand.
 
 
 
