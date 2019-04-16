@@ -1,4 +1,11 @@
-# Releasing Ampersand \(And workflow details\)
+---
+description: >-
+  This page is a work instruction for whoever does the periodic release. For now
+  we have a semi-automated procedure, because the CI/CD process is not yet fully
+  automated as well.
+---
+
+# How to release an Ampersand upgrade
 
 Working with Git gives many possibilities on how to work as a team. I have been looking around what other teams do. For us, I guess we should keep it simple, and use the good stuff invented elsewhere. I think we should adapt to [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), which uses [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 
@@ -33,9 +40,9 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
    [2](releasing-ampersand-and-workflow-details.md#myfootnote2)
 
-   ![](../.gitbook/assets/comparing-master-and-development.PNG)
+   ![](.gitbook/assets/comparing-master-and-development.PNG)
 
-   ![](../.gitbook/assets/create-pull-request.PNG)
+   ![](.gitbook/assets/create-pull-request.PNG)
 
    Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub.
 
@@ -51,7 +58,7 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
      [Release notes](https://github.com/AmpersandTarski/Ampersand/blob/master/ReleaseNotes.md)
      ```
 
-![](../.gitbook/assets/modify-release-title.PNG)
+![](.gitbook/assets/modify-release-title.PNG)
 
 1. Currently, the windows executables are not deployed by appveyor. This is to be fixed. Until then, you can generate them for yourself on a windows machine. use \` stack install --flag ampersand:buildAll\` to generate them and add them to the release.
 

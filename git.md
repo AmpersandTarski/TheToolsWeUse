@@ -1,6 +1,20 @@
-# Git
+---
+description: >-
+  We use Git for version control, with the shared Ampersand repository located
+  at Github. This chapter provides the information to get to the repository and
+  clone it for having your own local copy.
+---
 
-Git is the version control system we use. Understanding the basics is essential for anyone working on Ampersand. Fortunately, there is good help available:
+# Version control with Git
+
+We use Git for the following purposes:
+
+1. to have a shared source code repository;
+2. to work on different features in parallel without having to coordinate that with each other;
+3. to prevent loss of code because multiple copies exist on multiple sites;
+4. to have an accurate registration of changes, their authors, and the time each change has occured.
+
+Understanding the basics of Git is essential for anyone working on Ampersand. Fortunately, there is good help available:
 
 1. [The help at GitHub](https://help.github.com/articles/)
 
@@ -16,7 +30,7 @@ Git is the version control system we use. Understanding the basics is essential 
 
 ## Tools for Git
 
-To work with Git in an easy way, there are some tools that can make life easier.
+To work with Git in an easy way, there are some tools that can make life easier. You can live without, or take your personal pick.
 
 * Install [TortoiseGit](https://tortoisegit.org/) to use Git in your Windows Explorer. 
   * Accept all defaults
