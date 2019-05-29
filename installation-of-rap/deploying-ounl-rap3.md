@@ -57,9 +57,9 @@ We need only one file: `docker-compose.yml`
 To get it, I used the `wget` command, which gets stuff from the web:
 
 ```text
-sjo@lnx-hrl-202v:~$ mkdir ampersand-models
-sjo@lnx-hrl-202v:~$ cd ampersand-models
-sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/docker-compose.yml
+sjo@lnx-hrl-202v:~$ mkdir RAP3
+sjo@lnx-hrl-202v:~$ cd RAP3
+sjo@lnx-hrl-202v:~/RAP3$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/docker-compose.yml
 ```
 
 ## Installing RAP3
@@ -67,7 +67,7 @@ sjo@lnx-hrl-202v:~/ampersand-models$ wget https://raw.githubusercontent.com/Ampe
 To install RAP3:
 
 ```text
-sjo@lnx-hrl-202v:~/ampersand-models$ docker-compose up -d
+sjo@lnx-hrl-202v:~/RAP3$ docker-compose up -d
 ```
 
 To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/RAP3`.  
