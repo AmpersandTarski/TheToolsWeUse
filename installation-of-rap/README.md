@@ -2,7 +2,7 @@
 
 RAP is a **R**epository for **A**mpersand **P**rojects. This tool is being used by the Open University of the Netherlands in the course [Rule Based Design](http://portal.ou.nl/web/ontwerpen-met-bedrijfsregels). It lets students analyse Ampersand models, generate functional specifications and make prototypes of information systems. It is the primary tool for students in relation to Ampersand.
 
-Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how.
+Deployment means to install RAP3 on a web server, to make it work for a group of students. This text explains how. It is something you only want to do if your need an instance of RAP3 on your own server.
 
 ## Automated deployment
 

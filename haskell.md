@@ -1,12 +1,13 @@
 ---
 description: >-
-  The Ampersand compiler is written in Haskell. It is built automatically using
-  stack. This page shows you how to build your own Ampersand compiler.
+  To build your own Ampersand compiler is something to avoid as a user. As a
+  developer, however, you may have reasons to do this yourself. For instance to
+  verify what happens in older versions.
 ---
 
 # Building an Ampersand Compiler with Stack
 
-[Stack](https://haskellstack.org/) is a build tool for Haskell projects such as Ampersand. We use stack for the following purposes:
+[Stack](https://haskellstack.org/) is a build tool for Haskell projects such as Ampersand. The Ampersand compiler is built by stack, which we do for the following purposes:
 
 1. to prevent dependency conflicts inside and between Haskell packages that might otherwise cause errors during the compilation process;
 2. to generate ampersand compilers for different platforms without headache;

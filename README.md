@@ -17,12 +17,15 @@ Documentation on actually using Ampersand - e.g. for making and running prototyp
 ## Working Principles
 
 * The Ampersand project produces free open source software, available to everyone.
+* "We" is the [Ampersand community](https://github.com/orgs/AmpersandTarski/people) as specified on Github. We adhere to our own working principles to the best of our ability.
 * We respect the intellectual contribution of all. We wish to keep it that way by acknowledging intellectual ownership wherever appropriate.
 * We write software for maintainability, to facilitate others to contribute. This implies simplicity and understandability of all software artifacts. It means we document code to be relevant \(for new team members\), complete \(for finding everything you need\), and minimal \(to save readers some reading effort\). It implies we reuse code and strive for orthogonal design.
 * We automate the production of software to the max, to obtain robust and fast deployments and save ourselves repeated work.
 * When in trouble, we write an issue on [GitHub](https://github.com/AmpersandTarski/Ampersand/). We diagnose each problem before suggesting solutions. The diagnosis is documented on Github by means of comments to the issue. Once an issue is closed, we edit the issue to minimize text and focus on the correct diagnosis.
-* We accept the consequences of being "under construction" all the time.
+* Ampersand is under construction all the time. We accept the consequences and make them as bearable as we can.
 * We believe in a formal foundation of software engineering.
+* We seek to adopt sound software engineering practices that have demonstrated quality.
+* We want to reuse good software built by others, not only to save ourselves maintenance work, but also to benefit from things that others have done in a better way.
 
 ## Contributions to the documentation
 

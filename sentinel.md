@@ -271,5 +271,5 @@ And add each user with:
 htpasswd /home/sentinel/authentication/nvwa.htpasswords USERNAME
 ```
 
-\(Instead of using `touch`, it is also possible to add `-c` to the first call of `htpasswd`\)
+\(Instead of using `touch`, it is also possible to add `-c` to the first call of `htpasswd`
 
