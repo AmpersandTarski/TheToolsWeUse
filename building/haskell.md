@@ -7,7 +7,7 @@ description: >-
 
 # Building an Ampersand Compiler with Stack
 
-[Stack](https://haskellstack.org/) is a build tool for Haskell projects such as Ampersand. The Ampersand compiler is built by stack, which we do for the following purposes:
+[Stack](https://haskellstack.org/) is a build tool for Haskell projects such as Ampersand. The Ampersand compiler is built by stack, which serves the following purposes:
 
 1. to prevent dependency conflicts inside and between Haskell packages that might otherwise cause errors during the compilation process;
 2. to generate ampersand compilers for different platforms without headache;
