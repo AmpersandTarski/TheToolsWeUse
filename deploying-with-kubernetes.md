@@ -1,5 +1,7 @@
 ---
-description: This page is under construction and does not work yet. Help is appreciated.
+description: >-
+  This page is under construction and does not work yet. Help is appreciated.
+  Currently, the move from docker-compose to Kubernetes has low priority.
 ---
 
 # Deploying with Kubernetes
@@ -13,7 +15,7 @@ Deploying your Ampersand application to production can be done fast and frequent
 1. A Kubernetes cluster is needed as the platform from which to launch and maintain the application. If it is there, that's fine. Otherwise you get one from a provider, from a data center, or you create one yourself \(e.g. on your laptop\). The cluster is built on top of virtual or physical machines and hosts and exposes the services that constitute the application.
 2. On the platform I need a registry from which Kubernetes can pull the image\(s\).
 
-I tried it out for myself. I stole my inspiration from [Kevin Smets' instruction](https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7). Thank you Kevin! I ran the following from my terminal \(i.e. MacOS cli\)
+I tried it out for myself. I stole my inspiration from [Kevin Smets' instruction](https://gist.github.com/kevin-smets/b91a34cea662d0c523968472a81788f7). Thank you Kevin! I ran the following from my terminal \(i.e. MacOS cli\), just for the purpose of getting some hands-on experience...
 
 ### Requirements
 
