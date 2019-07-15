@@ -9,6 +9,7 @@
   * [Do's and Dont's in Ampersand documentation](gitbook/dos-and-donts-in-ampersand-documentation.md)
 * [Building](building/README.md)
   * [Building an Ampersand Compiler with Stack](building/haskell.md)
+  * [Baking a Docker image that contains the Ampersand Compiler](building/building-an-ampersand-compiler-as-docker-image.md)
 * [Prototype framework](prototype-framework.md)
 * [Automation of releasing \(CI/CD\)](automation-of-releasing-ci-cd.md)
 * [Installation of RAP](installation-of-rap/README.md)
