@@ -16,7 +16,7 @@ There is a lot of javascript going on, so we need a package manager for it.
 
 ### Releasing of this vs-code extension
 
-We have a release pipeline in place using travis-ci. See the travis.yml file in the root directory. Documentation of extentions can be found \[here\]\([https://code.visualstudio.com/api/working-with-extensions/publishing-extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)\).
+We have a release pipeline in place using travis-ci. See the travis.yml file in the root directory. Documentation of extentions can be found [here](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
 
 The personal access token in use has an expiry date on it. An email is sent to the owner of that token \(currently Han\), in advance of the expiry. It can be renewed or the expire date [can be extended](https://dev.azure.com/hanjoostenhan/_usersSettings/tokens). 
 
