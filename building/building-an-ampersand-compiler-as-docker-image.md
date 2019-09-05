@@ -9,95 +9,81 @@ description: >-
 
 ## What I did
 
-I wrote a Docker file that contains a recipe for building an Ampersand compiler and put it in the Ampersand repository on [docker/Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile). Here are your ingredients for running it:
+I wrote a Docker file that contains a recipe for building an Ampersand compiler and put it in the Ampersand repository on [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile). Here are your ingredients for running it:
 
-1. A machine that runs docker, to build your docker image with. I ran it on my MacBook.
+1. A machine to run docker, for building your docker image with. I ran it on my MacBook.
 2. Docker, which you need [installed on your machine](https://docs.docker.com/install/).
-3. I am using 5G of memory to run Docker in. This is more than the standard 2G , which was insufficient for Ampersand. I used [this instruction](https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container/44533437#44533437) to increase Docker's memory on my Macbook.
+3. At least 5G of memory to run Docker in. This is more than the standard 2G , which was insufficient for Ampersand. I used [this instruction](https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container/44533437#44533437) to increase Docker's memory on my Macbook.
 
-To run it, I cloned the Ampersand repository, into `~\Ampersand\`, and built the image with:
+To run it, I cloned the Ampersand repository, into `~/Ampersand/`, and built the image with:
 
 ```text
-docker build -f docker/Dockerfile -t myampersand:latest ~\Ampersand\
+docker build -t myampersand ~/Ampersand/
 ```
+
+It runs on my Mac for over half an hour, so some patience is required. If you don't have that patience, consider using the image [ampersandtarski/ampersand](https://hub.docker.com/r/ampersandtarski/ampersand) from docker hub.
 
 ## The steps in the Docker file
 
-Let us discuss the steps one-by-one. \(Please check [docker/Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile), just in case it is inconsistent with this documentation.\) All of these steps happen automatically, as they are in the docker file.
+If you want a slightly different image \(for reasons of your own\), you may want to repeat this process yourself. For that purpose, let us walk through the different steps described in Dockerfile.
 
-The first statement states that the compiler is built on an Ubuntu vs. 16.04, which is rather arbitrary but consistent throughout the automated building process. For the sake of maintainability, we want the compiler to be generated on the same platform as it is used.
+Let us discuss the steps one-by-one. \(Please check the [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile), just in case it is inconsistent with this documentation.\) All of these steps happen automatically, as they are in the docker file.
 
-```text
-FROM ubuntu:16.04 AS haskellstage
-```
-
-This building stage is called haskellstage because we use the Haskell compiler to build an Ampersand compiler. We use a [2-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) to get a small Ampersand image without excess-software.
-
-We use curl to obtain resources from the internet and git-core to clone source code from the Ampersand repository. So we `apt-get` both of them:
+The first statement states that the compiler is built on a well-defined Haskell image.
 
 ```text
-RUN apt-get update &&\
-    apt-get --yes install curl && \
-    apt-get --yes install git-core
+FROM haskell:8.6.5 AS buildstage
 ```
 
-We use `stack` as our Haskell build system, so we get that from the internet. Haskell comes with stack, so no need to get Haskell separately.
+This building stage is called buildstage because we want to use a [2-stage build](https://docs.docker.com/develop/develop-images/multistage-build/) to obtain a small Ampersand image without excess-software.
 
-```text
-RUN curl -sSL https://get.haskellstack.org/ | sh
-```
-
-I made a working directory for no other purpose than to have everything in an empty directory.
+We decide to work in the build-container from a working directory called `/Ampersand`.
 
 ```text
 WORKDIR /Ampersand/
 ```
 
-I used `git clone` to get the ampersand source files. It requires the directory to be empty
+Normally we want to generate Ampersand from the source code on GitHub. For this purpose we clone the Ampersand-repository into the \(working directory in the\) build environment.
 
 ```text
-# RUN git clone https://github.com/AmpersandTarski/Ampersand/ .
+RUN git clone https://github.com/AmpersandTarski/Ampersand/ .
 ```
 
-Ensure that the correct branch has been checked out, avoiding unexpected results just in case the repository has been left in some branch unintendedly.
+In this case I wanted to build from a specific feature, so I checked it out.
 
 ```text
-RUN git checkout development
+RUN git checkout feature/Archimate3
 ```
 
-Setting up the Haskell stack downloads approximately 177MB from the internet. Don't worry about the correct version of Haskell. It is specified in `stack.yaml`.
-
-```text
-RUN stack setup
-```
-
-Now everything is in place to compile Ampersand, resulting in a full-fledged Ampersand compiler. The executables are left in `/root/.local/bin`.
+Now everything is in place to compile Ampersand. Running `stack install` results in a full-fledged Ampersand compiler  in `/root/.local/bin`. Mind you, this takes a while...
 
 ```text
 RUN stack install
 ```
 
-Now we go on the the production stage. We want a clean machine, identical to the one the code was generated in. So we use `ubuntu:16.04` again.
+If we were to stop here, we get an image larger than 4GB. We can do better than that by starting over with a clean machine. So we introduce a second `FROM`-line in the Dockerfile which starts with a clean slate. We use an empty ubuntu machine \(form some reason yet unknown, the smaller alpine image doesn't work\)
 
 ```text
 FROM ubuntu:16.04
 ```
 
-Now all we have to do is copy the executable to `/usr/local/bin`, where it normally sits.
+Now we must copy the ampersand executable to `/bin`, from where we can run it as though it were a normal ubuntu-command. It is the only software we will copy into this image. \(Haskell and the intermediate files are all absent\). This results in an image that is slightly over 220MB.
 
 ```text
-COPY --from=haskellstage /root/.local/bin
+COPY --from=buildstage /root/.local/bin/ampersand /bin/
 ```
 
-The next step needs attention. For some reason the following needs to be copied or else ampersand does not work. It yields a 3MB larger image. I'd like to know why this is necessary, because not knowing does not help to prevent maintenance tasks.
+When compiling, we  will work in a directory called scripts. When using this container, we will volume-map this directory to the actual working directory that contains the ampersand-files we want to compile.
 
 ```text
-COPY --from=haskellstage /usr/lib/x86_64-linux-gnu/libgmp* /usr/lib/x86_64-linux-gnu/
+WORKDIR /scripts
+VOLUME ["/scripts"]
 ```
 
-Just to check the version, I am asking at compile-time for the Ampersand version. Its SHA should be the same as you intended when you checked in your software into the Ampersand repository.
+The program to be called when running the container is of course `ampersand` \(residing in `/bin/`\). If called without arguments it will use `--verbose`.
 
 ```text
-RUN ampersand --version
+ENTRYPOINT ["/bin/ampersand"]
+CMD ["--verbose"]
 ```
 
