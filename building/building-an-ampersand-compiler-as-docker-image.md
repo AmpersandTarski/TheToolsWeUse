@@ -23,6 +23,16 @@ docker build -t myampersand ~/Ampersand/
 
 It runs on my Mac for over half an hour, so some patience is required. If you don't have that patience, consider using the image [ampersandtarski/ampersand](https://hub.docker.com/r/ampersandtarski/ampersand) from docker hub.
 
+The resulting docker image sits in the docker repository on you laptop \(placed there when docker was installed\).
+
+You can call the image from the command line with the following command:
+
+```text
+docker run -it -v "$(pwd)":/scripts myampersand
+```
+
+
+
 ## The steps in the Docker file
 
 If you want a slightly different image \(for reasons of your own\), you may want to repeat this process yourself. For that purpose, let us walk through the different steps described in Dockerfile.
