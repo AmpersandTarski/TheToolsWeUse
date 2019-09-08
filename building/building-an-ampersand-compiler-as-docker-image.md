@@ -7,13 +7,29 @@ description: >-
 
 # Baking a Docker image that contains the Ampersand Compiler
 
-## What I did
+## The magic
 
-I wrote a Docker file that contains a recipe for building an Ampersand compiler and put it in the Ampersand repository on [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile). Here are your ingredients for running it:
+To get a docker container I took the file [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/feature/dockerize/docker/Dockerfile) and built an image called "myampersand", using the following command:
+
+```text
+docker build -t myampersand ~/Ampersand/
+```
+
+It took 45 minutes to build, but I got an image called `myampersand` in the docker repository on my laptop.
+
+To see it work, I executed the newly created image on a little file in my working directory, `hello.adl` from the command line with the following command:
+
+```text
+docker run -it -v "$(pwd)":/scripts myampersand hello.adl
+```
+
+## Do you want to reproduce this?
+
+The Ampersand repository contains a file, [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/development/Dockerfile), that contains a recipe for building an Ampersand compiler and put it in your Ampersand repository. You need the following ingredients to run it:
 
 1. A machine to run docker, for building your docker image with. I ran it on my MacBook.
 2. Docker, which you need [installed on your machine](https://docs.docker.com/install/).
-3. At least 5G of memory to run Docker in. This is more than the standard 2G , which was insufficient for Ampersand. I used [this instruction](https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container/44533437#44533437) to increase Docker's memory on my Macbook.
+3. Docker needs least 5G of memory to build Ampersand, which is more than the standard 2G. I used [this instruction](https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container/44533437#44533437) to increase Docker's memory on my Macbook.
 
 To run it, I cloned the Ampersand repository, into `~/Ampersand/`, and built the image with:
 
@@ -21,19 +37,11 @@ To run it, I cloned the Ampersand repository, into `~/Ampersand/`, and built the
 docker build -t myampersand ~/Ampersand/
 ```
 
-It runs on my Mac for over half an hour, so some patience is required. If you don't have that patience, consider using the image [ampersandtarski/ampersand](https://hub.docker.com/r/ampersandtarski/ampersand) from docker hub.
+It runs on my Mac for over half an hour, so some patience is required. If you don't have that patience, consider using the image [ampersandtarski/ampersand](https://hub.docker.com/r/ampersandtarski/ampersand) from docker hub. It was built for your convenience.
 
 The resulting docker image sits in the docker repository on you laptop \(placed there when docker was installed\).
 
-You can call the image from the command line with the following command:
-
-```text
-docker run -it -v "$(pwd)":/scripts myampersand
-```
-
-
-
-## The steps in the Docker file
+## So which steps does Docker take?
 
 If you want a slightly different image \(for reasons of your own\), you may want to repeat this process yourself. For that purpose, let us walk through the different steps described in Dockerfile.
 
