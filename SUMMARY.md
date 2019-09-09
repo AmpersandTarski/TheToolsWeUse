@@ -10,6 +10,7 @@
 * [Building](building/README.md)
   * [Building an Ampersand Compiler with Stack](building/haskell.md)
   * [Baking a Docker image that contains the Ampersand Compiler](building/building-an-ampersand-compiler-as-docker-image.md)
+  * [Automated builds](building/automated-builds.md)
 * [Prototype framework](prototype-framework.md)
 * [Automation of releasing \(CI/CD\)](automation-of-releasing-ci-cd.md)
 * [Installation of RAP](installation-of-rap/README.md)
