@@ -31,6 +31,7 @@ The following settings apply:
 | Inbound port: SSH | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
 | URL for calling the application | [http://rap.cs.ou.nl/RAP3](http://rap.cs.ou.nl/RAP3) |
+| internet access needed | for generating prototypes because the prototype generator draws from the Ampersand-github repository. |
 
 ## Getting access to the server
 

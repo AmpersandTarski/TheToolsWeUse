@@ -14,6 +14,22 @@ We use Git for the following purposes:
 3. to prevent loss of code because multiple copies exist on multiple sites;
 4. to have an accurate registration of changes, their authors, and the time each change has occurred.
 
+We maintain and use the following repositories at Github:
+
+| Repo | purpose |
+| :--- | :--- |
+| [Ampersand](https://github.com/AmpersandTarski/Ampersand) | contains the source code of the Ampersand compiler up to the point that all the regular docker images can be generated from this repository. |
+| [ampersand-models](https://github.com/AmpersandTarski/ampersand-models) | contains a collection of Ampersand models, which are meant for reuse by the public at large. |
+| [Ampersand-Language-Support](https://github.com/AmpersandTarski/Ampersand-Language-Support) | contains language support for VS-code, such as syntax coloring, code snippets, and the like. |
+| \*\*\*\*[Publications](https://github.com/AmpersandTarski/Publications) | This repo is meant for collaborative writing of journal and conference papers about Ampersand. |
+| [Prototype](https://github.com/AmpersandTarski/Prototype) | contains JavaScript source code of the prototype front-end and back-end generators and runtime code. |
+| [documentation](https://github.com/AmpersandTarski/documentation) | contains the source code of the documentation of Ampersand on GitBook. |
+| [TheToolsWeUse](https://github.com/AmpersandTarski/TheToolsWeUse) | contains the source code of the documentation on GitBook of tools used to create Ampersand. |
+| [RAP](https://github.com/AmpersandTarski/RAP) | contains the source code of RAP, a tool that lets you analyse Ampersand models, generate functional specifications and make prototypes of information systems. It is the primary tool for students of the Open University of the Netherlands in the course Rule Based Design. |
+| [MirrorMe](https://github.com/AmpersandTarski/MirrorMe) | contains the source code for an argument assistance system. It is based on defeasible reasoning along the lines of Toulmin and Hohfeld. |
+| [sentinel](https://github.com/AmpersandTarski/sentinel) | \(obsolete\) Software for automated testing the Ampersand software. Today, most of our testing is done by means of Travis-ci. Before that we heavily used our own sentinel to warn about bugs. Today, Sentinel is only used for issues with known bugs. Things that are known to break, and we didn't find time to solve them. |
+| [webFiles](https://github.com/AmpersandTarski/webFiles) | contains all kind of consolidated documents that are related to Ampersand in some way. They are stored here to ensure that we have stable URLs to these documents, so we can hyperlink to them wherever appropriate |
+
 ## Getting started with Git
 
 Understanding the basics of Git is essential for anyone working on Ampersand. Fortunately, there is good help available:
