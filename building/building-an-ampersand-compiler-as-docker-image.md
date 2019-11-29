@@ -23,6 +23,12 @@ To see it work, I executed the newly created image on a little file in my workin
 docker run -it -v "$(pwd)":/scripts myampersand hello.adl
 ```
 
+The same command in the Windows command line is:
+
+```text
+docker run -it -v "%cd%":/scripts myampersand hello.adl
+```
+
 ## Do you want to reproduce this?
 
 The Ampersand repository contains a file, [Dockerfile](https://github.com/AmpersandTarski/Ampersand/blob/development/Dockerfile), that contains a recipe for building an Ampersand compiler and put it in your Ampersand repository. You need the following ingredients to run it:
