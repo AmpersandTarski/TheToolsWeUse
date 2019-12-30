@@ -7,12 +7,12 @@ description: >-
 
 # Building an Ampersand Compiler with Stack
 
-Ampersand is built with [stack](https://haskellstack.org/). Stack is a build tool for Haskell projects such as Ampersand. We use the automated building process \(by stack\) for the following purposes:
+The Ampersand compiler is a Haskell program built with [stack](https://haskellstack.org/). Stack is a build tool for Haskell projects such as Ampersand. We have automated the building process \(using stack\) for the following purposes:
 
 1. to prevent mistakes such as dependency conflicts inside and between Haskell packages, for an uninterrupted  compilation process \(robust building\);
 2. to generate ampersand compilers for different platforms \(platform independence\);
 3. to provide a reproducible and reliable build process to developers with diverse development tools, operating systems, and working environments \(uniform building\); 
-4. to automate the building process, so we can generate images for docker containers \(containerization\);
+4. to allow for generating images for docker containers \(containerization\);
 5. to accellerate the build process to increase the release frequency of Ampersand.
 
 ## Installation
