@@ -50,6 +50,8 @@ So why should this NOT work?
 
 ## Solutions
 
+* Turn to [http://passingcuriosity.com/2013/dnsmasq-dev-osx/](http://passingcuriosity.com/2013/dnsmasq-dev-osx/) to install a local DNS-server on your Macbook.
+* Turn to ??? to install a local DNS-server on your Windows laptop.
 * Turn to [https://support.microsoft.com/nl-nl/help/972034/how-to-reset-the-hosts-file-back-to-the-default](https://support.microsoft.com/nl-nl/help/972034/how-to-reset-the-hosts-file-back-to-the-default) for setting the hosts-file on your Windows laptop. \(Don't do this if you are installing a domain name server\)
 * Turn to [https://www.techjunkie.com/edit-hosts-file-mac-os-x/](https://www.techjunkie.com/edit-hosts-file-mac-os-x/) for setting the hosts-file on your Macbook. \(Don't do this if you are installing a domain name server\)
 
