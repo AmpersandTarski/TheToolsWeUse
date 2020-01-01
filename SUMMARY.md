@@ -14,6 +14,7 @@
   * [Automated builds](building/automated-builds.md)
 * [Prototype framework](prototype-framework.md)
 * [Automation of releasing \(CI/CD\)](automation-of-releasing-ci-cd.md)
+  * [Github packages](cicd/github-packages.md)
 * [Installation of RAP](installation-of-rap/README.md)
   * [Deploying OUNL RAP3](installation-of-rap/deploying-ounl-rap3.md)
   * [Maintaining RAP3](installation-of-rap/redeploying-rap3.md)
