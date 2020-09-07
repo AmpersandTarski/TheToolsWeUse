@@ -31,11 +31,22 @@ You need a database and a web-server. This explains why a LAMP-server is an obvi
 
 ### 3. Uploading and running RAP3
 
-A quick way to install is to copy the source code of RAP3 on your server and compile it with Ampersand. That gives you the RAP3 webapplication. You will find the complete Ampersand source code of RAP3 on [https://github.com/AmpersandTarski/RAP](https://github.com/AmpersandTarski/RAP). The main file is `./RAP3/RAP3.adl`.
+A quick way to install is to copy the source code of RAP3 on your server and compile it with Ampersand. That gives you the RAP3 webapplication. You will find the complete Ampersand source code of RAP3 on [https://github.com/AmpersandTarski/RAP](https://github.com/AmpersandTarski/RAP). The main file is `./RAP3/RAP3dev.adl` for the development version and `./RAP3/RAP3prod.adl` for the production version.
 
 ### 4. Filling the Git repository with Ampersand files and Ampersand models
 
-If you don't have an Ampersand compiler, you can build one using the Haskell sources of that compiler. You will find the source code on the development branch of the Ampersand repository \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\).
+If you don't have an Ampersand compiler, you can build one using the Haskell sources of that compiler. You will find the source code on the development branch of the Ampersand repository \([https://github.com/AmpersandTarski/Ampersand/tree/development](https://github.com/AmpersandTarski/Ampersand/tree/development)\). You can verify success by asking  the Ampersand for its version:
+
+```text
+>  ampersand --version
+Ampersand-v3.17.4 [master:fd90ea3f1], build time: 15-Nov-19 18:02:19 CET
+```
+
+If you don't have an Ampersand compiler, but docker runs on your machine, you can simply use the most recent ampersand compiler by
+
+```text
+>  docker run -it ampersandtarski/ampersand
+```
 
 Use Git to create a local clone of these repositories. Git is preferred over copying the files, because you can repeatedly use it to ensure you get the right version.
 

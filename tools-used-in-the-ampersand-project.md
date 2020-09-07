@@ -135,7 +135,9 @@ description: >-
       </td>
     </tr>
   </tbody>
-</table>## Generic tools used in the Ampersand project
+</table>
+
+## Generic tools used in the Ampersand project
 
 <table>
   <thead>
@@ -303,6 +305,8 @@ description: >-
     </tr>
   </tbody>
 </table>
+
+
 
 
 

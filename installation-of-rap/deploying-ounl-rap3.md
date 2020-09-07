@@ -7,7 +7,7 @@ In early 2016 the need arose to replace the RAP2 implementation of Ampersand by 
 This chapter is an account of the installation process. It serves the following purposes:
 
 1. It is an example for others who want to deploy Ampersand. We get requests now and then by people who want to deploy Ampersand, so we figured it is nice to have a documented example for them.
-2. It documents the installation we made for the Open University. We want maintenance of RAP3 to be transferrable to other persons, so we need to document the choices made and the reasons for making them.
+2. It documents the installation we made for the Open University. We want maintenance of RAP3 to be transferable to other persons, so we need to document the choices made and the reasons for making them.
 3. It contains all information needed to make a deployment script for automated deployment. We have automated the deployment with Docker, so that RAP3 will always be up to date with the most recent stable release of Ampersand.
 
 Each step in the installation process gets a separate section in this text.
