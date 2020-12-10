@@ -2,15 +2,15 @@
 
 ## Docker images
 
-This chapter discusses the process of baking \(i.e. creating\) images for docker hub. It also gives a recipe for creating docker images. If you are interested only in installing RAP3, you do not need this chapter.
+This chapter discusses the process of baking \(i.e. creating\) images for docker hub. It also gives a recipe for creating docker images. If you are interested only in installing RAP4, you do not need this chapter.
 
-Docker images are baked when the Ampersand source code for RAP3 is ready to be deployed. This results in three files, to be stored on Docker hub:
+Docker images are baked when the Ampersand source code for RAP4 is ready to be deployed. This results in three files, to be stored on Docker hub:
 
 ![](../.gitbook/assets/docker-store.png)
 
 ## The release train
 
-RAP3 is deployed as shown in this picture
+RAP4 is deployed as shown in this picture
 
 ![](../.gitbook/assets/release-train-rap3.png)
 
@@ -33,7 +33,7 @@ If you need to install docker, follow the instructions on [https://docs.docker.c
 
 ### 4. Building an Ampersand image
 
-RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image. Run _./build.sh_ to build the initial ampersand container that serves as a base for the RAP3 application \(or any other Ampersand application\). This base images holds all required packages and the \(at that moment\) latest version of the ampersand compiler the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container \(_docker rmi ampersand:latest_\)
+RAP is built on Ampersand and is compiled with Ampersand. For this reason, the RAP image builds on an Ampersand image. Run _./build.sh_ to build the initial ampersand container that serves as a base for the RAP4 application \(or any other Ampersand application\). This base images holds all required packages and the \(at that moment\) latest version of the ampersand compiler the workflow around this container can/should be improved since now the easiest way to rebuild is to remove the container \(_docker rmi ampersand:latest_\)
 
 ### 4. Making a Docker image
 
@@ -85,7 +85,7 @@ When you build an image where nothing changes \(as shown above\), this takes vir
 I checked whether all images are built by the `docker images` command:
 
 ```text
-sjo@lnx-hrl-202v:~/ampersand-models/RAP3$ docker images
+sjo@lnx-hrl-202v:~/ampersand-models/RAP4$ docker images
 REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
 ampersandtarski/ampersand-rap            latest              636643166a78        2 hours ago         3.62GB
 ampersandtarski/ampersand-prototype-db   latest              d267da36fb90        4 hours ago         395MB
@@ -107,7 +107,7 @@ At this point the images are published and this chapter is done. However, it is 
 
 ### 6. Deploying directly on this server
 
-We are making three containers: one for the database, one for the RAP3 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
+We are making three containers: one for the database, one for the RAP4 application, and one for PhpMyAdmin. Containers are built from images by the command `docker-compose`:
 
 ```text
 cd /home/ampersandadmin/docker-ampersand
@@ -118,7 +118,7 @@ This command brings all three containers up and runs them in the background. For
 
 I checked whether the containers are running by means of the `docker ps` command.
 
-Completion of this step allowed access to RAP3 from an arbitrary computer on the internet:
+Completion of this step allowed access to RAP4 from an arbitrary computer on the internet:
 
 ![](../.gitbook/assets/import.png)
 
@@ -130,21 +130,21 @@ The database is accessible on port 8080:
 
 The `docker-compose up` command aggregates the output of each container. When the command exits, all containers are stopped. Running `docker-compose up -d` starts the containers in the background and leaves them running.
 
-To interfere with RAP3 as it is running, you need to get into the Rap3 container. It is not enough just being on the server, because all the data is in the container \(rather than directly on the server\). To go into the Rap3 container, use the command
+To interfere with RAP4 as it is running, you need to get into the Rap4 container. It is not enough just being on the server, because all the data is in the container \(rather than directly on the server\). To go into the Rap4 container, use the command
 
 ```text
-docker exec -ti dockerampersand_rap3_1 /bin/bash
+docker exec -ti dockerampersand_rap4_1 /bin/bash
 ```
 
 ### 10. Local Settings
 
-To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP3/include`. This step requires section 5 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
+To inspect and change the local settings, you need the file `localsettings.php` on directory `~/git/Ampersand-models/RAP4/include`. This step requires section 5 to be finished successfully. This file contains comments that guide you to use the correct settings in a development situation and in a production situation. Read the file and follow the instructions it contains, especially when making the transition from development to production.
 
 ### 11. Last minute changes before going to production
 
-1. In the source code of RAP3, in the file SIAM\_importer.adl:
-   1. disable "RAP3\_LoginForDevelopment.ifc", to prevent users from seeing 
-   2. enable "RAP3\_LoginForProduction.ifc"
+1. In the source code of RAP4, in the file SIAM\_importer.adl:
+   1. disable "RAP4\_LoginForDevelopment.ifc", to prevent users from seeing 
+   2. enable "RAP4\_LoginForProduction.ifc"
    3. disable "../SIAM/SIAM\_AutoLoginAccount.adl"
 2. Is there anything we must alter in localsettings.php before going live?
 
