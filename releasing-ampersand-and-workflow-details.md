@@ -38,7 +38,7 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
    [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development)
 
-   :
+  
 
    [2](releasing-ampersand-and-workflow-details.md#myfootnote2)
 
@@ -48,9 +48,6 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
    Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub, and it triggers the actual release. 
 
-5. ```
-
-   ```
 
 Notes, tips and tricks:
 
