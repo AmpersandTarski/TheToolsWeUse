@@ -1,11 +1,13 @@
 ---
 description: >-
-  This page is a work instruction for whoever does the periodic release. For now
-  we have a semi-automated procedure, because the CI/CD process is not yet fully
-  automated as well.
+  This page is a work instruction for whoever does the periodic release. We use
+  github actions to do a release. The aim is to do a release every 4 weeks, but
+  it depends on the need to do so.
 ---
 
 # How to release an Ampersand upgrade
+
+## Branching strategy
 
 Working with Git gives many possibilities on how to work as a team. I have been looking around what other teams do. For us, I guess we should keep it simple, and use the good stuff invented elsewhere. I think we should adapt to [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow), which uses [feature branch workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow).
 
@@ -29,9 +31,9 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
    * `ReleaseNotes.md` : 
      * Rename the "unreleased changes" section to the new version
      * Add a new "unreleased changes" section for the next release.
-2. Push your modifications to GitHub. This will trigger automated testing by Travis.
-3. Ensure that travis-ci builds succesfully:
-   * check the [build at travis](https://travis-ci.org/AmpersandTarski/Ampersand)
+2. Push your modifications to GitHub. This will trigger automated testing.
+3. Ensure that the build is succesfully:
+   * [Check the build](https://github.com/AmpersandTarski/Ampersand/actions) \(this could take up to an hour\)
 4. Create a pull request to the
 
    [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development)
@@ -40,27 +42,15 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 
    [2](releasing-ampersand-and-workflow-details.md#myfootnote2)
 
-   ![](.gitbook/assets/comparing-master-and-development.PNG)
+
 
    ![](.gitbook/assets/create-pull-request.PNG)
 
-   Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub.
+   Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub, and it triggers the actual release. 
 
-5. Wait in [Travis](https://travis-ci.org/AmpersandTarski/Ampersand) for all tests to complete, and then pull the pull-request into the [master](https://github.com/AmpersandTarski/Ampersand/)[3](releasing-ampersand-and-workflow-details.md#myfootnote3).
-6. Unfortunatly, currently Appveyor does not build properly. This will be fixed when cabal version 3.0 wil be used. Therefor, both executables have to be build manually on a windows machine and added to the released artefacts. For the time being, the next steps are not working:
-7. ~~Now that the master branch contains the new functionality, it will take some time for Appveyor to build the windows executable.~~
-8. ~~Wait until~~ [~~appveyor is ready crafting the release~~](https://ci.appveyor.com/project/hanjoosten/ampersand)~~. This should take about 15 minutes.~~
-9. Modify the title of the [newly created release](https://github.com/AmpersandTarski/Ampersand/releases/latest).
-   * press the edit button, and add the current date to the title. 
-   * Also add the following line into the description field:
+5. ```
 
-     ```text
-     [Release notes](https://github.com/AmpersandTarski/Ampersand/blob/master/ReleaseNotes.md)
-     ```
-
-![](.gitbook/assets/modify-release-title.PNG)
-
-1. Currently, the windows executables are not deployed by appveyor. This is to be fixed. Until then, you can generate them for yourself on a windows machine. use \` stack install --flag ampersand:buildAll\` to generate them and add them to the release.
+   ```
 
 Notes, tips and tricks:
 

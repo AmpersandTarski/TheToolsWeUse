@@ -6,9 +6,9 @@ The docker configuration uses volumes to link to the file system of the host com
 
 ## Docker group
 
-You have a host computer in which the docker platform runs. \(In deploying RAP4 for the OUNL that would be the machine with domain name `rap.cs.ou.nl`\). To avoid permission errors \(and the use of `sudo`\), add your user to the `docker` group. [Read more](https://docs.docker.com/engine/installation/linux/linux-postinstall/).
+You have a host computer in which the docker platform runs. \(In deploying RAP3 for the OUNL that would be the machine with domain name `rap.cs.ou.nl`\). To avoid permission errors \(and the use of `sudo`\), add your user to the `docker` group. [Read more](https://docs.docker.com/engine/installation/linux/linux-postinstall/).
 
 ## Development vs. Production versions
 
-For developing RAP you use slightly different settings. For example you want to reset the database when developing, but this feature must be entirely impossible during production. For this purpose we have two source files: `RAP4dev.adl` and `RAP4prod.adl`. The only difference between the two is configuration settings. Follow the code to find out.
+For developing RAP you use slightly different settings. For example you want to reset the database when developing, but this feature must be entirely impossible during production. For this purpose we have two source files: `RAP3dev.adl` and `RAP3prod.adl`. The only difference between the two is configuration settings. Follow the code to find out.
 

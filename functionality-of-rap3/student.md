@@ -1,12 +1,12 @@
 # Student
 
-As a student, your main objective with RAP4 is to write Ampersand scripts and have them compiled. RAP4 will help you by giving error messages when your script contains errors. If your script complies to the Ampersand syntax and has no type errors, it will let you generate artifacts from your script. Currently these artifacts are
+As a student, your main objective with RAP3 is to write Ampersand scripts and have them compiled. RAP3 will help you by giving error messages when your script contains errors. If your script complies to the Ampersand syntax and has no type errors, it will let you generate artifacts from your script. Currently these artifacts are
 
 1. A diagnosis document
 2. A functional design document
 3. An analysis site, containing an overview of concepts, relations and rules in your script. 
 
-You might find it interesting to know that RAP4 has been built with Ampersand itself!
+You might find it interesting to know that RAP3 has been built with Ampersand itself!
 
 ## Create an Ampersand script
 
