@@ -1,8 +1,8 @@
-# Functionality of RAP3
+# Functionality of RAP4
 
-These pages are meant to describe the functionality of RAP3. As RAP3 is still under development, some of this functionality is still work in progress. We will tell the current status of everything mentioned here. While doing so, this document will grow until it describes everything one can do with RAP3.
+These pages are meant to describe the functionality of RAP4. As RAP4 is still under development, some of this functionality is still work in progress. We will tell the current status of everything mentioned here. While doing so, this document will grow until it describes everything one can do with RAP4.
 
-The purpose of RAP3 is to be a platform for people to learn how to work with Ampersand. We distinguage the following ROLEs:
+The purpose of RAP4 is to be a platform for people to learn how to work with Ampersand. We distinguage the following ROLEs:
 
 * Student. 
 * Tutor. This role is to watch the progress of students, and being able to give guidance.

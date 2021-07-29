@@ -17,7 +17,7 @@ In [gitflow workflow](https://www.atlassian.com/git/tutorials/comparing-workflow
 
 ## Release notes
 
-Every time someone pulls a feature branch into the [development branch](https://github.com/AmpersandTarski/Ampersand/tree/development), the release notes should be updated with a small description of the change. If we all stick to this habit, it will become pretty easy to do a release, including an appropriate set of [release notes](https://github.com/AmpersandTarski/Ampersand/blob/development/ReleaseNotes.md).
+Changes in the code should be done using a feature branch. It is a good habit to start the first commit by updateing `releasnotes.md` by describing what the change is about. By doing so, the releasenotes will automatically contain a description of the change as soon as the feature branch is merged into the development branch. If we all stick to this habit, it will become pretty easy to do a release, including an appropriate set of [release notes](https://github.com/AmpersandTarski/Ampersand/blob/development/ReleaseNotes.md).
 
 ## Releasing at Github
 
@@ -26,7 +26,7 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 ## Pre-release steps \(what to do\)
 
 1. In `development` branch, modify the following files[1](releasing-ampersand-and-workflow-details.md#myfootnote1):
-   * `package.yaml (and ampersand.cabal)`: 
+   * `package.yaml` :
      * Change the version number to the next release number.
    * `ReleaseNotes.md` : 
      * Rename the "unreleased changes" section to the new version
@@ -34,22 +34,15 @@ We release Ampersand every four weeks. Of course, we want this to happen as smoo
 2. Push your modifications to GitHub. This will trigger automated testing.
 3. Ensure that the build is succesfully:
    * [Check the build](https://github.com/AmpersandTarski/Ampersand/actions) \(this could take up to an hour\)
-4. Create a pull request to the
+4. Create a pull request to the [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development)
 
-   [master from the compare with development](https://github.com/AmpersandTarski/Ampersand/compare/master...development)
+[2](releasing-ampersand-and-workflow-details.md#myfootnote2)
 
-  
+![](.gitbook/assets/create-pull-request.PNG)
 
-   [2](releasing-ampersand-and-workflow-details.md#myfootnote2)
-
-
-
-   ![](.gitbook/assets/create-pull-request.PNG)
-
-   Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub, and it triggers the actual release. 
-
+Press the green button to create the pull request. We create a pull request so the release leaves a proper administrative trail in GitHub, and it triggers the actual release.
 
 Notes, tips and tricks:
 
-[1](releasing-ampersand-and-workflow-details.md): Looking for `ampersand.cabal` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current \(!\) version. Please make sure your Git is working in the development branch. [2](releasing-ampersand-and-workflow-details.md): This and most of the following actions are done from within the ampersand repository at github. [3](releasing-ampersand-and-workflow-details.md): At the bottom of the page in GitHub, you will find the buttons to merge this release. Please drop a note to describe new features.
+[1](releasing-ampersand-and-workflow-details.md): Looking for `package.yaml` and `ReleaseNotes.md`? Want to know where they are located? Look in Github for the commit of the previous release. It shows changes were made to these files. From there, open their current \(!\) version. Please make sure your Git is working in the development branch. [2](releasing-ampersand-and-workflow-details.md): This and most of the following actions are done from within the ampersand repository at github. [3](releasing-ampersand-and-workflow-details.md): At the bottom of the page in GitHub, you will find the buttons to merge this release. Please drop a note to describe new features.
 

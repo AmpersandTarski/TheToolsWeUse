@@ -4,9 +4,9 @@ An Ampersand application may grant access to named users. We have done this befo
 
 ## Setting up with Github as access provider
 
-I made a separate Github organization, RAP-OUNL, to serve as access provider for RAP3.
+I made a separate Github organization, RAP-OUNL, to serve as access provider for RAP4.
 
-callback URL: [http://example.com/AmpersandPrototypes/RAP3/api/v1/oauthlogin/callback/github](http://example.com/AmpersandPrototypes/RAP3/api/v1/oauthlogin/callback/github)
+callback URL: [http://example.com/AmpersandPrototypes/RAP4/api/v1/oauthlogin/callback/github](http://example.com/AmpersandPrototypes/RAP3/api/v1/oauthlogin/callback/github)
 
 ## Experimenting from a laptop
 

@@ -1,20 +1,20 @@
 # Student
 
-As a student, your main objective with RAP3 is to write Ampersand scripts and have them compiled. RAP3 will help you by giving error messages when your script contains errors. If your script complies to the Ampersand syntax and has no type errors, it will let you generate artifacts from your script. Currently these artifacts are
+As a student, your main objective with RAP4 is to write Ampersand scripts and have them compiled. RAP4 will help you by giving error messages when your script contains errors. If your script complies to the Ampersand syntax and has no type errors, it will let you generate artifacts from your script. Currently these artifacts are
 
 1. A diagnosis document
 2. A functional design document
 3. An analysis site, containing an overview of concepts, relations and rules in your script. 
 
-You might find it interesting to know that RAP3 has been built with Ampersand itself!
+You might find it interesting to know that RAP4 has been built with Ampersand itself!
 
 ## Create an Ampersand script
 
-![](../.gitbook/assets/menunieuwscript.png)
+![](../.gitbook/assets/menuNieuwScript.png)
 
 A new script can be made by hitting the + sign in the menu and go to New Script. A new script is being made, but it doesn't have any content:
 
-![](../.gitbook/assets/nieuwscript.png)
+![](../.gitbook/assets/NieuwScript.png)
 
 In the header of the script you can see Script
 
@@ -46,7 +46,7 @@ After you pressed the blue button, you can check the compile checkbox. Ampersand
 
 If your script is OK however, it will also tell you, by letting you know that processing has come to an end:
 
-![](../.gitbook/assets/compilationok.png)
+![](../.gitbook/assets/CompilationOK.png)
 
 Every time compilation is succesful, a new version of your script will be made. You will see the most recent version. Now you can ask for the artifacts, by checking an appropriate checkbox. This will take some time, and a link will appear at the right of the checkbox. If you follow that link, the result will be shown.
 
