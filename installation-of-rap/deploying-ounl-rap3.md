@@ -68,7 +68,7 @@ sjo@lnx-hrl-202v:~/RAP4$ wget https://raw.githubusercontent.com/AmpersandTarski/
 To install RAP4:
 
 ```text
-sjo@lnx-hrl-202v:~/RAP4$ docker-compose up -d
+sjo@lnx-hrl-202v:~/RAP4$ docker compose up -d
 ```
 
 To check whether this worked, I went to my browser and navigated to `http://145.20.188.96/RAP4`.  
