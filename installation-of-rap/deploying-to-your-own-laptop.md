@@ -4,9 +4,7 @@ If you want to deploy RAP4 to your laptop, this chapter tells you how.
 
 Each step in the installation process gets a separate section in this text.
 
-This example has worked on my Macbook. If not, you may either change the commands below to the commands of your own computer, or set up a virtual linux machine on your laptop.
-
-
+This example has worked on my Macbook. If not, you may either change the commands below to the commands of your own computer or set up a virtual Linux machine on your laptop.
 
 ## Prerequisites
 
@@ -49,6 +47,8 @@ $ docker compose up -d
  ⠿ Container phpmyadmin                     Star...                       12.1s
 $ 
 ```
+
+The first time you run `docker compose up -d` it will spontaneously download the images it needs to spin up RAP.
 
 To prevent an error when running your prototype, execute the following commands:
 
