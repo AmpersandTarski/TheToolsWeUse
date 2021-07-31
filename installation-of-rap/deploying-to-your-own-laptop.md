@@ -50,12 +50,10 @@ $ docker compose up -d
 $ 
 ```
 
-To check whether this worked, I went to my browser and navigated to `https://localhost`.
-
 To prevent an error when running your prototype, execute the following commands:
 
 ```text
-$ docker exec -it rap4 bash                      
+$ docker exec -it rap4 bash
 root@2bf09123ebd1:/var/www# chmod 666 /var/run/docker.sock 
 root@2bf09123ebd1:/var/www# exit
 exit
@@ -66,7 +64,7 @@ Completion of this step allowed access to RAP4 from `localhost`:
 
 ![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.31.22.png)
 
-Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders tresspassing. If you [depoy to a server](deploying-ounl-rap3.md), you need the setup for `https://`.
+Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders tresspassing. If you [deploy to a server](deploying-ounl-rap3.md), you need the secure setup.
 
 You will find that the database is accessible on `http://phpmyadmin/localhost`
 
