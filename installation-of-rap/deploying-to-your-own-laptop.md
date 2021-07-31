@@ -8,38 +8,36 @@ This example has worked on my Macbook. If not, you may either change the command
 
 
 
-## Installing Docker
+## Prerequisites
 
-I installed docker following the instructions on `https://docs.docker.com/`
+You need docker. Follow the instructions on`https://docs.docker.com/.`
 
-Then I checked that everything went successfully by means of the `which`-command:
-
-```text
-$ which docker
-/usr/bin/docker
-$ 
-```
+You need git. Follow the instructions on `https://github.com/git-guides/install-git`.
 
 ## Obtaining the files we need
 
-We need only one file: `docker-compose.yml`  
-To get it, I used the `wget` command, which gets stuff from the web:
+Import the required files from Github and go to the directory from which to install RAP:
 
 ```text
-$ mkdir RAP4
-$ cd RAP4
-$ wget https://raw.githubusercontent.com/AmpersandTarski/RAP/master/docker-compose.yml
+$ git clone https://github.com/AmpersandTarski/RAPinstall
+Cloning into 'RAPinstall'...
+remote: Enumerating objects: 19, done.
+remote: Counting objects: 100% (19/19), done.
+remote: Compressing objects: 100% (17/17), done.
+remote: Total 19 (delta 2), reused 14 (delta 0), pack-reused 0
+Unpacking objects: 100% (19/19), done.
+$ cd RAPinstall
 $ 
 ```
 
 ## Installing RAP4
 
-To install RAP4 I have to type two commands:
+To install RAP4 you need two commands:
 
 ```text
 $  docker network create proxy
 3f9552a7506ac5f2b5d9fcb158edae82f9f64e4e3d6b093916d624d118ba342a
-$ docker compose up -d       
+$ docker compose up -d
 [+] Running 8/8
  ⠿ Network rap_db                           Created                        4.7s
  ⠿ Network rap_default                      Creat...                       4.0s
@@ -52,18 +50,15 @@ $ docker compose up -d
 $ 
 ```
 
-To check whether this worked, I went to my browser and navigated to `http://localhost`.
+To check whether this worked, I went to my browser and navigated to `https://localhost`.
 
-I checked whether the containers are running by means of the `docker ps` command.
+To prevent an error when running your prototype, execute the following commands:
 
 ```text
-$ docker ps
-CONTAINER ID   IMAGE          COMMAND                  CREATED              STATUS              PORTS                                                                      NAMES
-43edb0f3a4aa   2d806de52e67   "/docker-entrypoint.…"   About a minute ago   Up About a minute   80/tcp                                                                     phpmyadmin
-a6b937c3fe93   8edf637cc6bc   "docker-php-entrypoi…"   About a minute ago   Up About a minute   80/tcp                                                                     rap4
-48f6477fdab8   ad69046676ea   "docker-php-entrypoi…"   About a minute ago   Up About a minute   80/tcp                                                                     enroll
-d7ebdb394bfd   f965f5a1fff8   "/entrypoint.sh trae…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, :::80->80/tcp, 0.0.0.0:443->443/tcp, :::443->443/tcp   traefik
-982bacd58ba6   30a3b1fa460a   "docker-entrypoint.s…"   About a minute ago   Up About a minute   3306/tcp                                                                   rap4-db
+$ docker exec -it rap4 bash                      
+root@2bf09123ebd1:/var/www# chmod 666 /var/run/docker.sock 
+root@2bf09123ebd1:/var/www# exit
+exit
 $ 
 ```
 
