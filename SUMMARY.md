@@ -17,7 +17,7 @@
   * [Github packages](automation-of-releasing-ci-cd/github-packages.md)
 * [Installation of RAP](installation-of-rap/README.md)
   * [Deploying to your own laptop](installation-of-rap/deploying-to-your-own-laptop.md)
-  * [Deploying RAP4 with Azure on Ubuntu](installation-of-rap/deploying-rap3-with-azure-on-ubuntu.md)
+  * [Deploying RAP4 in the Azure cloud](installation-of-rap/deploying-rap3-with-azure-on-ubuntu.md)
   * [Deploying OUNL RAP4](installation-of-rap/deploying-ounl-rap3.md)
   * [Maintaining RAP4](installation-of-rap/redeploying-rap3.md)
   * [Making Docker images](installation-of-rap/making-docker-images.md)

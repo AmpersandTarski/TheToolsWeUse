@@ -1,4 +1,4 @@
-# Deploying RAP4 with Azure on Ubuntu
+# Deploying RAP4 in the Azure cloud
 
 In early 2017 the need arose for an Ampersand implementation in Ordina's cloud, to let young professionals get acquainted with Ampersand. We chose to implement RAP4 in Azure, because Ordina has an Azure subscription. RAP4 is the same environment that our students use at the Open Universiteit, so the maintainance of RAP4 can be reused for both target audiences.
 
@@ -35,7 +35,6 @@ The following settings were made:
 | Inbound port: RAP4 \(HTTP\) | TCP/80 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
-| Inbound port: phpMyAdmin \(HTTP\) | TCP/8080 |
 | Public IP-adres | 137.117.190.28 \(static\) |
 | the full name for calling the application | http://137.117.190.28/RAP4 |
 
@@ -45,10 +44,7 @@ I have verified the machine was live by logging in via Putty \(a popular SSH-cli
 
 ## 2. Port settings
 
-To perform this step, I didn't wait until step1 was completed. It is sufficient that the Netwerkbeveiligingsgroep `Wolfram-nsg` exists. In order to access RAP4 from the internet, we told the virtual machine to open port 80 for http and port 8080 to phpmyadmin. These settings were made in the Azure portal via `Resourcegroepen > AmpersandRAP4 > Wolfram-nsg (Netwerkbeveiligingsgroep) > inkomende beveiligingsregels`. Two rules were added:
-
-1. A rule called http, which makes the server listen to port 80/TCP.
-2. A rule called phpmyadmin, which makes the server listen to port 8080/TCP.
+To perform this step, I didn't wait until step1 was completed. It is sufficient that the Netwerkbeveiligingsgroep `Wolfram-nsg` exists. In order to access RAP4 from the internet, we told the virtual machine to open port 80 for http and 443 for https. These settings were made in the Azure portal via `Resourcegroepen > AmpersandRAP4 > Wolfram-nsg (Netwerkbeveiligingsgroep) > inkomende beveiligingsregels`. A rules was added to make the server listen to port 80/TCP.
 
 No rule was added for the database, so the database is only open to phpMyAdmin and RAP4, or from within its container.
 
