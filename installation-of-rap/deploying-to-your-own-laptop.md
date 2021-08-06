@@ -66,7 +66,7 @@ Completion of this step allowed access to RAP4 from `localhost`:
 
 Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders tresspassing. If you [deploy to a server](deploying-ounl-rap3.md), you need the secure setup.
 
-You will find that the database is accessible on `http://phpmyadmin/localhost`
+You will find that the database is accessible on `http://phpmyadmin.localhost`
 
 ![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.36.16.png)
 
