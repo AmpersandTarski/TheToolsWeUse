@@ -12,9 +12,11 @@ You need docker. Follow the instructions on`https://docs.docker.com/.`
 
 You need git. Follow the instructions on `https://github.com/git-guides/install-git`.
 
+You need to use a command-line, you need permission to install software on your laptop and you need to be connected to the Internet.
+
 ## Obtaining the files we need
 
-Import the required files from Github and go to the directory from which to install RAP:
+Import the required files from Github:
 
 ```text
 $ git clone https://github.com/AmpersandTarski/RAPinstall
@@ -24,17 +26,27 @@ remote: Counting objects: 100% (19/19), done.
 remote: Compressing objects: 100% (17/17), done.
 remote: Total 19 (delta 2), reused 14 (delta 0), pack-reused 0
 Unpacking objects: 100% (19/19), done.
+$
+```
+
+Go to the directory from which to install RAP:
+
+```text
 $ cd RAPinstall
 $ 
 ```
 
-## Installing RAP4
-
-To install RAP4 you need two commands:
+You need to create a proxy network to let RAP communicate with your browser
 
 ```text
-$  docker network create proxy
+$ docker network create proxy
 3f9552a7506ac5f2b5d9fcb158edae82f9f64e4e3d6b093916d624d118ba342a
+$ 
+```
+
+Now spin up RAP4:
+
+```text
 $ docker compose up -d
 [+] Running 8/8
  ⠿ Network rap_db                           Created                        4.7s
@@ -48,23 +60,31 @@ $ docker compose up -d
 $ 
 ```
 
-The first time you run `docker compose up -d` it will spontaneously download the images it needs to spin up RAP.
+The first time you run `docker compose up -d` it will spontaneously download the images it needs to spin up RAP. That generates somewhat more output than shown here. Don't worry about it.
 
-To prevent an error when running your prototype, execute the following commands:
+To execute an initial command, you need to "climb into" the rap4 container:
 
 ```text
 $ docker exec -it rap4 bash
+root@2bf09123ebd1:/var/www# 
+```
+
+You are now inside the rap4 container. To prevent a runtime error when executing your prototype, type the shown chmod command and exit the container:
+
+```text
 root@2bf09123ebd1:/var/www# chmod 666 /var/run/docker.sock 
 root@2bf09123ebd1:/var/www# exit
 exit
 $ 
 ```
 
-Completion of this step allowed access to RAP4 from `localhost`:
+Now you are done. Just check whether everything works:
+
+Type `localhost` in the URL-field of your browser, to see if RAP4 has started. You should see this:
 
 ![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.31.22.png)
 
-Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders tresspassing. If you [deploy to a server](deploying-ounl-rap3.md), you need the secure setup.
+Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders' trespassing. If you [deploy to a server](deploying-ounl-rap3.md), you need a secure setup.
 
 You will find that the database is accessible on `http://phpmyadmin.localhost`
 
