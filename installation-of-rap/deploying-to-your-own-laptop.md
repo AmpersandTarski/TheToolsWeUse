@@ -4,7 +4,7 @@ If you want to deploy RAP4 to your laptop, this chapter tells you how.
 
 Each step in the installation process gets a separate section in this text.
 
-This example has worked on my Macbook. If not, you may either change the commands below to the commands of your own computer or set up a virtual Linux machine on your laptop.
+This example has worked on my Macbook. If you have a different computer, you may either change the commands below to the commands of your own computer or set up a virtual Linux machine on your laptop.
 
 ## Prerequisites
 

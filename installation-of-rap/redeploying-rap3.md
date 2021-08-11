@@ -1,6 +1,6 @@
 ---
 description: >-
-  Once RAP3 is running, there are maintenance tasks you might want to do. The
+  Once RAP4 is running, there are maintenance tasks you might want to do. The
   most frequently used tasks are described here for RAP-3 maintainers to refer
   to.
 ---
@@ -15,8 +15,9 @@ Here is an overview of all tasks described on this page. Refer to the related se
 
 1. Connect Before doing any maintenance, you need credentials to gain access to your server. Then you can connect to the server. We assume you gain access to a command-line interface \(CLI\) of your server. In this text that CLI is `/bin/bash` on a linux machine.
 2. Check the configuration When you start a maintenance session, you may want to check on the system. RAP4 runs in containers on a docker-platform, so you can check whether the containers are running and you can check the configuration in which they should be running.
-3. Upgrade to a new version
-4. Refresh the configuration Refreshing the RAP4 configuration is something you need to do only when developers tell you to do that. 
+3. Upgrade to a new version of RAP
+4. Upgrade to a new version of Ubuntu
+5. Refresh the configuration Refreshing the RAP4 configuration is something you need to do only when developers tell you to do that. 
 
 ## Connecting to the RAP4 server
 
@@ -127,7 +128,7 @@ sjo@lnx-hrl-202v:~/RAP4$
 
 There are three data sets. The directory `log` contains logging information of the RAP4-server. The directory `mysql` contains the data from MariaDB. The directory `scripts` contains the student scripts and the files they generated when working in RAP4.
 
-## Upgrade to a new version 
+## Upgrade to a new version of RAP
 
 If you need to upgrade RAP4 to the latest release run this command:
 
@@ -136,6 +137,52 @@ sjo@lnx-hrl-202v:~/RAP4$ docker-compose up -d
 ```
 
 As you can see in the configuration \(`docker-compose.yml`\) 
+
+## Upgrade to a new version of Ubuntu
+
+When you connect to the server, you get hints about the state your Ubuntu server is in. E.g.
+
+```text
+% ssh sjo@rap.cs.ou.nl
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 4.15.0-151-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Wed Aug 11 10:26:22 CEST 2021
+
+  System load:                    0.08
+  Usage of /:                     68.3% of 48.83GB
+  Memory usage:                   17%
+  Swap usage:                     0%
+  Processes:                      264
+  Users logged in:                0
+  IP address for ens160:          145.20.188.96
+  IP address for br-0b19c7bfdba3: 172.20.0.1
+  IP address for br-0f95c427718c: 172.26.0.1
+  IP address for docker0:         172.17.0.1
+
+ * Canonical Livepatch is enabled.
+   - All available patches applied.
+
+84 packages can be updated.
+1 update is a security update.
+
+
+*** System restart required ***
+Last login: Mon Aug  2 11:14:56 2021 from 145.20.142.176
+sjo@lnx-hrl-202v:~$
+```
+
+In such cases you can update by giving two commands:
+
+```text
+sjo@lnx-hrl-202v:~$ sudo apt update
+sjo@lnx-hrl-202v:~$ sudo apt upgrade
+```
+
+Sometimes a package is kept back because there is a problem with dependencies. You will have to upgrade such packages by hand.
 
 ## Refreshing the code
 
