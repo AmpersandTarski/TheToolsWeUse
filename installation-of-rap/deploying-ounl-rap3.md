@@ -21,12 +21,11 @@ The following settings apply:
 |  |  |
 | :--- | :--- |
 | server name | lnx-hrl-202v |
-| OS | Ubuntu 16.04.2 LTS \(GNU/Linux 4.4.0-83-generic x86\_64\) |
+| OS | Ubuntu 18.04.5 LTS \(GNU/Linux 4.15.0-153-generic x86\_64 |
 | Admin user name | sjo |
 | verification type | password \(Stef Joosten knows the password\) |
 | Size | 2 core, 7GB |
 | Inbound port: RAP4 \(HTTP\) | TCP/80 |
-| Inbound port: phpMyAdmin \(HTTP\) | TCP/8080 |
 | Inbound port: HTTPS | TCP/443 |
 | Inbound port: SSH | TCP/22 |
 | Public IP-adres | 145.20.188.96 |
