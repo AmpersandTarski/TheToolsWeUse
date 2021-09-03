@@ -25,41 +25,9 @@ First of all, we want to be **in control** of our software. We use Git\(hub\) to
 To learn more about Git, head over to [this documentation](https://git-scm.com/).
 {% endhint %}
 
-#### Automatic build
+#### Automatic build & test
 
-![](../.gitbook/assets/travisci-full-color-1.png)
-
-Each time a modification of the code is committed to our Github repository, we want to provide answers to a couple of questions: 
-
-1. Can the modified software be built?
-2. If so, can we be confident that it doesn't break earlier working features?
-
-To answer these questions, we use Travis-ci to build and do a regression test. This is triggered **whenever a new commit is done** on any branch in the Ampersand repo. 
-
-{% hint style="info" %}
-Configuration of what should happen when a commit is done is specified in the _**.travis.yml**_ file in the root directory of the repo. 
-{% endhint %}
-
-In brief, the following actions take place
-
-1. Build the application \(using stack\);
-2. Run the quickcheck tests \(currently used to verify the parser and prettyprinter\);
-3. Run the tests in the regression testset;
-4. Depending on if the above was successful, we want to notify specific users and/or systems.
-5. If the above was successful, and depending on the branch, a new tag is created at the github repo, as start of a release. Also, built artifacts are being added to the new draft release.
-
-![](../.gitbook/assets/appveyor_logo.svg.png)
-
-We also make use of **Appveyor** to build the application. While travis-ci uses linux, AppVeyor uses Windows. By using Appveyor as well, we can provide windows executables in the release as well. To be able to add windows binary executables to a release, we have AppVeyor build from the same commit. This is triggered whenever a new tag is attached to a commit in the Ampersand repo.
-
-{% hint style="info" %}
-Configuration of what should happen when a commit is done is specified in the _**.appveyor.yml**_ file in the root directory of the repo.
-{% endhint %}
-
-In brief, the following actions take place \(see the .appveyor.yml file for details\):
-
-1. Build the application \(using chocolatry and cabal\); 
-2. Upon success, Appveyor adds the artifacts it has built to the release from the current tag.
+We use [github actions](https://github.com/features/actions) to build and test the code whenever a commit is done on github. Github actions is pretty well [documented](https://docs.github.com/en/actions). Our specific code can be found in the repository at the designated directory:  `.github/workflows/` . 
 
 
 
