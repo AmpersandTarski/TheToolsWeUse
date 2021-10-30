@@ -52,7 +52,9 @@ Git works from the command prompt. There are however some tools that make life e
   * Accept all defaults
 * Install [SourceTree](http://www.sourcetreeapp.com) to visualize the history in the most popular Git client.
   * No global ignore, further everything default
-  * When at _Add an account_, select _GitHub_ and supply your credentials.
+  *   When at _Add an account_, select _GitHub_ and supply your credentials.
+
+      Note: there are many other git clients too, many of which are free, e.g. [Github Desktop](https://desktop.github.com) or [GitKraken](https://www.gitkraken.com).
 * Install [KDiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/) to get help in merging conflicts. To avoid KDiff3, you can merge conflicts from your editor or IDE as well.
   * To select KDiff3 in SourceTree, go to SourceTree / Tools / Options / Diff and select KDiff3 for External Diff Tool and Merge Tool.
 * Pin Git Bash to Start menu to use Git from a command line interface.
@@ -76,7 +78,7 @@ To avoid typing a GitHub password for every commit you make, [install an SSH-key
 
 Checking out means to create your own local copy of the repository. By default, the Git directory in your home directory will be used for all local repositories. You have various options to do this
 
-* Use a git client such as [Github Desktop](https://desktop.github.com), [SourceTree](https://www.sourcetreeapp.com), or [GitKraken](https://www.gitkraken.com) if you want a client application so you don't have to remember any git-command
+* Use your git client (e.g. [Github Desktop](https://desktop.github.com), [SourceTree](https://www.sourcetreeapp.com), or [GitKraken](https://www.gitkraken.com)) if you want to click instead of typing commands.
 * Use your command-line interface:
   *   go to your working directory
 
