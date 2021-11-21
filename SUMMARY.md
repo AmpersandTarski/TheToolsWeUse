@@ -13,7 +13,7 @@
   * [Testing with Docker on your own laptop](building/testing-with-docker-on-your-own-laptop.md)
   * [Automated builds](building/automated-builds.md)
 * [Prototype framework](prototype-framework.md)
-* [Automation of releasing \(CI/CD\)](automation-of-releasing-ci-cd/README.md)
+* [Automation of releasing (CI/CD)](automation-of-releasing-ci-cd/README.md)
   * [Github packages](automation-of-releasing-ci-cd/github-packages.md)
 * [Installation of RAP](installation-of-rap/README.md)
   * [Deploying to your own laptop](installation-of-rap/deploying-to-your-own-laptop.md)
@@ -32,3 +32,6 @@
 * [Authentication and access management with OAuth](authentication-and-access-management-with-oauth.md)
 * [Ampersand language support](ampersand-language-support.md)
 
+## Group 1
+
+* [Development using VS Code](group-1/development-using-vs-code.md)
