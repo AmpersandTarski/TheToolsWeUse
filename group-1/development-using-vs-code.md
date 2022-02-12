@@ -26,6 +26,16 @@ In order to use ormolu, you have to make sure it is available. Hopefully, some t
 stack install ormolu
 ```
 
+
+
+{% hint style="info" %}
+If you use the devcontainer functionality (available in vscode), your code is auto-formatted by default. In other cases, you need to do that yourself. When merging code into the main branch, it should be formatted correctly. You can autoformat all haskell files with the command:
+
+```bash
+stack exec ormolu -- --mode inplace $(git ls-files '*.hs')
+```
+{% endhint %}
+
 ### Devcontainer
 
 We provide a standard developer container to the developers of Ampersand. Documentation about this awsome VScode feature can be found [here](https://code.visualstudio.com/docs/remote/containers).
