@@ -4,7 +4,7 @@ As a student, your main objective with RAP4 is to write Ampersand scripts and ha
 
 1. A diagnosis document
 2. A functional design document
-3. An analysis site, containing an overview of concepts, relations and rules in your script. 
+3. An analysis site, containing an overview of concepts, relations and rules in your script.&#x20;
 
 You might find it interesting to know that RAP4 has been built with Ampersand itself!
 
@@ -24,19 +24,19 @@ _\__
 
 _\_1491765040_
 
-_\_
+_\\_
 
 \_
 
-00901936, which is a 
+00901936, which is a&#x20;
 
-\(
+(
 
 generated
 
-\)
+)
 
- identifier of the instance, with which you have nothing to do. The big white space in the middle is where you will write your script. You could als choose to upload a script from your computer. It is a good habit to save your scripts at your own computer, because currently we have no functionality to retrieve your script easily. Please take care of your own precious work yourself.
+&#x20;identifier of the instance, with which you have nothing to do. The big white space in the middle is where you will write your script. You could als choose to upload a script from your computer. It is a good habit to save your scripts at your own computer, because currently we have no functionality to retrieve your script easily. Please take care of your own precious work yourself.
 
 Each time you modify your script, you have to send it to Ampersand by pressing the big blue button below the white space. Only then Ampersand will be notified about your changes.
 
@@ -49,4 +49,3 @@ If your script is OK however, it will also tell you, by letting you know that pr
 ![](../.gitbook/assets/CompilationOK.png)
 
 Every time compilation is succesful, a new version of your script will be made. You will see the most recent version. Now you can ask for the artifacts, by checking an appropriate checkbox. This will take some time, and a link will appear at the right of the checkbox. If you follow that link, the result will be shown.
-

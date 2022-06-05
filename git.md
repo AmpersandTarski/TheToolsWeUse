@@ -38,7 +38,7 @@ Understanding the basics of Git is essential for anyone working on Ampersand. Fo
 
 * If you want  write access to the Ampersand repo, create yourself an account at [GitHub](https://www.github.com), if you don't have one already. You don't need that if you just want to read.
   * Ask one of the administrators of Ampersand to add you as member to the team, stating that you want/need write access to the Ampersand repo or any other repo in the project.
-* If you need a local copy on your own computer, install [Git for Windows](http://msysgit.github.io) or [Git for MacOS](https://nl.atlassian.com/git/tutorials/install-git#mac-os-x) to stay abreast with the latest version.
+* If you need a local copy on your own computer, install [Git for Windows](http://msysgit.github.io/) or [Git for MacOS](https://nl.atlassian.com/git/tutorials/install-git#mac-os-x) to stay abreast with the latest version.
 * When installing for Windows:
   * Accept all defaults, except:
   * 4th screen check "Windows Explorer integration" / "Simple context menu" / "Git Bash here"
@@ -48,13 +48,13 @@ Understanding the basics of Git is essential for anyone working on Ampersand. Fo
 
 Git works from the command prompt. There are however some tools that make life easier when you work with Git. Not necessary, but very much appreciated.
 
-* Install [TortoiseGit](https://tortoisegit.org) to use Git in your Windows Explorer.&#x20;
+* Install [TortoiseGit](https://tortoisegit.org/) to use Git in your Windows Explorer.&#x20;
   * Accept all defaults
 * Install [SourceTree](http://www.sourcetreeapp.com) to visualize the history in the most popular Git client.
   * No global ignore, further everything default
   *   When at _Add an account_, select _GitHub_ and supply your credentials.
 
-      Note: there are many other git clients too, many of which are free, e.g. [Github Desktop](https://desktop.github.com) or [GitKraken](https://www.gitkraken.com).
+      Note: there are many other git clients too, many of which are free, e.g. [Github Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/).
 * Install [KDiff3](http://sourceforge.net/projects/kdiff3/files/kdiff3/) to get help in merging conflicts. To avoid KDiff3, you can merge conflicts from your editor or IDE as well.
   * To select KDiff3 in SourceTree, go to SourceTree / Tools / Options / Diff and select KDiff3 for External Diff Tool and Merge Tool.
 * Pin Git Bash to Start menu to use Git from a command line interface.
@@ -78,7 +78,7 @@ To avoid typing a GitHub password for every commit you make, [install an SSH-key
 
 Checking out means to create your own local copy of the repository. By default, the Git directory in your home directory will be used for all local repositories. You have various options to do this
 
-* Use your git client (e.g. [Github Desktop](https://desktop.github.com), [SourceTree](https://www.sourcetreeapp.com), or [GitKraken](https://www.gitkraken.com)) if you want to click instead of typing commands.
+* Use your git client (e.g. [Github Desktop](https://desktop.github.com/), [SourceTree](https://www.sourcetreeapp.com/), or [GitKraken](https://www.gitkraken.com/)) if you want to click instead of typing commands.
 * Use your command-line interface:
   *   go to your working directory
 

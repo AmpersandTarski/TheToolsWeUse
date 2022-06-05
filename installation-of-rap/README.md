@@ -6,7 +6,7 @@ Deployment means to install RAP4 on a web server or a laptop of your own. The ea
 
 ## Automated deployment
 
-We use Docker for automating the deployment and making RAP portable over different platforms. The following three sections report three different installation we did:
+We use Docker for automating the deployment and making RAP portable over different platforms. The following three sections report three different installations we did:
 
 * to [deploy RAP on a laptop](deploying-to-your-own-laptop.md);
 * to [deploy RAP on an Ordina server](deploying-rap3-with-azure-on-ubuntu.md) in the Azure cloud;
@@ -14,9 +14,8 @@ We use Docker for automating the deployment and making RAP portable over differe
 
 These three reports will most likely contain enough information to let you reproduce the installation on a computer or platform of your own.
 
-The last section of this chapter discusses the [making of docker images](making-docker-images.md), which you may need if the above does not work because the images are \(for any reason whatsoever\) unavailable on the internet.
+The last section of this chapter discusses the [making of docker images](making-docker-images.md), which you may need if the above does not work because the images are (for any reason whatsoever) unavailable on the internet.
 
 ## Questions? Need help?
 
 Don't hesitate to contact Han Joosten. He'll be glad to help out.
-

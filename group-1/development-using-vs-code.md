@@ -40,3 +40,28 @@ stack exec ormolu -- --mode inplace $(git ls-files '*.hs')
 
 We provide a standard developer container to the developers of Ampersand. Documentation about this awsome VScode feature can be found [here](https://code.visualstudio.com/docs/remote/containers).
 
+#### How to get started using the .devcontainer stuff
+
+Setting up a Haskell environment with awsome tooling has never been as easy as today.
+
+* Make sure you have vscode installed
+* Install the \`Remote - Containers\` extention.
+* Go to the directory where your Ampersand stuff resides, and type \`code .\`
+* In the lower right corner, you will see a message:&#x20;
+
+![](<../.gitbook/assets/image (1).png>)
+
+* Push the button \`Reopen in Container\` and watch the show.
+
+{% hint style="warning" %}
+The first time, opening the development container will take quite some time. It will build some docker images and finally spin up the container. Fortunatly, this is one time only.&#x20;
+{% endhint %}
+
+* While you are waiting, you can watch the progress by inspecting the log. There will be a message containing a link to the log file.&#x20;
+
+
+
+* After everything is set up, open `Main.hs` . This will trigger the Haskell extention of vscode. Also here, the first time will take a while, because the project is being build. That includes all dependencies of Ampersand. If you want to see what is going on, go to the Output tab and open the dropdown called \`tasks\`. You will find the task building Ampersand:
+
+![](../.gitbook/assets/image.png)
+
