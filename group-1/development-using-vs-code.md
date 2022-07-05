@@ -46,11 +46,11 @@ Setting up a Haskell environment with awsome tooling has never been as easy as t
 
 * Make sure you have vscode installed.
 * Install the \`Remote - Containers\` extention.
-* Makd sure Docker is running.
+* Make sure Docker is running.
 * Go to the directory where your Ampersand stuff resides, and type \`code .\`
 * In the lower right corner, you will see a message:&#x20;
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 * Push the button \`Reopen in Container\` and watch the show.
 
@@ -60,7 +60,19 @@ The first time, opening the development container will take quite some time. It 
 
 * While you are waiting, you can watch the progress by inspecting the log. There will be a message containing a link to the log file.&#x20;
 
+<details>
 
+<summary>What if `Reopen in Container` doesn't appear?</summary>
+
+This behaviour can happen when you clicked 'Don't Show Again...' in the past.&#x20;
+
+In this case, you can click on the status bar at the place where the 'remote container' plugin shows the machine you are currently using:
+
+&#x20;<img src="../.gitbook/assets/image (2).png" alt="" data-size="original">
+
+&#x20;After you clicked, choose the menu-item \`Reopen in container\`
+
+</details>
 
 * After everything is set up, open `Main.hs` . This will trigger the Haskell extention of vscode. Also here, the first time will take a while, because the project is being build. That includes all dependencies of Ampersand. If you want to see what is going on, go to the Output tab and open the dropdown called \`tasks\`. You will find the task building Ampersand:
 
