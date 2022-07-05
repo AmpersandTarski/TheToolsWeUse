@@ -44,8 +44,9 @@ We provide a standard developer container to the developers of Ampersand. Docume
 
 Setting up a Haskell environment with awsome tooling has never been as easy as today.
 
-* Make sure you have vscode installed
+* Make sure you have vscode installed.
 * Install the \`Remote - Containers\` extention.
+* Makd sure Docker is running.
 * Go to the directory where your Ampersand stuff resides, and type \`code .\`
 * In the lower right corner, you will see a message:&#x20;
 
