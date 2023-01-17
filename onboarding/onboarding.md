@@ -26,8 +26,7 @@ Gebruikers van RAP zijn vooral studenten van de Open Universiteit en geïnteress
 In de [documentatie](https://ampersandtarski.github.io/) vind je alle informatie nodig om het Ampersand project te leren kennen. De RAP applicatie van de Open Universiteit kan gebruikt worden om de applicatie te leren kennen.
 
 Als developer binnen het Ampersand project zul je de applicatie ook lokaal willen draaien. 
-1. [Hier een link naar een Readme waar dit staat uitgelegd]()
-2. 
+1. [The Tools We Use documentation](https://ampersandtarski.github.io/the-tools-we-use)
 
 De verschillende projecten binnen Ampersand hebben een eigen onboarding.
 
@@ -46,21 +45,21 @@ Het updaten van de Angular library die Ampersand gebruikt om de front-end te gen
 
 - [Repository](https://github.com/AmpersandTarski/prototype-frontend)
 - [Project](https://github.com/orgs/AmpersandTarski/projects/5)
-- [Onboarding](https://github.com/AmpersandTarski/prototype-frontend/tree/dev/docs/onboarding.md)
+- [Onboarding](https://github.com/AmpersandTarski/prototype-frontend/tree/dev/docs)
 
 ### Front-end testing
 Testen van de front-end met het Robot framework.
 
 - [Repository](https://github.com/AmpersandTarski/prototype-frontend)
 - [Project](https://github.com/orgs/AmpersandTarski/projects/8)
-- [Onboarding]()
+- Onboarding
 
 ### RAP testing
 Testen van de back-end met Gatling framework.
 
 - [Repository](https://github.com/AmpersandTarski/RAP)
 - [Project](https://github.com/orgs/AmpersandTarski/projects/4)
-- [Onboarding]()
+- Onboarding
 
 
 ### RAP deployment
@@ -102,10 +101,10 @@ Een nieuwe sprint begint bij de sprint planning, de vaste activiteiten in chrono
 Het doel van de Daily Scrum is om voortgang richting het Sprint doel te inspecteren en de Sprint Backlog als nodig aan te passen, waarbij het aankomend gepland werk wordt bijgesteld. De Daily Scrum is een gebeurtenis van 15 minuten voor de Developers van het Scrum Team.
 
 ### Wekelijks overleg
-Tijdens de daily van maandag zijn de product owners aanwezig ter ondersteuning van het proces en voor inhoudelijke vragen. **Is deze meeting eigenlijk nodig??**
+Tijdens de daily van maandag zijn de product owners aanwezig ter ondersteuning van het proces en voor inhoudelijke vragen.
 
 ### Scrum poker
-Tijdens scrum poker worden gewicht gehangen aan (nieuwe) backlog items. Gaat alleen door als er backlog items zijn om mee te pokeren. **Is deze meeting eigenlijk nodig??**
+Tijdens scrum poker worden gewicht gehangen aan (nieuwe) backlog items. Gaat alleen door als er backlog items zijn om mee te pokeren.
 
 | Poker | Duur  |
 | ----- | ----  |
@@ -146,9 +145,6 @@ Voor de retrospective wordt in de Teams chat *NUTwente ontwikkelteam* een nieuw 
 
 Een copy van het Whiteboard wordt opgeslagen in Teams *Project A & NUT-Vluchtelingen opensource*.
 
-**Misschien 'ns navragen bij een scrum master of dit de beste manier is.**
-
-
 ### Zelfstudie
 Dit project is bedoeld ter ondersteuning van Young professionals en (nieuwe) werknemers van Ordina die beschikbaar zijn. Van Young professionals wordt verwacht dat ze tijd besteden aan zelfstudie.
 
@@ -168,21 +164,32 @@ Developers die aan Ampersand werken of hebben gewerkt:
 
 | Naam | Project(en) | Start | Eind |
 | ---- | ------- | ----- | ---- |
-| Andre de Nijs | RAP, Front-end | 01/09/2022 | - |
-| Bas Plijnaer | ?? | ?? | ?? |
-| *Dirk Suelmann* | Front-end | 07/11/2022 | 16/12/2022 |
-| Freek Rodenburg | RAP deployment | 07/11/2022 | - |
-| *Jesse Zwitserlood* | ?? | ?? | ?? |
+| **Andre de Nijs** | Coach | 01/09/2022 | - |
+| Bas Plijnaer | RAP deployment | 01/09/2022 | 31/10/2022 |
+| Dirk Suelmann | Front-end | 07/11/2022 | 16/12/2022 |
+| **Emre Gul** | Testen Front-end | 16/12/2022 | - | 
+| **Frank Teusink** | RAP deployment | 17/02/2023 | - | 
+| **Freek Rodenburg** | RAP deployment | 07/11/2022 | - |
+| Jesse Zwitserlood | RAP deployment | 01/09/2022 | 10/11/2022 |
 | Kemal Yildiz | Testen RAP | 07/11/2022 | 30/12/2022 |
-| Li-Wei Yeh | Front-end | 01/09/2022 | - |
-| *Mark van der Hart* | Front-end | 01/09/2022 | 30/11/2022 |
-| *Naomi Prins* | Front-end | 07/11/2022 | 16/12/2022 |
+| **Li-Wei Yeh** | Front-end | 01/09/2022 | - |
+| Mark van der Hart | Front-end | 01/09/2022 | 30/11/2022 |
+| **Martijn van Andel** | Front-end | 17/01/2023 | - | 
+| Naomi Prins | Front-end | 07/11/2022 | 16/12/2022 |
 | Patrick Ramge | Front-end, RAP | 01/09/2022 | 30/12/2022 |
-| Sheriff Balunywa | Front-end | 16/12/2022 | - |
-| Sharvin Ramdat | Testen RAP, Testen front-end | ?? | - |
+| **Sheriff Balunywa** | Front-end | 16/12/2022 | - |
+| Sharvin Ramdat | Testen RAP, Testen front-end | 01/10/2022 | 13/01/2023 |
 
 ## Product owner(s)
+De Product Owner is verantwoordelijk voor het maximaliseren van de waarde van het product, dat het resultaat is van het werk van het Scrum Team. Hoe dit wordt gedaan, kan sterk uiteenlopen tussen organisaties, Scrum Teams en individuen.
 
+De Product Owner is ook verantwoordelijk voor effectief Product Backlog management, wat het volgende omvat:
+- Het ontwikkelen en duidelijk overbrengen van het Product Doel;
+- Het creëren en helder overbrengen van Product Backlog items;
+- Het ordenen van Product Backlog items;  
+- Het ervoor zorgen dat de Product Backlog transparant en zichtbaar is en begrepen wordt.
+
+In het Ampersand project wordt echter ook van de developers verwacht zich actief bezig te houden met de inhoud van het backlog.
 
 Product owners Ampersand project:
 - [Stef Joosten](mailto:stef.joosten@ordina.nl)
@@ -202,6 +209,7 @@ In het Ampersand project is geen vast scrum master, deze wisselt daarom per spri
 | 9 | 05/12/2022 | 16/12/2022 | Freek Rodenburg |
 | 10a | 19/12/2022 | 30/12/2022 | Patrick Ramge |
 | 10b | 02/01/2023 | 15/01/2023 | Li-Wei Yeh |
+| 11 | 15/01/2023 | 29/02/2023 | Sherrif Balunywa |
 
 ## Business Analyst
 De Business Analyst heeft als taak systemen en processen te verbeteren. Zij doet dit door de brug te zijn tussen de product owners en developers. Taken af te stemmen en het backlog te beheren.
@@ -218,4 +226,87 @@ Elk project heeft belanghebbenden, bijvoorbeeld de opdrachtgever en/of gebruiker
 Belanghebbenden van het Ampersand project:
 - Open Universiteit: vertegenwoordigd door [Stef Joosten](mailto:stef.joosten@ordina.nl)
 - TNO: vertegenwoordig door [Michiel Stornebrink](mailto:michiel.stornebrink@tno.nl)
-- Ordina: vertegenwoordigd door [Stef Joosten](mailto:stef.joosten@ordina.nl), [Han Joosten](mailto:han.joosten@ordina.nl) en [Wilco Morren](mailto:wilco.morren@ordina.nl)
+
+# Backlog / Scrum board / issues
+
+Taken worden bijgehouden op de bijbehorende [project pagina](https://github.com/orgs/AmpersandTarski/projects). Elke taak die aangemaakt wordt op het backlog is direct ook een issue in de repository dat hoort bij het project.
+
+Issues en backlog items, moeten aan bepaalde voorwaarden voldoen. Een issue moet self-explaining zijn, daarvoor zijn een aantal templates gemaakt.
+
+## Backlog: epic
+```
+# What is purpose: why do we need it?
+
+# List of user stories / tasks
+
+# What is the result?
+```
+
+## Backlog: user story / task
+```
+# What is the purpose: why do we need it?
+
+# How to acclompish the task
+
+# List of subtasks
+
+# What is the result?
+```
+
+## Issue: Bug report
+```
+<!-- Thanks for contributing to this project! Please pick a clear title and proceed.-->
+<!-- Please note: If your issue is about RAP3, please report it over there:-->
+<!--      https://github.com/AmpersandTarski/RAP/issues -->
+
+# What happened
+
+# What I expected
+
+# Version of ampersand that was used
+
+# Steps to reproduce
+
+1.
+2.
+3.
+4.
+
+# Screenshot / Video
+
+# Context / Source of ampersand script
+<!-- Optional: share your script if possible. It helps us reproduce the problem. Please try to keep the scripts tiny-->
+
+<!-- We'd also love to know how you found the bug: #dogfooding, #manual-testing, #automated-testing, or #user-report if applicable.-->
+
+<!-- If requesting a new feature, explain why you'd like to see it added.-->asdf
+```
+
+## Issue: Comment / error /typo in the documentation
+```
+<!-- Thanks for contributing to this project! We are happy with your comments on the documentation. Please pick a clear title and proceed.-->
+
+# What is the page that your suggestion is about?
+
+# What Is your comment?
+<!-- You can provide sceenshots, or whatever you think is helpful to us to do better --!>
+```
+
+## Issue: Feature request
+```
+**Is your feature request related to a problem? Please describe.**
+
+<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
+
+**Describe the solution you'd like**
+
+<!-- A clear and concise description of what you want to happen. -->
+
+**Describe alternatives you've considered**
+
+<!-- A clear and concise description of any alternative solutions or features you've considered. -->
+
+**Additional context**
+
+<!-- Add any other context or screenshots about the feature request here. -->
+```
