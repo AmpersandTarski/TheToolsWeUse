@@ -25,6 +25,13 @@ Gebruikers van RAP zijn vooral studenten van de Open Universiteit en geïnteress
 ## Aan de slag
 In de [documentatie](https://ampersandtarski.github.io/) vind je alle informatie nodig om het Ampersand project te leren kennen. De RAP applicatie van de Open Universiteit kan gebruikt worden om de applicatie te leren kennen.
 
+Je dient toegang te krijgen tot:
+- GitHub project AmpersandTarkse: [Han Joosten](mailto:han.joosten@ordina.nl)
+- Scrum outlook appointments: [Freek Rodenburg](mailto:freek.rodenburg@ordina.nl)
+- Teams chat: NUTwente ontwikkelteam
+- Teams: Project A & NUT-Vluchtelingen opensource
+- [Miro board](https://miro.com/app/board/uXjVPjtMErQ=/): [Freek Rodenburg](mailto:freek.rodenburg@ordina.nl)
+
 Als developer binnen het Ampersand project zul je de applicatie ook lokaal willen draaien. 
 1. [The Tools We Use documentation](https://ampersandtarski.github.io/the-tools-we-use)
 
@@ -105,16 +112,6 @@ Tijdens de daily van maandag zijn de product owners aanwezig ter ondersteuning v
 
 ### Scrum poker
 Tijdens scrum poker worden gewicht gehangen aan (nieuwe) backlog items. Gaat alleen door als er backlog items zijn om mee te pokeren.
-
-| Poker | Duur  |
-| ----- | ----  |
-| 1     | ? uur |
-| 2     | ? uur |
-| 3     | ? uur |
-| 5     | ? uur |
-| 8     | ? uur |
-| 13    | ? uur |
-| 21    | ? uur |
 
 ### Sprint review
 Het doel van de Sprint Review is om de uitkomst van de Sprint te inspecteren en toekomstige aanpassingen te bepalen. Het Scrum Team presenteert de resultaten van hun werk aan de belangrijkste belanghebbenden en de voortgang richting het Product Doel wordt besproken.
