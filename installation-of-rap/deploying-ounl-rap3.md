@@ -80,8 +80,8 @@ I checked whether the containers are running by means of the `docker ps` command
 
 Completion of this step allowed access to RAP4 from an arbitrary computer on the internet:
 
-![](<../.gitbook/assets/import (1).png>)
+![](<../assets/import.png>)
 
 The database is accessible on port 8080:
 
-![](<../.gitbook/assets/phpmyadmin (1) (1).png>)
+![](<../assets/phpMyAdmin.png>)

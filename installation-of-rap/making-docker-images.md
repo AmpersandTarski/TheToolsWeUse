@@ -6,13 +6,13 @@ This chapter discusses the process of baking \(i.e. creating\) images for docker
 
 Docker images are baked when the Ampersand source code for RAP4 is ready to be deployed. This results in three files, to be stored on Docker hub:
 
-![](../.gitbook/assets/Docker%20store.png)
+![](../assets/Docker%20store.png)
 
 ## The release train
 
 RAP4 is deployed as shown in this picture
 
-![](../.gitbook/assets/release-train-rap3.png)
+![](../assets/release-train-rap3.png)
 
 ## A recipe for creating images
 
@@ -120,11 +120,11 @@ I checked whether the containers are running by means of the `docker ps` command
 
 Completion of this step allowed access to RAP4 from an arbitrary computer on the internet:
 
-![](../.gitbook/assets/import.png)
+![](../assets/import.png)
 
 The database is accessible on port 8080:
 
-![](../.gitbook/assets/phpmyadmin%20%281%29.png)
+![](../assets/phpMyAdmin.png)
 
 ### 7. Maintenance
 

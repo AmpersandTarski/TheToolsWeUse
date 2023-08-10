@@ -13,7 +13,7 @@ All of the above users have access to the login page. Further functionality is b
 
 ## Logging in <a id="rap3-login"></a>
 
-![](../.gitbook/assets/login.png)
+![](../assets/login.png)
 
 When you log in, a userid and password must be entered.
 
@@ -21,7 +21,7 @@ When you log in, a userid and password must be entered.
 
 After you have logged in, this screen turns into a logout-screen. The menu bar gives you the options you are entitled to by the role\(s\) you have. In this case you get `MyScripts` and `My Account`:
 
-![](../.gitbook/assets/logout.png)
+![](../assets/logout.png)
 
 In the sequel, the functionality is described by role.
 
@@ -38,11 +38,11 @@ You might find it interesting to know that RAP3 has been built with Ampersand it
 
 ### Create an Ampersand script
 
-![](../.gitbook/assets/menunieuwscript.png)
+![](../assets/menuNieuwScript.png)
 
 A new script can be made by hitting the + sign in the menu and go to New Script. A new script is being made, but it doesn't have any content:
 
-![](../.gitbook/assets/nieuwscript.png)
+![](../assets/NieuwScript.png)
 
 In the header of the script you can see Script
 
@@ -68,13 +68,13 @@ generated
 
 Each time you modify your script, you have to send it to Ampersand by pressing the big blue button below the white space. Only then Ampersand will be notified about your changes.
 
-![](../.gitbook/assets/parseerror.png)
+![](../assets/parseError.png)
 
 After you pressed the blue button, you can check the compile checkbox. Ampersand is launched and it will validate your script. If any error is found, it will notify you, as shown above.
 
 If your script is OK however, it will also tell you, by letting you know that processing has come to an end:
 
-![](../.gitbook/assets/compilationok.png)
+![](../assets/CompilationOK.png)
 
 Every time compilation is succesful, a new version of your script will be made. You will see the most recent version. Now you can ask for the artifacts, by checking an appropriate checkbox. This will take some time, and a link will appear at the right of the checkbox. If you follow that link, the result will be shown.
 

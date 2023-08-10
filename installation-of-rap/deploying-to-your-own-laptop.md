@@ -91,15 +91,15 @@ Now you are done. Just check whether everything works:
 
 Type `localhost` in the URL-field of your browser, to see if RAP4 has started. You should see this:
 
-![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.31.22.png)
+![](../assets/schermafbeelding-2021-07-31-om-08.31.22.png)
 
 Note that RAP runs on the insecure `http://` instead of `https://`.  This is not a problem if you keep your laptop safe from outsiders' trespassing. If you [deploy to a server](deploying-ounl-rap3.md), you need a secure setup.
 
 You will find that the database is accessible on `http://phpmyadmin.localhost`
 
-![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.36.16.png)
+![](../assets/schermafbeelding-2021-07-31-om-08.36.16.png)
 
 The demonstration application, Enrollment, is accessible on `http://enroll.localhost`
 
-![](../.gitbook/assets/schermafbeelding-2021-07-31-om-08.37.47.png)
+![](../assets/schermafbeelding-2021-07-31-om-08.37.47.png)
 

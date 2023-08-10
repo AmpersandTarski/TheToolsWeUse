@@ -50,7 +50,7 @@ Setting up a Haskell environment with awsome tooling has never been as easy as t
 * Go to the directory where your Ampersand stuff resides, and type \`code .\`
 * In the lower right corner, you will see a message:&#x20;
 
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../assets/reopen-in-container.png>)
 
 * Push the button \`Reopen in Container\` and watch the show.
 
@@ -68,7 +68,7 @@ This behaviour can happen when you clicked 'Don't Show Again...' in the past.&#x
 
 In this case, you can click on the status bar at the place where the 'remote container' plugin shows the machine you are currently using:
 
-&#x20;<img src="../.gitbook/assets/image (2).png" alt="" data-size="original">
+&#x20;<img src="../assets/image (1).png" alt="" data-size="original"></img>
 
 &#x20;After you clicked, choose the menu-item \`Reopen in container\`
 
@@ -76,5 +76,5 @@ In this case, you can click on the status bar at the place where the 'remote con
 
 * After everything is set up, open `Main.hs` . This will trigger the Haskell extention of vscode. Also here, the first time will take a while, because the project is being build. That includes all dependencies of Ampersand. If you want to see what is going on, go to the Output tab and open the dropdown called \`tasks\`. You will find the task building Ampersand:
 
-![](../.gitbook/assets/image.png)
+![](../assets/image.png)
 
