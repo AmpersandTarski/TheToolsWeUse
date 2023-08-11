@@ -35,7 +35,7 @@ Ampersand valt onder de paraplu van het A-team. Een team developers van de area 
 
 Andere projecten die onder de paraplu van het A-team vallen:
 - NUTwente: platform die huisvesting van Oekrainse vluchtelingen in de omgeving Twente ondersteund. Looptijd: februari 2022 tot juli 2022, daarna onderhoudt.
-- Boswachter: ontwikkelen van een [website](www.ordinagoingtozero.be/nl) die bezoekers informeert over de CO2-reductie ambitie van Ordina. Looptijd: december 2022 tot april 2023.
+- Boswachter: ontwikkelen van een [website](https://www.ordina.com/who-we-are/social-responsibility/co2-neutral-by-2030/) die bezoekers informeert over de CO2-reductie ambitie van Ordina. Looptijd: december 2022 tot april 2023.
 
 ## A-team projecten
 De projecten die door het A-team zijn opgepakt:
